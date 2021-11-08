@@ -1,0 +1,4037 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A curated list of awesome IT projects and resources. Inspired by the awesome list.">
+      
+      
+        <link rel="canonical" href="https://redhatspain.com/prometheus/">
+      
+      
+        <meta name="author" content="info@redhatspain.com">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Prometheus - Awesome Kubernetes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../static/extra.css">
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-168051035-1","redhatspain.com"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prometheus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-header-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Awesome Kubernetes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Prometheus
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Awesome Kubernetes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes" class="md-nav__link">
+      From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Microservices FAQ & Kubernetes Native" class="md-nav__link">
+      Microservices FAQ & Kubernetes Native
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sre/" title="SRE Site Reliability Engineering" class="md-nav__link">
+      SRE Site Reliability Engineering
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      DevOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheets/" title="Cheat Sheets" class="md-nav__link">
+      Cheat Sheets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitops/" title="GitOps" class="md-nav__link">
+      GitOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mlops/" title="MLOps" class="md-nav__link">
+      MLOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chaos-engineering/" title="Chaos Engineering" class="md-nav__link">
+      Chaos Engineering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Demos and Boilerplates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Demos and Boilerplates" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Demos and Boilerplates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../demos/" title="Demos, Boilerplates & Screencasts" class="md-nav__link">
+      Demos, Boilerplates & Screencasts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Security and DevSecOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Security and DevSecOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Security and DevSecOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devsecops/" title="DevSecOps. Container Security" class="md-nav__link">
+      DevSecOps. Container Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../securityascode/" title="Security Policy as Code" class="md-nav__link">
+      Security Policy as Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      NoOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="NoOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        NoOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noops/" title="NoOps" class="md-nav__link">
+      NoOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../finops/" title="FinOps - Cloud Financial Management" class="md-nav__link">
+      FinOps - Cloud Financial Management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      TestOps - Continuous Testing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TestOps - Continuous Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        TestOps - Continuous Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testops/" title="TestOps and Continuous Testing" class="md-nav__link">
+      TestOps and Continuous Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qa/" title="QA" class="md-nav__link">
+      QA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Project Management Methodology
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Project Management Methodology" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Project Management Methodology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-methodology/" title="Project Management Methodology" class="md-nav__link">
+      Project Management Methodology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-tools/" title="Project Management Tools" class="md-nav__link">
+      Project Management Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appointment-scheduling/" title="Appointment Scheduling" class="md-nav__link">
+      Appointment Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workfromhome/" title="Work From Home" class="md-nav__link">
+      Work From Home
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-tools/" title="Kubernetes Plugins, Tools, Extensions and Projects" class="md-nav__link">
+      Kubernetes Plugins, Tools, Extensions and Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubectl-commands/" title="kubectl commands" class="md-nav__link">
+      kubectl commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-networking/" title="Kubernetes Networking" class="md-nav__link">
+      Kubernetes Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-monitoring/" title="Kubernetes Monitoring and Logging" class="md-nav__link">
+      Kubernetes Monitoring and Logging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-security/" title="Kubernetes security" class="md-nav__link">
+      Kubernetes security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-storage/" title="Kubernetes Storage" class="md-nav__link">
+      Kubernetes Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-backup-migrations/" title="Kubernetes Backup and Migrations" class="md-nav__link">
+      Kubernetes Backup and Migrations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-autoscaling/" title="Kubernetes autoscaling" class="md-nav__link">
+      Kubernetes autoscaling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-operators-controllers/" title="Kubernetes Operators and Controllers" class="md-nav__link">
+      Kubernetes Operators and Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-based-devel/" title="Kubernetes Based Development" class="md-nav__link">
+      Kubernetes Based Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-on-premise/" title="Kubernetes on premise" class="md-nav__link">
+      Kubernetes on premise
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../managed-kubernetes-in-public-cloud/" title="Managed kubernetes in public clouds" class="md-nav__link">
+      Managed kubernetes in public clouds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-releases/" title="Kubernetes Releases" class="md-nav__link">
+      Kubernetes Releases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matrix-table/" title="Kubernetes Matrix Table" class="md-nav__link">
+      Kubernetes Matrix Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-alternatives/" title="Kubernetes alternatives" class="md-nav__link">
+      Kubernetes alternatives
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      SUSE Rancher
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="SUSE Rancher" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        SUSE Rancher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rancher/" title="Rancher - Enterprise management for Kubernetes" class="md-nav__link">
+      Rancher - Enterprise management for Kubernetes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Red Hat OpenShift
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Red Hat OpenShift" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Red Hat OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift/" title="OpenShift docs" class="md-nav__link">
+      OpenShift docs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp3/" title="OCP 3" class="md-nav__link">
+      OCP 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp4/" title="OCP 4" class="md-nav__link">
+      OCP 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Software Delivery Pipeline
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Software Delivery Pipeline" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Software Delivery Pipeline
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd/" title="CI/CD - Continuous Integration & Continuous Delivery" class="md-nav__link">
+      CI/CD - Continuous Integration & Continuous Delivery
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs" class="md-nav__link">
+      Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins/" title="Jenkins & Cloudbees" class="md-nav__link">
+      Jenkins & Cloudbees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift-pipelines/" title="OpenShift Pipelines with Jenkins, Tekton and more..." class="md-nav__link">
+      OpenShift Pipelines with Jenkins, Tekton and more...
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../performance-testing-with-jenkins-and-jmeter/" title="Performance testing with Jenkins and JMeter or Gatling" class="md-nav__link">
+      Performance testing with Jenkins and JMeter or Gatling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins-alternatives/" title="Jenkins Alternatives for Continuous Integration" class="md-nav__link">
+      Jenkins Alternatives for Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-7" type="checkbox" id="nav-16-7">
+    
+    <label class="md-nav__link" for="nav-16-7">
+      Toolchain
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Toolchain" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Toolchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../container-managers/" title="Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo" class="md-nav__link">
+      Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maven-gradle/" title="Maven, Gradle & SDKMAN" class="md-nav__link">
+      Maven, Gradle & SDKMAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sonarqube/" title="SonarQube" class="md-nav__link">
+      SonarQube
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../registries/" title="Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more" class="md-nav__link">
+      Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../selenium-appium-zephyr/" title="Selenium, Cucumber, Appium & Zephyr Jira plugin" class="md-nav__link">
+      Selenium, Cucumber, Appium & Zephyr Jira plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Linux & SSH" class="md-nav__link">
+      Linux & SSH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs/" title="MkDocs & GitHub Pages" class="md-nav__link">
+      MkDocs & GitHub Pages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-8" type="checkbox" id="nav-16-8">
+    
+    <label class="md-nav__link" for="nav-16-8">
+      Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-servers/" title="Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more" class="md-nav__link">
+      Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_app_servers/" title="Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more" class="md-nav__link">
+      Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../embedded-servlet-containers/" title="Embedded Servlet Containers in SpringBoot" class="md-nav__link">
+      Embedded Servlet Containers in SpringBoot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../caching/" title="Caching Solutions" class="md-nav__link">
+      Caching Solutions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17" checked>
+    
+    <label class="md-nav__link" for="nav-17">
+      Monitoring and Performance. Prometheus, Grafana, APMs and more
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Monitoring and Performance. Prometheus, Grafana, APMs and more" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Monitoring and Performance. Prometheus, Grafana, APMs and more
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monitoring/" title="Monitoring and Performance" class="md-nav__link">
+      Monitoring and Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Prometheus
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Prometheus" class="md-nav__link md-nav__link--active">
+      Prometheus
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promgen" class="md-nav__link">
+    Promgen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promcat-resource-catalog" class="md-nav__link">
+    Promcat Resource Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-demo" class="md-nav__link">
+    Prometheus Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-storage" class="md-nav__link">
+    Prometheus Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-slo-service-level-objectives" class="md-nav__link">
+    Prometheus SLO Service Level Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus SLO Service Level Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalability-high-availability-ha-and-long-term-storage" class="md-nav__link">
+    Scalability, High Availability (HA) and Long-Term Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-solutions-for-prometheus" class="md-nav__link">
+    Storage Solutions for Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Solutions for Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#influxdb-and-influxdb-templates" class="md-nav__link">
+    InfluxDB and InfluxDB Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors-software-exposing-prometheus-metrics" class="md-nav__link">
+    Collectors. Software exposing Prometheus metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Collectors. Software exposing Prometheus metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-exporters-plug-in-architecture-and-extensibility-with-prometheus-exporters-collectors" class="md-nav__link">
+    Prometheus Exporters. Plug-in architecture and extensibility with Prometheus Exporters (collectors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-exporters-development-node-exporter" class="md-nav__link">
+    Prometheus Exporters Development. Node Exporter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-third-party-collectorsexporters" class="md-nav__link">
+    Prometheus Third-party Collectors/Exporters
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Third-party Collectors/Exporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentelemetry-collector" class="md-nav__link">
+    OpenTelemetry Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telegraf-collector" class="md-nav__link">
+    Telegraf Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micrometer-collector" class="md-nav__link">
+    Micrometer Collector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-alarms-and-event-tracking" class="md-nav__link">
+    Prometheus Alarms and Event Tracking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-cloud-monitoring" class="md-nav__link">
+    Prometheus and Cloud Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-installers" class="md-nav__link">
+    Prometheus Installers
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Installers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-source-code-or-docker" class="md-nav__link">
+    Binaries, source code or Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-roles" class="md-nav__link">
+    Ansible Roles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-operator" class="md-nav__link">
+    Prometheus Operator
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kube-prometheus" class="md-nav__link">
+    kube Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="kube Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-operator-with-helm3" class="md-nav__link">
+    Prometheus Operator with Helm3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-prometheus-stack-best-choice" class="md-nav__link">
+    Kube-prometheus-stack (best choice)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-cluster-monitoring-stack-based-on-prometheus-operator" class="md-nav__link">
+    Kubernetes Cluster Monitoring Stack based on Prometheus Operator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-saas-solutions" class="md-nav__link">
+    Prometheus SaaS Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-concept-activemq-monitoring-with-prometheus" class="md-nav__link">
+    Proof of Concept: ActiveMQ Monitoring with Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof of Concept: ActiveMQ Monitoring with Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poc-activemq-5x-monitoring-with-telegraf-collector-prometheus-and-grafana-dashboard-10702" class="md-nav__link">
+    PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702
+  </a>
+  
+    <nav class="md-nav" aria-label="PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-and-configuration" class="md-nav__link">
+    Deployment and Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poc-activemq-artemis-monitoring-with-prometheus-metrics-plugin-micrometer-collector-and-prometheus-grafana-dashboard-not-available" class="md-nav__link">
+    PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available
+  </a>
+  
+    <nav class="md-nav" aria-label="PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-and-configuration_1" class="md-nav__link">
+    Deployment and Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-of-artemis-broker-monitoring-with-jmeter" class="md-nav__link">
+    Validation of Artemis Broker Monitoring with JMeter
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation of Artemis Broker Monitoring with JMeter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jmeter-example-test-plans" class="md-nav__link">
+    JMeter Example Test Plans
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-azure" class="md-nav__link">
+    Prometheus and Azure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafana/" title="Grafana" class="md-nav__link">
+      Grafana
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Configuration Management
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration Management" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Configuration Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible/" title="Ansible" class="md-nav__link">
+      Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../argocd/" title="Argo CD - Declarative GitOps for Kubernetes" class="md-nav__link">
+      Argo CD - Declarative GitOps for Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd-kubernetes-plugins/" title="CI/CD Kubernetes Plugins" class="md-nav__link">
+      CI/CD Kubernetes Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-client-libraries/" title="Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK" class="md-nav__link">
+      Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helm/" title="Helm Kubernetes Tool" class="md-nav__link">
+      Helm Kubernetes Tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../liquibase/" title="Liquibase & Flyway" class="md-nav__link">
+      Liquibase & Flyway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kustomize/" title="Template-Free Kubernetes Configuration Customization with Kustomize" class="md-nav__link">
+      Template-Free Kubernetes Configuration Customization with Kustomize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files" class="md-nav__link">
+      Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Infrastructure Management Tools
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Infrastructure Management Tools" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Infrastructure Management Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../iac/" title="IaC Infrastructure as Code" class="md-nav__link">
+      IaC Infrastructure as Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pulumi/" title="Pulumi" class="md-nav__link">
+      Pulumi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform & Packer. K8s boilerplates" class="md-nav__link">
+      Terraform & Packer. K8s boilerplates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crossplane/" title="Crossplane" class="md-nav__link">
+      Crossplane
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Databases on Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Databases on Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Databases on Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../databases/" title="Relational Databases and Database DevOps" class="md-nav__link">
+      Relational Databases and Database DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nosql/" title="NoSQL Databases" class="md-nav__link">
+      NoSQL Databases
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../message-queue/" title="Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)" class="md-nav__link">
+      Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+    
+    <label class="md-nav__link" for="nav-22">
+      Service Mesh
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Service Mesh" data-md-level="1">
+      <label class="md-nav__title" for="nav-22">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Service Mesh
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../servicemesh/" title="Service Mesh" class="md-nav__link">
+      Service Mesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../istio/" title="Istio" class="md-nav__link">
+      Istio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23">
+    
+    <label class="md-nav__link" for="nav-23">
+      APIs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="APIs" data-md-level="1">
+      <label class="md-nav__title" for="nav-23">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="APIs with SOAP, REST and gRPC" class="md-nav__link">
+      APIs with SOAP, REST and gRPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swagger-code-generator-for-rest-apis/" title="Swagger code generator for REST APIs" class="md-nav__link">
+      Swagger code generator for REST APIs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postman/" title="API Test Automation with Postman" class="md-nav__link">
+      API Test Automation with Postman
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developerportals/" title="API Marketplaces. API Management with API Gateways & Developer Portals" class="md-nav__link">
+      API Marketplaces. API Management with API Gateways & Developer Portals
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24" type="checkbox" id="nav-24">
+    
+    <label class="md-nav__link" for="nav-24">
+      Development & Frameworks
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development & Frameworks" data-md-level="1">
+      <label class="md-nav__title" for="nav-24">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Development & Frameworks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dom/" title="Document Object Model (DOM)" class="md-nav__link">
+      Document Object Model (DOM)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript - node.js & npm" class="md-nav__link">
+      JavaScript - node.js & npm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python - Django & Flask" class="md-nav__link">
+      Python - Django & Flask
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xamarin/" title="Microsoft Xamarin" class="md-nav__link">
+      Microsoft Xamarin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dotnet/" title="Microsoft .NET" class="md-nav__link">
+      Microsoft .NET
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devel-sites/" title="Websites for web developers" class="md-nav__link">
+      Websites for web developers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-9" type="checkbox" id="nav-24-9">
+    
+    <label class="md-nav__link" for="nav-24-9">
+      Java
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_frameworks/" title="Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more" class="md-nav__link">
+      Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java-and-java-performance-optimization/" title="Java Memory Management & Java Performance Optimization" class="md-nav__link">
+      Java Memory Management & Java Performance Optimization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jvm-parameters-matrix-table/" title="Java Parameters Matrix Table" class="md-nav__link">
+      Java Parameters Matrix Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-10" type="checkbox" id="nav-24-10">
+    
+    <label class="md-nav__link" for="nav-24-10">
+      Dev Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dev Environment" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Dev Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../visual-studio/" title="Visual Studio Code" class="md-nav__link">
+      Visual Studio Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-dev-env/" title="WSL - Linux Dev Environment on Windows" class="md-nav__link">
+      WSL - Linux Dev Environment on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scaffolding/" title="Scaffolding Tools" class="md-nav__link">
+      Scaffolding Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ChromeDevTools/" title="Chrome & Firefox DevTools. HTTP Protocols & WebSockets" class="md-nav__link">
+      Chrome & Firefox DevTools. HTTP Protocols & WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowcode-nocode/" title="Low Code and No Code" class="md-nav__link">
+      Low Code and No Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web3/" title="Web 3" class="md-nav__link">
+      Web 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digital-money/" title="Digital Money" class="md-nav__link">
+      Digital Money
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25">
+    
+    <label class="md-nav__link" for="nav-25">
+      Public Cloud
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Public Cloud" data-md-level="1">
+      <label class="md-nav__title" for="nav-25">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Public Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../public-cloud-solutions/" title="Public Cloud Solutions" class="md-nav__link">
+      Public Cloud Solutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edge-computing/" title="Edge Computing" class="md-nav__link">
+      Edge Computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloud-arch-diagrams/" title="Cloud Architecture Diagram Tools" class="md-nav__link">
+      Cloud Architecture Diagram Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws/" title="AWS" class="md-nav__link">
+      AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GoogleCloudPlatform/" title="Google Cloud Platform" class="md-nav__link">
+      Google Cloud Platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../azure/" title="Microsoft Azure" class="md-nav__link">
+      Microsoft Azure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ibm_cloud/" title="IBM & IBM Cloud" class="md-nav__link">
+      IBM & IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oraclecloud/" title="Oracle Cloud" class="md-nav__link">
+      Oracle Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digitalocean/" title="Digital Ocean" class="md-nav__link">
+      Digital Ocean
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloudflare/" title="Cloudflare" class="md-nav__link">
+      Cloudflare
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bigdata/" title="Big Data" class="md-nav__link">
+      Big Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-27" type="checkbox" id="nav-27">
+    
+    <label class="md-nav__link" for="nav-27">
+      More References
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="More References" data-md-level="1">
+      <label class="md-nav__title" for="nav-27">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        More References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../elearning/" title="E-Learning" class="md-nav__link">
+      E-Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../newsfeeds/" title="Subreddits" class="md-nav__link">
+      Subreddits
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other-awesome-lists/" title="Other Awesome Lists" class="md-nav__link">
+      Other Awesome Lists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-28" type="checkbox" id="nav-28">
+    
+    <label class="md-nav__link" for="nav-28">
+      Recruitment and Freelancing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Recruitment and Freelancing" data-md-level="1">
+      <label class="md-nav__title" for="nav-28">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Recruitment and Freelancing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../recruitment/" title="Recruitment" class="md-nav__link">
+      Recruitment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../freelancing/" title="Freelancing" class="md-nav__link">
+      Freelancing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../remote-tech-jobs/" title="Remote Tech Jobs" class="md-nav__link">
+      Remote Tech Jobs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customer/" title="Customer Success Stories" class="md-nav__link">
+      Customer Success Stories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promgen" class="md-nav__link">
+    Promgen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promcat-resource-catalog" class="md-nav__link">
+    Promcat Resource Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-demo" class="md-nav__link">
+    Prometheus Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-storage" class="md-nav__link">
+    Prometheus Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-slo-service-level-objectives" class="md-nav__link">
+    Prometheus SLO Service Level Objectives
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus SLO Service Level Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalability-high-availability-ha-and-long-term-storage" class="md-nav__link">
+    Scalability, High Availability (HA) and Long-Term Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-solutions-for-prometheus" class="md-nav__link">
+    Storage Solutions for Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Solutions for Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#influxdb-and-influxdb-templates" class="md-nav__link">
+    InfluxDB and InfluxDB Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors-software-exposing-prometheus-metrics" class="md-nav__link">
+    Collectors. Software exposing Prometheus metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Collectors. Software exposing Prometheus metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-exporters-plug-in-architecture-and-extensibility-with-prometheus-exporters-collectors" class="md-nav__link">
+    Prometheus Exporters. Plug-in architecture and extensibility with Prometheus Exporters (collectors)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-exporters-development-node-exporter" class="md-nav__link">
+    Prometheus Exporters Development. Node Exporter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-third-party-collectorsexporters" class="md-nav__link">
+    Prometheus Third-party Collectors/Exporters
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Third-party Collectors/Exporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentelemetry-collector" class="md-nav__link">
+    OpenTelemetry Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telegraf-collector" class="md-nav__link">
+    Telegraf Collector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#micrometer-collector" class="md-nav__link">
+    Micrometer Collector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-alarms-and-event-tracking" class="md-nav__link">
+    Prometheus Alarms and Event Tracking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-cloud-monitoring" class="md-nav__link">
+    Prometheus and Cloud Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-installers" class="md-nav__link">
+    Prometheus Installers
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Installers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-source-code-or-docker" class="md-nav__link">
+    Binaries, source code or Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-roles" class="md-nav__link">
+    Ansible Roles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-operator" class="md-nav__link">
+    Prometheus Operator
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kube-prometheus" class="md-nav__link">
+    kube Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="kube Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-operator-with-helm3" class="md-nav__link">
+    Prometheus Operator with Helm3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-prometheus-stack-best-choice" class="md-nav__link">
+    Kube-prometheus-stack (best choice)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-cluster-monitoring-stack-based-on-prometheus-operator" class="md-nav__link">
+    Kubernetes Cluster Monitoring Stack based on Prometheus Operator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-saas-solutions" class="md-nav__link">
+    Prometheus SaaS Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-concept-activemq-monitoring-with-prometheus" class="md-nav__link">
+    Proof of Concept: ActiveMQ Monitoring with Prometheus
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof of Concept: ActiveMQ Monitoring with Prometheus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poc-activemq-5x-monitoring-with-telegraf-collector-prometheus-and-grafana-dashboard-10702" class="md-nav__link">
+    PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702
+  </a>
+  
+    <nav class="md-nav" aria-label="PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-and-configuration" class="md-nav__link">
+    Deployment and Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poc-activemq-artemis-monitoring-with-prometheus-metrics-plugin-micrometer-collector-and-prometheus-grafana-dashboard-not-available" class="md-nav__link">
+    PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available
+  </a>
+  
+    <nav class="md-nav" aria-label="PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-and-configuration_1" class="md-nav__link">
+    Deployment and Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-of-artemis-broker-monitoring-with-jmeter" class="md-nav__link">
+    Validation of Artemis Broker Monitoring with JMeter
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation of Artemis Broker Monitoring with JMeter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jmeter-example-test-plans" class="md-nav__link">
+    JMeter Example Test Plans
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-azure" class="md-nav__link">
+    Prometheus and Azure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/redhatspain/awesome-kubernetes/edit/master/docs/prometheus.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="prometheus">Prometheus<a class="headerlink" href="#prometheus" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#promgen">Promgen</a></li>
+<li><a href="#promcat-resource-catalog">Promcat Resource Catalog</a></li>
+<li><a href="#prometheus-demo">Prometheus Demo</a></li>
+<li><a href="#prometheus-storage">Prometheus Storage</a></li>
+<li><a href="#prometheus-slo-service-level-objectives">Prometheus SLO Service Level Objectives</a><ul>
+<li><a href="#scalability-high-availability-ha-and-long-term-storage">Scalability, High Availability (HA) and Long-Term Storage</a></li>
+<li><a href="#storage-solutions-for-prometheus">Storage Solutions for Prometheus</a><ul>
+<li><a href="#influxdb-and-influxdb-templates">InfluxDB and InfluxDB Templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#collectors-software-exposing-prometheus-metrics">Collectors. Software exposing Prometheus metrics</a><ul>
+<li><a href="#prometheus-exporters-plug-in-architecture-and-extensibility-with-prometheus-exporters-collectors">Prometheus Exporters. Plug-in architecture and extensibility with Prometheus Exporters (collectors)</a></li>
+<li><a href="#prometheus-exporters-development-node-exporter">Prometheus Exporters Development. Node Exporter</a></li>
+<li><a href="#prometheus-third-party-collectorsexporters">Prometheus Third-party Collectors/Exporters</a><ul>
+<li><a href="#opentelemetry-collector">OpenTelemetry Collector</a></li>
+<li><a href="#telegraf-collector">Telegraf Collector</a></li>
+<li><a href="#micrometer-collector">Micrometer Collector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#prometheus-alarms-and-event-tracking">Prometheus Alarms and Event Tracking</a></li>
+<li><a href="#prometheus-and-cloud-monitoring">Prometheus and Cloud Monitoring</a></li>
+<li><a href="#prometheus-installers">Prometheus Installers</a><ul>
+<li><a href="#binaries-source-code-or-docker">Binaries, source code or Docker</a></li>
+<li><a href="#ansible-roles">Ansible Roles</a></li>
+</ul>
+</li>
+<li><a href="#prometheus-operator">Prometheus Operator</a><ul>
+<li><a href="#kube-prometheus">kube Prometheus</a><ul>
+<li><a href="#prometheus-operator-with-helm3">Prometheus Operator with Helm3</a></li>
+<li><a href="#kube-prometheus-stack-best-choice">Kube-prometheus-stack (best choice)</a></li>
+<li><a href="#kubernetes-cluster-monitoring-stack-based-on-prometheus-operator">Kubernetes Cluster Monitoring Stack based on Prometheus Operator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#prometheus-saas-solutions">Prometheus SaaS Solutions</a></li>
+<li><a href="#proof-of-concept-activemq-monitoring-with-prometheus">Proof of Concept: ActiveMQ Monitoring with Prometheus</a><ul>
+<li><a href="#poc-activemq-5x-monitoring-with-telegraf-collector-prometheus-and-grafana-dashboard-10702">PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702</a><ul>
+<li><a href="#deployment-and-configuration">Deployment and Configuration</a></li>
+</ul>
+</li>
+<li><a href="#poc-activemq-artemis-monitoring-with-prometheus-metrics-plugin-micrometer-collector-and-prometheus-grafana-dashboard-not-available">PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available</a><ul>
+<li><a href="#deployment-and-configuration-1">Deployment and Configuration</a></li>
+</ul>
+</li>
+<li><a href="#validation-of-artemis-broker-monitoring-with-jmeter">Validation of Artemis Broker Monitoring with JMeter</a><ul>
+<li><a href="#jmeter-example-test-plans">JMeter Example Test Plans</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#prometheus-and-azure">Prometheus and Azure</a></li>
+<li><a href="#videos">Videos</a></li>
+</ul>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://prometheus.io/"><strong>prometheus.io</strong></a></li>
+<li><a href="https://dzone.com/articles/monitoring-with-prometheus">dzone.com: Monitoring with <strong>Prometheus</strong></a> Learn how to set up a basic instance of Prometheus along with Grafana and the Node Exporter to monitor a simple Linux server.</li>
+<li><a href="https://github.com/prometheus/prometheus">github.com/prometheus/prometheus</a></li>
+<li><a href="https://dzone.com/articles/monitoring-with-prometheus">Monitoring With Prometheus</a></li>
+<li><a href="https://dzone.com/refcardz/scaling-and-augmenting-prometheus">Dzone Refcard: Scaling and Augmenting Prometheus</a> Prometheus is an open-source infrastructure and services monitoring system popular for Kubernetes and cloud-native services and apps. It can help make metric collection easier, correlate events and alerts, provide security, and do troubleshooting and tracing at scale. This Refcard will teach you how to pave the path for Prometheus adoption, what observability looks like beyond Prometheus, and how Prometheus helps provide scalability, high availability, and long-term storage.</li>
+<li><a href="https://dzone.com/articles/prometheus-collectors">Monitoring Self-Destructing Apps Using Prometheus</a> Learn how to configure Prometheus collectors and their use cases.</li>
+<li><a href="https://opensource.com/article/19/11/introduction-monitoring-prometheus">Monitoring kubernetes with Prometheus</a></li>
+<li><a href="https://dzone.com/articles/focus-on-detectionprometheus-and-the-case-for-time">Focus on Detection: Prometheus and the Case for Time Series Analysis</a></li>
+<li><a href="https://dzone.com/articles/ensure-high-availability-and-uptime-with-kubernete">Ensure High Availability and Uptime With Kubernetes Horizontal Pod Autoscaler (HPA) and Prometheus</a></li>
+<li><a href="https://dzone.com/articles/prometheus-2-times-series-storage-performance-anal">Prometheus 2 Times Series Storage Performance Analyses</a></li>
+<li><a href="https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra">Set Up and Integrate Prometheus With Grafana for Monitoring.</a> How to set up and configure Prometheus and Grafana to enable application performance monitoring for REST applications.</li>
+<li><a href="https://dzone.com/articles/discover-applications-running-on-kubernetes-with-p">Discover Applications Running on Kubernetes With Prometheus</a></li>
+<li><a href="https://dzone.com/articles/prometheus-vs-graphite-which-should-you-choose-for">Prometheus vs. Graphite: Which Should You Choose for Time Series or Monitoring?</a></li>
+<li><a href="https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085">PromQL Tutorial</a></li>
+<li><a href="https://opensource.com/article/18/3/how-use-ansible-set-system-monitoring-prometheus">How to use Ansible to set up system monitoring with Prometheus</a></li>
+<li><a href="https://medium.com/@griggheo/initial-experiences-with-the-prometheus-monitoring-system-167054ac439c">Initial experiences with the Prometheus monitoring system</a></li>
+<li><a href="https://prometheus.io/docs/instrumenting/writing_exporters/">prometheus.io/docs/instrumenting/writing_exporters/</a></li>
+<li><a href="https://devconnected.com/complete-node-exporter-mastery-with-prometheus/">devconnected.com/complete-node-exporter-mastery-with-prometheus/</a></li>
+<li><a href="https://www.scalyr.com/blog/prometheus-metrics-by-example/">www.scalyr.com/blog/prometheus-metrics-by-example/</a></li>
+<li>Prometheus es un &ldquo;time series DBMS&rdquo; y sistema de monitorización completo, que incluye recogida de datos, almacenamiento, visualización y exportación. </li>
+<li>La <strong>arquitectura de Prometheus</strong> se basa en <strong>&ldquo;pull metrics&rdquo; (extracción de métricas)</strong>. En lugar de empujar las métricas (&ldquo;pushing metrics&rdquo;) hacia la herramienta de monitorización, <strong>extrae (&ldquo;pull&rdquo;) las métricas de los servicios (por defecto un &ldquo;/metrics&rdquo; HTTP endpoint)</strong> en texto plano (parseable por humanos y de fácil diagnóstico). Prometheus también tiene un &ldquo;push gateway&rdquo;, de modo que también soporta &ldquo;push&rdquo; para métricas específicas cuando el modelo de &ldquo;pull&rdquo; no funciona (si bien este método no es recomendable).</li>
+<li>Prometheus se puede conectar a <strong>series de tiempo (time series)</strong> con un nombre de métrica y pares clave-valor, simplificando la monitorización en complejos entornos cloud multi-nodo.</li>
+<li>La herramienta también proporciona <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">PromQL</a>, para el procesado de datos &ldquo;time-series&rdquo;. Permite realizar consultas (queries) para la manipulación de datos y generar nueva información relevante. Con <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">PromQL</a> se pueden generar gráficos, visualizar conjuntos de datos, crear tablas, y generar alertas basadas en parámetros específicos. </li>
+<li>La consola web de Prometheus permite gestionar todas las características y herramientas disponibles en Prometheus. Se pueden utilizar expresiones regulares y consultas avanzadas de <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">PromQL</a> para la creación de conjuntos de datos (datasets) y alertas.</li>
+<li>Prometheus activamente &ldquo;scrapea&rdquo; datos, los almacena, y soporta &ldquo;queries&rdquo;, &ldquo;gráficos&rdquo; y &ldquo;alertas&rdquo;, así como proporciona &ldquo;endpoints&rdquo; a otros consumidores API como Grafana. Todo esto lo realiza con los siguientes componentes:<ul>
+<li><a href="https://prometheus.io/docs/instrumenting/clientlibs/">Librerías cliente</a>: instrumentación del código de aplicación (para generar eventos).</li>
+<li><a href="https://github.com/prometheus/prometheus">Servidor Prometheus</a>: &ldquo;scrapeando&rdquo; y almacenando estos eventos, cuando se generan, como &ldquo;time series data&rdquo;. Este es el <strong>modelo &ldquo;pull&rdquo;</strong> más común para la recogida general de métricas en Prometheus.</li>
+<li><a href="https://github.com/prometheus/pushgateway">Pushgateway</a>: <strong>Modelo &ldquo;Push&rdquo;</strong>, soportando trabajos efímeros de importación de datos. <strong>Sólo recomendable en aplicaciones &ldquo;serverless&rdquo;</strong>, donde las aplicaciones son lanzadas y destruidas bajo demanda, así como las aplicaciones que manejan &ldquo;batch jobs&rdquo;. </li>
+<li><a href="https://prometheus.io/docs/instrumenting/exporters/">Exportadores de Datos</a>: exportando servicios como HAProxy, StatsD, Graphite, etc.</li>
+</ul>
+</li>
+<li>Prometheus se diferencia de otros sistemas de monitorización con las siguientes funcionalidades:<ul>
+<li>Modelo de datos multi-dimensional, donde los &ldquo;time-series data&rdquo; se definen por el nombre de la métrica y dimensiones clave/valor.</li>
+<li>Nodos únicos de servidor y autónomos, sin dependencia de almacenamiento distribuido.</li>
+<li>Recogida de datos via un modelo &ldquo;pull&rdquo; sobre HTTP.</li>
+<li>&ldquo;Time Series Data&rdquo; empujado (&ldquo;pushed&rdquo;) a otros destinos de datos vía un gateway intermediario.</li>
+<li>&ldquo;Targets&rdquo; descubiertos via &ldquo;service discovery&rdquo; ó configuración estática.</li>
+<li>Soporte de federación horizontal y vertical.</li>
+</ul>
+</li>
+<li><a href="https://www.magalix.com/blog/monitor-kuberentes-cluster-to-manage-large-scale-projects">magalix.com: Monitoring of Kubernetes Clusters To Manage Large Scale Projects</a></li>
+<li><a href="https://samirbehara.com/2019/05/30/cloud-native-monitoring-with-prometheus/">Cloud Native Monitoring with Prometheus 🌟</a></li>
+<li><a href="https://itnext.io/prometheus-yet-another-cloudwatch-exporter-collecting-aws-cloudwatch-metrics-806bd34818a8">itnext.io - Prometheus: yet-another-cloudwatch-exporter — collecting AWS CloudWatch metrics</a></li>
+<li><a href="https://medium.com/better-programming/kubernetes-lessons-in-alerting-a0b7a455e89d">medium: Kubernetes Lessons in Alerting</a> Live issues are a great opportunity to learn and improve. Here’s what happened to us</li>
+<li><a href="https://containerjournal-com.cdn.ampproject.org/c/s/containerjournal.com/topics/container-ecosystems/prometheus-monitoring-ecosystem-begins-to-mature/amp/">Prometheus Monitoring Ecosystem Begins to Mature</a></li>
+<li><a href="https://www.learnsteps.com/monitoring-infrastructure-system-design/">learnsteps.com: Monitoring Infrastructure System Design</a></li>
+<li><a href="https://ganeshvernekar.com/blog/prometheus-tsdb-the-head-block/">ganeshvernekar.com: Prometheus TSDB (Part 1): The Head Block</a></li>
+<li><a href="https://ganeshvernekar.com/blog/prometheus-tsdb-wal-and-checkpoint/">ganeshvernekar.com: Prometheus TSDB (Part 2): WAL and Checkpoint</a></li>
+<li><a href="https://ganeshvernekar.com/blog/prometheus-tsdb-mmapping-head-chunks-from-disk/">ganeshvernekar.com: Prometheus TSDB (Part 3): Memory Mapping of Head Chunks from Disk</a></li>
+<li><a href="https://ganeshvernekar.com/blog/prometheus-tsdb-persistent-block-and-its-index/">ganeshvernekar.com: Prometheus TSDB (Part 4): Persistent Block and its Index</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLVx1qovxj-anCTn6um3BDsoHnIr0O2tz3">youtube playlist: How to setup Prometheus 🌟</a></li>
+<li><a href="https://learndevops.substack.com/p/hitting-prometheus-api-with-curl">learndevops.substack.com: Hitting prometheus API with curl and jq 🌟</a> <strong>Determine offending pods that use more RAM than requested, causing OOM.</strong></li>
+<li><a href="https://devclass.com/2021/01/07/prometheus-2_24/">devclass.com: Safety…first? Prometheus 2.24 finally features TLS on HTTP serving endpoints</a></li>
+<li><a href="https://sysadminxpert.com/steps-to-monitor-linux-server-using-prometheus/">sysadminxpert.com: Steps to Monitor Linux Server using Prometheus</a></li>
+<li><a href="https://medium.com/@akshitverma8191/prometheus-grafana-node-monitoring-on-kubernetes-79fd8311b56d">medium.com: Prometheus-Grafana : Node Monitoring on Kubernetes</a></li>
+<li><a href="https://zerodha.tech/blog/infra-monitoring-at-zerodha/">zerodha.tech: Infrastructure monitoring with Prometheus at Zerodha</a></li>
+<li><a href="https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/">devopscube.com: How to Setup Prometheus Monitoring On Kubernetes Cluster 🌟</a></li>
+<li><a href="https://prometheus-operator.dev">prometheus-operator.dev 🌟</a> </li>
+<li><a href="https://gabrieltanner.org/blog/collecting-prometheus-metrics-in-golang">gabrieltanner.org: Golang Application monitoring using Prometheus</a></li>
+<li><a href="https://promlens.com/">promlens.com 🌟</a> The power tool for querying Prometheus. Build, understand, and fix your queries much more effectively with the ultimate query builder for PromQL</li>
+<li><a href="https://timber.io/blog/promql-for-humans">timber.io: PromQL For Humans 🌟</a></li>
+<li><a href="https://medium.com/avmconsulting-blog/prometheus-monitoring-with-elastic-stack-in-kubernetes-5cf0aaa7ce04">medium: Prometheus monitoring with Elastic Stack in Kubernetes 🌟</a> Monitoring is one of the key components for managing large clusters. For this, we have several tools.</li>
+<li><a href="https://grafana.com/blog/2021/04/08/how-we-use-metamonitoring-prometheus-servers-to-monitor-all-other-prometheus-servers-at-grafana-labs/">grafana.com: How we use metamonitoring Prometheus servers to monitor all other Prometheus servers at Grafana Labs</a> If you rely on Prometheus for your monitoring, and your monitoring fails, how will you know? Learn how to set up Prometheus servers to monitor all other Prometheus servers</li>
+<li><a href="https://portworx.com/kubernetes-backup-monitoring/">portworx.com: Monitoring Kubernetes Backup with Prometheus and Grafana</a></li>
+<li><a href="https://sysdig.com/blog/postgresql-monitoring/">sysdig.com: Top 10 metrics in PostgreSQL monitoring with Prometheus 🌟</a></li>
+<li><a href="https://itnext.io/observability-at-scale-52d0d9a5fb9b">itnext.io: Observability at Scale</a></li>
+<li><a href="https://jonbc.medium.com/hacking-your-way-to-observability-part-1-cf4cd42fb4dc">jonbc.medium.com: Hacking your way to Observability — Part 1 : Metrics</a> Starting your journey in observability by gathering metrics with Prometheus</li>
+<li><a href="https://www.innoq.com/en/blog/scraping-docker-swarm-service-instances-with-prometheus/">innoq.com: Scraping a Docker swarm service with Prometheus</a></li>
+<li><a href="https://opensource.com/article/21/7/run-prometheus-home-container">opensource.com: Run Prometheus at home in a container</a></li>
+<li><a href="https://faun.pub/production-grade-kubernetes-monitoring-using-prometheus-78144b835b60">faun.pub: Production grade Kubernetes Monitoring using Prometheus 🌟</a></li>
+<li><a href="https://www.howtoforge.com/how-to-install-prometheus-on-ubuntu-20-04/">howtoforge.com: How to Install Prometheus System Monitoring Tool on Ubuntu 20.04</a></li>
+<li><a href="https://cribl.io/blog/using-prometheus-for-agentless-monitoring/">cribl.io: Using Prometheus for Agentless Monitoring</a></li>
+<li><a href="https://logz.io/blog/aws-lambda-metrics-monitoring-guide/">logz.io:  Guide to Monitoring AWS Lambda Metrics with Prometheus &amp; Logz.io 🌟</a></li>
+<li><a href="https://aprenderbigdata.com/prometheus/">aprenderbigdata.com: Prometheus: Introducción a la Monitorización de Métricas</a></li>
+<li><a href="https://tech.marksblogg.com/clickhouse-prometheus-grafana.html">tech.marksblogg.com: Monitor ClickHouse column oriented database with Prometheus &amp; Grafana</a></li>
+<li><a href="https://github.com/prymitive/karma">karma 🌟</a> Alert dashboard for Prometheus Alertmanager</li>
+<li><a href="https://github.com/prometheus/alertmanager/releases/tag/v0.23.0-rc.0">Alertmanager 0.23.0-rc.0 with awscloud SNS support is available for testing. There are also bugfixes and features for amtool</a></li>
+<li><a href="https://www.youtube.com/watch?v=GL2v81xYuAQ&amp;ab_channel=k6">youtube: Monitoring your k6 load test: how to install Grafana and Prometheus on a Kubernetes cluster</a></li>
+<li><a href="https://blog.couchbase.com/how-to-build-observability-dashboards-prometheus-grafana-couchbase/">blog.couchbase.com: How to Build Observability Dashboards with Prometheus, Grafana &amp; Couchbase</a></li>
+<li><a href="https://sysdig.com/blog/redis-prometheus/">sysdig.com: How to monitor Redis with Prometheus</a></li>
+<li><a href="https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/">jfrog.com: Don’t let Prometheus Steal your Fire</a> <strong>Real world secrets exposed by unsafe defaults</strong></li>
+</ul>
+<p><a href="https://github.com/prometheus/prometheus"><img alt="prometheus architecture" src="../images/prometheus-architecture.png" /></a></p>
+<h2 id="promgen">Promgen<a class="headerlink" href="#promgen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/line/promgen">Promgen 🌟</a> Promgen is a configuration file generator for Prometheus</li>
+</ul>
+<h2 id="promcat-resource-catalog">Promcat Resource Catalog<a class="headerlink" href="#promcat-resource-catalog" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://promcat.io/">Promcat: A resource catalog for enterprise-class Prometheus monitoring 🌟</a></li>
+</ul>
+<h2 id="prometheus-demo">Prometheus Demo<a class="headerlink" href="#prometheus-demo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://prometheus.demo.do.prometheus.io">Prometheus Demo: prometheus.demo.do.prometheus.io 🌟</a></li>
+</ul>
+<h2 id="prometheus-storage">Prometheus Storage<a class="headerlink" href="#prometheus-storage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Proporciona etiquetado clave-valor y &ldquo;time-series&rdquo;.  La propia documentación de Prometheus explica cómo se gestiona el <a href="https://prometheus.io/docs/prometheus/latest/storage/">almacenamiento en disco</a> (<strong>Prometheus Time-Series DB</strong>). La ingestión de datos se agrupa en bloques de dos horas, donde cada bloque es un directorio conteniendo uno o más &ldquo;chunk files&rdquo; (los datos), además de un fichero de metadatos y un fichero index:</li>
+<li>Almacenamiento de datos en disco (Prometheus Time-Series DB):
+<div class="highlight"><pre><span></span><code>./data/01BKGV7JBM69T2G1BGBGM6KB12
+./data/01BKGV7JBM69T2G1BGBGM6KB12/meta.json
+./data/01BKGV7JBM69T2G1BGBGM6KB12/wal
+./data/01BKGV7JBM69T2G1BGBGM6KB12/wal/000002
+./data/01BKGV7JBM69T2G1BGBGM6KB12/wal/000001
+</code></pre></div></li>
+<li>Un proceso en segundo plano compacta los bloques de dos horas en otros más grandes.</li>
+<li>Es posible almacenar los datos en otras soluciones de &ldquo;Time-Series Database&rdquo; como <strong>InfluxDB</strong>.</li>
+</ul>
+<h2 id="prometheus-slo-service-level-objectives">Prometheus SLO Service Level Objectives<a class="headerlink" href="#prometheus-slo-service-level-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/slok/sloth">Sloth 🌟</a> Easy and simple Prometheus SLO (service level objectives) generator<ul>
+<li><a href="https://itnext.io/slos-should-be-easy-say-hi-to-sloth-9c8a225df0d4">itnext.io: SLOs should be easy, say hi to Sloth 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://promtools.dev/">PromTools: SLOs with Prometheus 🌟</a> Multiple Burn Rate Alerts. This page will generate, with the data you provide in the form, the necessary Prometheus alerting and recording rules for Multiple Burn Rate which you might know from The Site Reliability Workbook. These rules will evaluate based on the available metrics in the last 30 days. <ul>
+<li><a href="https://github.com/metalmatze/slo-libsonnet">slo-libsonnet</a> Generate Prometheus alerting &amp; recording rules and Grafana dashboards for your SLOs.</li>
+</ul>
+</li>
+<li><a href="https://opensource.google/projects/prometheus-slo-burn-example">opensource.google: Prometheus SLO example</a> An end to end example of implementing SLOs with Prometheus, Grafana and Go</li>
+<li><a href="https://github.com/google/slo-generator">SLO Generator</a> SLO Generator is a tool to compute SLIs, SLOs, Error Budgets and Burn rate and export an SLO report to supported exporters.</li>
+</ul>
+<h3 id="scalability-high-availability-ha-and-long-term-storage">Scalability, High Availability (HA) and Long-Term Storage<a class="headerlink" href="#scalability-high-availability-ha-and-long-term-storage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prometheus fue diseñado para ser fácil de desplegar. Es extremadamente fácil ponerlo en marcha, recoger algunas métricas, y empezar a construir nuestra propia herramienta de monitorización. Las cosas se complican cuando se intenta operar a un nivel de escalado considerable.</li>
+<li>Para entender si esto va a ser un problema, conviene plantearse las siguiente preguntas:<ul>
+<li>¿Cuántas métricas puede ingerir el sistema de monitorización y cuántas son necesarias?</li>
+<li>¿Cuál es la cardinalidad de las métricas? La cardinalidad es el número de etiquetas que cada métrica puede tener. Es una cuestión muy frecuente en las métricas pertenecientes a entornos dinámicos donde a los contenedores se les asignan un ID ó nombre diferente cada vez que son lanzados, reiniciados o movidos entre nodos (caso de kubernetes).</li>
+<li>¿Es necesaria la Alta Disponibilidad (HA)?</li>
+<li>¿Durante cuánto tiempo es necesario mantener las métricas y con qué resolución? </li>
+</ul>
+</li>
+<li>La implementación de HA es laboriosa porque la funcionalidad de cluster requiere añadir plugins de terceros al servidor Prometheus. Es necesario tratar con &ldquo;backups&rdquo; y &ldquo;restores&rdquo;, y el almacenamiento de métricas por un periodo de tiempo extendido hará que la base de datos crezca exponencialmente. Los servidores Prometheus proporcionan almacenamiento persistente, pero Prometheus no fue creado para el almacenamiento distribuido de métricas a lo largo de múltiples nodos de un cluster con replicación y capacidad curativa (como es el caso de Kubernetes).  Esto es conocido como <strong>&ldquo;almacenamiento a largo-plazo&rdquo; (Long-Term)</strong> y actualmente es un requisito en unos pocos casos de uso, por ejemplo en la planificación de la capacidad para monitorizar cómo la infraestructura necesita evolucionar, contracargos para facturar diferentes equipos ó departamentos para un caso específico que han hecho de la infraestructura, análisis de tendencias de uso, o adherirse a regulaciones para verticales específicos como banca, seguros, etc. </li>
+</ul>
+<h3 id="storage-solutions-for-prometheus">Storage Solutions for Prometheus<a class="headerlink" href="#storage-solutions-for-prometheus" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://monitoring2.substack.com/p/big-prometheus">monitoring2.substack.com: Big Prometheus. Thanos, Cortex, M3DB and VictoriaMetrics at scale 🌟</a></li>
+<li><a href="https://prometheus.io/docs/prometheus/latest/storage/"><strong>Prometheus TSDB</strong></a></li>
+<li><a href="https://cortexmetrics.io/"><strong>Cortex</strong>:</a> Provides horizontally scalable, highly available, multi-tenant, long term storage for Prometheus. Cortex allows for storing time series data in a key-value store like Cassandra, AWS DynamoDB, or Google BigTable. It offers a Prometheus compatible query API, and you can push metrics into a write endpoint. This makes it best suited for cloud environments and multi-tenant scenarios like service providers building hosted and managed platforms.<ul>
+<li><a href="https://github.com/cortexproject/cortex">github.com/cortexproject/cortex</a></li>
+<li><a href="https://www.weave.works/features/prometheus-monitoring/">Weave Cortex SaaS (Hosted Prometheus - Public Cloud)</a></li>
+</ul>
+</li>
+<li><a href="https://thanos.io/"><strong>Thanos</strong>:</a> Open source, <strong>highly available Prometheus setup with long term storage capabilities</strong>. <ul>
+<li>Thanos stores time series data in an object store like AWS S3, Google Cloud Storage, etc. Thanos pushes metrics through a side-car container from each Prometheus server through the gRPC store API to the query service in order to provide a global query view.</li>
+<li><a href="https://github.com/ruanbekker/thanos-cluster-setup">github.com/ruanbekker: Thanos Cluster Setup</a> How to deploy a HA Prometheus setup with Unlimited Data Retention Capabilities on aws cloud S3 with Thanos Metrics.</li>
+<li><a href="https://blog.yugabyte.com/highly-available-prometheus-metrics-for-distributed-sql-with-thanos-on-gke/">Highly Available Prometheus Metrics for Distributed SQL with Thanos on GKE</a></li>
+<li><a href="https://www.infracloud.io/blogs/multi-tenancy-monitoring-thanos-receiver/">infracloud.io: Achieving multi-tenancy in monitoring with Prometheus &amp; the mighty Thanos Receiver</a></li>
+<li><a href="https://particule.io/en/blog/thanos-monitoring">particule.io: Multi-Cluster Monitoring with Thanos</a></li>
+<li><a href="https://prometheus-operator.dev/docs/operator/thanos/">prometheus-operator.dev: Thanos and the Prometheus Operator 🌟</a></li>
+<li><a href="https://github.com/thanos-io/thanos#architecture-overview">Thanos Architecture Overview 🌟</a></li>
+<li><a href="https://enmilocalfunciona.io/aprende-a-configurar-thanos-usando-docker-compose/">enmilocalfunciona.io: Aprende a configurar Thanos usando docker-compose</a></li>
+<li><a href="https://github.com/goatlas-io/atlas">goatlas-io/atlas</a> Atlas provides the ability to easily run a secure distributed Thanos deployment. </li>
+</ul>
+</li>
+<li><a href="https://www.m3db.io/"><strong>M3</strong>:</a> An open source, large-scale metrics platform developed by Uber. It has its own time series database, M3DB. Like Thanos, M3 also uses a side-car container to push the metrics to the DB. In addition, it supports metric deduplication and merging, and provides distributed query support.
+Although it&rsquo;s exciting to see attempts to address the challenges of running Prometheus at scale, these are very young projects that are not widely used yet.</li>
+<li><a href="https://victoriametrics.com/">VictoriaMetrics</a></li>
+</ul>
+<h4 id="influxdb-and-influxdb-templates">InfluxDB and InfluxDB Templates<a class="headerlink" href="#influxdb-and-influxdb-templates" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.influxdata.com/"><strong>InfluxDB</strong>:</a> An <a href="https://en.wikipedia.org/wiki/Time_series_database">open-source time series database (TSDB)</a> developed by InfluxData. It is written in <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a> and optimized for fast, high-availability storage and retrieval of <a href="https://en.wikipedia.org/wiki/Time_series">time series</a> data in fields such as operations monitoring, application metrics, <a href="https://en.wikipedia.org/wiki/Internet_of_Things">Internet of Things</a> sensor data, and real-time analytics. It also has support for processing data from <a href="https://en.wikipedia.org/wiki/Graphite_(software)">Graphite</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/MIT_License">en.wikipedia.org/wiki/InfluxDB</a></li>
+<li><a href="https://www.influxdata.com/blog/building-a-metrics-alerts-as-a-service-maas-monitoring-solution-using-the-influxdb-stack/">influxdata.com: Building a Metrics &amp; Alerts as a Service (MaaS) Monitoring Solution Using the InfluxDB Stack</a></li>
+<li><a href="https://en.wikipedia.org/wiki/MIT_License">en.wikipedia.org/wiki/MIT_License</a></li>
+<li><a href="https://dzone.com/articles/flux-windowing-and-aggregation">dzone: Flux queries</a> New language being developed at InfluxData.</li>
+<li><a href="https://www.influxdata.com/products/influxdb-templates/">influxdb-templates</a> Build and share InfluxDB templates for monitoring solutions that deliver faster time to awesome.<ul>
+<li><a href="https://thenewstack.io/make-a-gitops-workflow-using-influxdb-templates/">thenewstack.io: Make a GitOps Workflow Using InfluxDB Templates</a></li>
+</ul>
+</li>
+<li><a href="https://www.influxdata.com/blog/running-influxdb-2-0-and-telegraf-using-docker/">influxdata.com: Running InfluxDB 2.0 and Telegraf Using Docker</a></li>
+</ul>
+<h2 id="collectors-software-exposing-prometheus-metrics">Collectors. Software exposing Prometheus metrics<a class="headerlink" href="#collectors-software-exposing-prometheus-metrics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://localhost:9090/targets">http://localhost:9090/targets</a> : you should see a list of targets that you Prometheus server is scraping. </li>
+</ul>
+<h3 id="prometheus-exporters-plug-in-architecture-and-extensibility-with-prometheus-exporters-collectors">Prometheus Exporters. Plug-in architecture and extensibility with Prometheus Exporters (collectors)<a class="headerlink" href="#prometheus-exporters-plug-in-architecture-and-extensibility-with-prometheus-exporters-collectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prometheus proporciona un ecosistema de <strong>&ldquo;exporters&rdquo;</strong>, los cuales permiten que herramientas de terceros puedan exportar sus datos en Prometheus. Muchos componentes de software de código abierto son compatibles por defecto. </li>
+<li><a href="https://exporterhub.io/">exporterhub.io 🌟</a> Exporterhub is a curated List of Prometheus Exporters</li>
+<li><strong>Un &ldquo;exporter&rdquo; expone las métricas de uno ó varios &ldquo;collectors&rdquo;.</strong></li>
+<li><a href="https://prometheus.io/docs/instrumenting/exporters/">Prometheus Exporters</a> <ul>
+<li><a href="https://prometheus.io/download/">prometheus.io/download/</a></li>
+<li><a href="https://github.com/prometheus">github.com/prometheus</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/prometheus/jmx_exporter">Prometheus JMX Exporter 🌟</a> A process for exposing JMX Beans via HTTP for Prometheus consumption.</li>
+<li><a href="https://github.com/prometheus/blackbox_exporter">blackbox_exporter 🌟</a> The blackbox exporter allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP and ICMP.</li>
+<li><a href="https://www.openlogic.com/blog/prometheus-java-monitoring-and-gathering-data">Example: How to Use Prometheus Monitoring With Java to Gather Data. Gathering Java Metrics with Prometheus Monitoring (ActiveMQ)</a></li>
+<li><a href="https://mvnrepository.com/artifact/io.prometheus">Maven Prometheus instrumentation library for JVM applications (client library)</a><ul>
+<li><a href="https://github.com/prometheus/client_java">github.com/prometheus/client_java</a></li>
+</ul>
+</li>
+<li><a href="https://www.openlogic.com/blog/prometheus-java-monitoring-and-gathering-data">Example: JMX Exporter with ActiveMQ</a></li>
+<li><a href="https://github.com/flant/k8s-image-availability-exporter">k8s-image-availability-exporter</a> is a Prometheus exporter that warns you proactively about images that are defined in Kubernetes objects (e.g., an image field in the Deployment) but are not available in the container registry (such as Docker Registry, etc.).</li>
+<li><a href="https://engineeringblog.yelp.com/2020/10/improving-the-performance-of-the-prometheus-jmx-exporter.html">engineeringblog.yelp.com: Improving the performance of the Prometheus JMX Exporter</a></li>
+<li><a href="https://sysdig.com/blog/monitor-oracle-database-prometheus/">sysdig.com: How to monitor an Oracle database with Prometheus. The OracleDB Prometheus exporter</a></li>
+<li><a href="https://github.com/ivx/yet-another-cloudwatch-exporter">YACE - yet another cloudwatch exporter 🌟</a> AWS cloudwatch to prometheus exporter - Discovers services through AWS tags, gets cloudwatch data and provides them as prometheus metrics with AWS tags as labels</li>
+<li><a href="https://github.com/prometheus-community/elasticsearch_exporter">prometheus-community/elasticsearch_exporter</a> Prometheus exporter for various metrics about ElasticSearch, written in Go.</li>
+</ul>
+<h3 id="prometheus-exporters-development-node-exporter">Prometheus Exporters Development. Node Exporter<a class="headerlink" href="#prometheus-exporters-development-node-exporter" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node exporter puede ser utilizado para exportar las métricas de nuestra aplicación ya que permite exportar un &ldquo;text-file&rdquo;. Nuestra aplicación puede escribir datos en un fichero de texto con el formato de datos de Prometheus. Este fichero de texto con datos agregados sería exportado a Prometheus con Node Exporter. </li>
+<li><a href="https://dzone.com/articles/prometheus-collectors">dzone.com: Monitoring Self-Destructing Apps Using Prometheus</a> Learn how to configure Prometheus collectors and their use cases.</li>
+<li><a href="https://prometheus.io/docs/instrumenting/writing_exporters/">prometheus.io: Writing Exporters</a></li>
+<li><a href="https://devconnected.com/complete-node-exporter-mastery-with-prometheus">devconnected.com: Complete Node Exporter Mastery with Prometheus</a></li>
+<li><a href="https://www.scalyr.com/blog/prometheus-metrics-by-example/">scalyr.com: Prometheus metrics by example: 5 things you can learn</a></li>
+<li><a href="https://aws.amazon.com/blogs/opensource/building-a-prometheus-remote-write-exporter-for-the-opentelemetry-go-sdk/">aws.amazon.com: Building a Prometheus remote write exporter for the OpenTelemetry Go SDK</a></li>
+</ul>
+<h3 id="prometheus-third-party-collectorsexporters">Prometheus Third-party Collectors/Exporters<a class="headerlink" href="#prometheus-third-party-collectorsexporters" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Some third-party software exposes metrics in the Prometheus format, so no separate exporters are needed.</li>
+<li><a href="https://prometheus.io/docs/instrumenting/exporters/">Prometheus Third Party Exporters</a></li>
+</ul>
+<h4 id="opentelemetry-collector">OpenTelemetry Collector<a class="headerlink" href="#opentelemetry-collector" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/open-telemetry/opentelemetry-collector">OpenTelemetry Collector</a></li>
+<li><a href="https://thenewstack.io/lightsteps-opentelemetry-launchers-simplify-integration-to-line-of-code/">thenewstack.io: Lightstep’s OpenTelemetry Launchers Simplify Integration to Line of Code</a> </li>
+<li><a href="https://github.com/search?q=org%3Alightstep+launcher">OpenTelemetry Launchers 🌟</a></li>
+<li><a href="https://thenewstack.io/demystifying-distributed-traces-in-opentelemetry/">thenewstack.io: Demystifying Distributed Traces in OpenTelemetry</a></li>
+<li><a href="https://medium.com/opentelemetry/opentelemetry-specification-v1-0-0-tracing-edition-72dd08936978">medium: OpenTelemetry Specification v1.0.0, Tracing Edition</a></li>
+<li><a href="https://www.cncf.io/blog/2021/04/29/from-distributed-tracing-to-apm-taking-opentelemetry-and-jaeger-up-a-level/?utm_source=thenewstack&amp;utm_medium=twitter&amp;utm_campaign=platform">cncf.io: From distributed tracing to APM: Taking OpenTelemetry and Jaeger up a level</a></li>
+<li><a href="https://medium.com/edreams-odigeo-tech/tracing-in-edreams-odigeo-lodging-with-open-telemetry-and-grafana-tempo-bd1f20ddf49d">medium: Tracing in eDreams ODIGEO Lodging with Open Telemetry and Grafana Tempo</a></li>
+<li><a href="https://newrelic.com/blog/best-practices/java-opentelemetry">newrelic.com: Understand OpenTelemetry Part 4: Instrument a Java App with OpenTelemetry</a></li>
+<li><a href="https://github.com/jenkinsci/opentelemetry-plugin">https://github.com/jenkinsci/opentelemetry-plugin</a> Publish Jenkins performances metrics to an OpenTelemetry endpoint, including distributed traces of job executions and health metrics of the controller.</li>
+<li><a href="https://github.com/cyrille-leclerc/opentelemetry-maven-extension">https://github.com/cyrille-leclerc/opentelemetry-maven-extension</a> Maven extension to observe Maven builds as distributed traces using OpenTelemetry</li>
+<li><a href="https://github.com/equinix-labs/otel-cli">https://github.com/equinix-labs/otel-cli</a> OpenTelemetry command-line tool for sending events from shell scripts &amp; similar environments</li>
+<li><a href="https://github.com/ansible-collections/community.general/pull/3091">https://github.com/ansible-collections/community.general/pull/3091</a> Send distributed traces for the ansible runs with OpenTelemetry</li>
+</ul>
+<h4 id="telegraf-collector">Telegraf Collector<a class="headerlink" href="#telegraf-collector" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.influxdata.com/time-series-platform/telegraf/">Telegraf Collector</a></li>
+<li><a href="https://github.com/influxdata/telegraf/tree/master/plugins/outputs/prometheus_client">Telegraf Prometheus Output Plugin</a></li>
+<li><a href="https://github.com/rossmcdonald/telegraf">Telegraf Ansible Role</a></li>
+<li><a href="https://grafana.com/grafana/dashboards?collector=Telegraf">Grafana Dashboards with Telegraf Collectors</a></li>
+<li><a href="https://dzone.com/articles/synthetic-monitoring-with-telegraf">dzone: Synthetic Monitoring With Telegraf (white-box monitoring)</a> Monitoring based on metrics exposed by the internals of the system</li>
+<li><a href="https://grafana.com/blog/2021/04/05/using-telegraf-plugins-to-visualize-industrial-iot-data-with-the-grafana-cloud-hosted-prometheus-service/">grafana.com: Using Telegraf plugins to visualize industrial IoT data with the Grafana Cloud Hosted Prometheus service</a></li>
+<li><a href="https://sysadminxpert.com/monitor-linux-system-with-grafana-and-telegraf/">sysadminxpert.com: How to Monitor Linux System with Grafana and Telegraf</a></li>
+<li><a href="https://www.influxdata.com/blog/three-ways-to-keep-cardinality-under-control-when-using-telegraf/">influxdata.com: Three Ways to Keep Cardinality Under Control When Using Telegraf</a></li>
+</ul>
+<h4 id="micrometer-collector">Micrometer Collector<a class="headerlink" href="#micrometer-collector" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="http://micrometer.io/"><strong>Micrometer</strong> Collector</a></li>
+<li><a href="https://micrometer.io/docs/registry/prometheus">Micrometer Prometheus</a></li>
+</ul>
+<h2 id="prometheus-alarms-and-event-tracking">Prometheus Alarms and Event Tracking<a class="headerlink" href="#prometheus-alarms-and-event-tracking" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Prometheus no soporta rastreo de eventos (event tracking), pero ofrece un soporte completo de alarmas y gestión de alarmas. El lenguaje de consultas (queries) de Prometheus permite en cambio implementar rastreo de eventos por cuenta propia.</li>
+</ul>
+<h2 id="prometheus-and-cloud-monitoring">Prometheus and Cloud Monitoring<a class="headerlink" href="#prometheus-and-cloud-monitoring" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AWS CloudWatch is supported by Prometheus.</li>
+</ul>
+<h2 id="prometheus-installers">Prometheus Installers<a class="headerlink" href="#prometheus-installers" title="Permanent link">&para;</a></h2>
+<h3 id="binaries-source-code-or-docker">Binaries, source code or Docker<a class="headerlink" href="#binaries-source-code-or-docker" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://prometheus.io/docs/prometheus/latest/installation/">prometheus.io: Installarion</a></li>
+<li><a href="https://prometheus.io/docs/prometheus/latest/getting_started/">prometheus.io: Getting Started</a> </li>
+<li><a href="https://github.com/prometheus/prometheus">github.com/prometheus/prometheus</a></li>
+</ul>
+<h3 id="ansible-roles">Ansible Roles<a class="headerlink" href="#ansible-roles" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cloud Alchemy</strong>: Deploy prometheus node exporter using ansible.<ul>
+<li><a href="https://galaxy.ansible.com/cloudalchemy/node-exporter">galaxy.ansible.com/cloudalchemy/node-exporter</a></li>
+<li><a href="https://github.com/cloudalchemy/ansible-prometheus">github.com/cloudalchemy/ansible-prometheus</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/idealista/prometheus_jmx_exporter-role">Idealista: This ansible role installs a Prometheus Node Exporter in a debian environment</a></li>
+<li><strong>Alexdzyoba</strong>: This ansible role installs a Prometheus JMX exporter java agent in a debian nvironment. Inspired by <a href="https://github.com/dealista/prometheus_jmx_exporter-role">Idealista prometheus_jmx_exporter-role</a>.<ul>
+<li><a href="https://galaxy.ansible.com/alexdzyoba/jmx-exporter">galaxy.ansible.com/alexdzyoba/jmx-exporter</a> </li>
+<li><a href="https://github.com/alexdzyoba/ansible-jmx-exporter">github.com/alexdzyoba/ansible-jmx-exporter</a></li>
+</ul>
+</li>
+<li><strong>Mesaguy</strong>: Installs and manages Prometheus and Prometheus exporters.<ul>
+<li>Installs and manages Prometheus server, Alertmanager, PushGateway, and numerous Prometheus exporters</li>
+<li>This role was designed to allow adding new exporters with ease. Regular releases ensure it always provides the latest Prometheus software.</li>
+<li>This role can register client exporters with the Prometheus server/s automatically (see tgroup management below).</li>
+<li>This Ansible role will be migrated to an Ansible Collection.</li>
+<li><a href="https://galaxy.ansible.com/mesaguy/prometheus">galaxy.ansible.com/mesaguy/prometheus</a></li>
+<li><a href="https://github.com/mesaguy/ansible-prometheus">github.com/mesaguy/ansible-prometheus</a></li>
+</ul>
+</li>
+<li><strong>William Yeh</strong>: Prometheus for Ansible Galaxy. This role only installs 3 components: Prometheus server, Node exporter, and Alertmanager. <ul>
+<li><a href="https://galaxy.ansible.com/William-Yeh/prometheus">galaxy.ansible.com/William-Yeh/prometheus</a> </li>
+<li><a href="https://github.com/William-Yeh/ansible-prometheus">github.com/William-Yeh/ansible-prometheus</a></li>
+<li><a href="https://awesomeopensource.com/project/William-Yeh/ansible-prometheus">awesomeopensource.com/project/William-Yeh/ansible-prometheus</a></li>
+</ul>
+</li>
+<li><strong>Undergreen</strong>: An Ansible role that installs Prometheus Node Exporter on Ubuntu|Debian|redhat-based machines with systemd|Upstart|sysvinit.<ul>
+<li><a href="https://galaxy.ansible.com/UnderGreen/prometheus-node-exporter">galaxy.ansible.com/UnderGreen/prometheus-node-exporter</a> </li>
+<li><a href="https://github.com/UnderGreen/ansible-prometheus-node-exporter">github.com/UnderGreen/ansible-prometheus-node-exporter</a></li>
+</ul>
+</li>
+<li><strong>Mitesh Sharma</strong>: Prometheus With Grafana Using Ansible<ul>
+<li><a href="https://itnext.io/prometheus-with-grafana-using-ansible-549e575c9dfa">itnext.io/prometheus-with-grafana-using-ansible-549e575c9dfa</a></li>
+<li><a href="https://github.com/MiteshSharma/PrometheusWithGrafana">github.com/MiteshSharma/PrometheusWithGrafana</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="prometheus-operator">Prometheus Operator<a class="headerlink" href="#prometheus-operator" title="Permanent link">&para;</a></h2>
+<h3 id="kube-prometheus">kube Prometheus<a class="headerlink" href="#kube-prometheus" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/coreos/kube-prometheus">kube-prometheus</a> Use Prometheus to monitor Kubernetes and applications running on Kubernetes.</li>
+</ul>
+<h4 id="prometheus-operator-with-helm3">Prometheus Operator with Helm3<a class="headerlink" href="#prometheus-operator-with-helm3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://devstack.in/2020/05/25/deploy-prometheus-operator-with-helm3-and-private-registry/">devstack.in: Deploy Prometheus Operator with Helm3 and Private Registry 🌟</a></li>
+</ul>
+<h4 id="kube-prometheus-stack-best-choice">Kube-prometheus-stack (best choice)<a class="headerlink" href="#kube-prometheus-stack-best-choice" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">prometheus-community/kube-prometheus-stack 🌟🌟</a> <strong>kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.</strong></li>
+</ul>
+<h4 id="kubernetes-cluster-monitoring-stack-based-on-prometheus-operator">Kubernetes Cluster Monitoring Stack based on Prometheus Operator<a class="headerlink" href="#kubernetes-cluster-monitoring-stack-based-on-prometheus-operator" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/carlosedp/cluster-monitoring">Cluster Monitoring stack for ARM / X86-64 platforms</a> Updated the cluster-monitoring stack for kubernetes to latest versions. Fresh Grafana 7, Prometheus Operator and more. This repository collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.</li>
+</ul>
+<h2 id="prometheus-saas-solutions">Prometheus SaaS Solutions<a class="headerlink" href="#prometheus-saas-solutions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.weave.works/features/prometheus-monitoring/">Weave Cortex SaaS (Hosted Prometheus - Public Cloud)</a></li>
+<li><a href="https://logz.io">logz.io</a><ul>
+<li><a href="https://logz.io/blog/prometheus-as-a-service-launch/">logz.io: Logz.io’s Prometheus-as-a-Service is Generally Available 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://aws.amazon.com/prometheus/">Amazon Managed Service for Prometheus</a></li>
+</ul>
+<h2 id="proof-of-concept-activemq-monitoring-with-prometheus">Proof of Concept: ActiveMQ Monitoring with Prometheus<a class="headerlink" href="#proof-of-concept-activemq-monitoring-with-prometheus" title="Permanent link">&para;</a></h2>
+<p>The aim of this Proof of Concept is to learn Prometheus by example being <a href="https://developers.redhat.com/products/amq/overview">Red Hat AMQ 7 (broker)</a> on RHEL the application to be monitored. Red Hat AMQ Broker is based on ActiveMQ Artemis, being this the reason why one of the following proof of concepts is done with Artemis (the other one was run in order to learn telegraf, prometheus and grafana). The same solution tested with Artemis on RHEL is valid for Red Hat AMQ 7 Broker on RHEL. </p>
+<p>Red Hat AMQ 7 Broker is OpenShift 3.11 compliant as Technical Preview and deployed as Operator.</p>
+<p>Red Hat AMQ 7 Operator is fully supported in OpenShift 4.x, initially with Prometheus and Grafana monitoring already setup and maintained by AMQ Operator. It is recommended to check the metrics collected and displayed by AMQ Operator with another Proof of Concept in OpenShift 4.x. </p>
+<h3 id="poc-activemq-5x-monitoring-with-telegraf-collector-prometheus-and-grafana-dashboard-10702">PoC: ActiveMQ 5.x Monitoring with Telegraf Collector, Prometheus and Grafana Dashboard 10702<a class="headerlink" href="#poc-activemq-5x-monitoring-with-telegraf-collector-prometheus-and-grafana-dashboard-10702" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Latest releases of Telegraf and Prometheus have been used in this Proof of Concept:<ul>
+<li><a href="https://www.influxdata.com/time-series-platform/telegraf/">telegraf-1.14.0-1 (rpm)</a></li>
+<li><a href="https://grafana.com/">grafana-6.3.2-1.x86_64 (rpm)</a> This is the release specified as requirement for this grafana dashboard. Newer releases of grafana are probably compliant.</li>
+<li><a href="https://prometheus.io/">prometheus-2.17.1.linux-amd64 (.tar.gz)</a></li>
+<li><a href="https://activemq.apache.org/components/classic/">apache-activemq-5.15.12 (.tar.g)</a></li>
+</ul>
+</li>
+<li>References:<ul>
+<li><a href="https://activemq.apache.org/components/classic/documentation">activemq.apache.org/components/classic/documentation</a></li>
+<li><a href="https://grafana.com/grafana/dashboards/10702">grafana.com/grafana/dashboards/10702</a> </li>
+<li><a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/activemq">github.com/influxdata/telegraf/tree/master/plugins/inputs/activemq</a> </li>
+<li><a href="https://docs.wavefront.com/activemq.html">docs.wavefront.com/activemq.html</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="deployment-and-configuration">Deployment and Configuration<a class="headerlink" href="#deployment-and-configuration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Systemd </li>
+</ul>
+<div class="highlight"><pre><span></span><code>/etc/systemd/system/prometheus.service
+/etc/systemd/system/activemq.service
+/usr/lib/systemd/system/telegraf.service
+/usr/lib/systemd/system/grafana-server.service
+</code></pre></div>
+
+<ul>
+<li>Systemctl</li>
+</ul>
+<div class="highlight"><pre><span></span><code>systemctl daemon-reload
+<span class="k">for</span> service in activemq telegraf prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl status <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> service in activemq telegraf prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl restart <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> service in activemq telegraf prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl stop <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> service in activemq telegraf prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl start <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
+<ul>
+<li>Jolokia Permissions already integrated in ActiveMQ by default. Jolokia permissions have been disabled by renaming &ldquo;jolokia-access.xml&rdquo; to &ldquo;jolokia-access.xmlORIG&rdquo; (this is a Proof of Concept):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mv /opt/activemq/webapps/api/WEB-INF/classes/jolokia-access.xml /opt/activemq/webapps/api/WEB-INF/classes/jolokia-access.xmlORIG
+</code></pre></div>
+
+<ul>
+<li>Telegraf Jolokia Input Plugin /etc/telegraf/telegraf.d/activemq.conf </li>
+</ul>
+<div class="highlight"><pre><span></span><code>[[inputs.jolokia2_agent]]
+urls = [&quot;http://localhost:8161/api/jolokia&quot;]
+name_prefix = &quot;activemq.&quot;
+username = &quot;admin&quot;
+password = &quot;admin&quot;
+### JVM Generic
+[[inputs.jolokia2_agent.metric]]
+name  = &quot;OperatingSystem&quot;
+mbean = &quot;java.lang:type=OperatingSystem&quot;
+paths = [&quot;ProcessCpuLoad&quot;,&quot;SystemLoadAverage&quot;,&quot;SystemCpuLoad&quot;]
+[[inputs.jolokia2_agent.metric]]
+name  = &quot;jvm_runtime&quot;
+mbean = &quot;java.lang:type=Runtime&quot;
+paths = [&quot;Uptime&quot;]
+[[inputs.jolokia2_agent.metric]]
+name  = &quot;jvm_memory&quot;
+mbean = &quot;java.lang:type=Memory&quot;
+paths = [&quot;HeapMemoryUsage&quot;, &quot;NonHeapMemoryUsage&quot;, &quot;ObjectPendingFinalizationCount&quot;]
+[[inputs.jolokia2_agent.metric]]
+name     = &quot;jvm_garbage_collector&quot;
+mbean    = &quot;java.lang:name=*,type=GarbageCollector&quot;
+paths    = [&quot;CollectionTime&quot;, &quot;CollectionCount&quot;]
+tag_keys = [&quot;name&quot;]
+[[inputs.jolokia2_agent.metric]]
+name       = &quot;jvm_memory_pool&quot;
+mbean      = &quot;java.lang:name=*,type=MemoryPool&quot;
+paths      = [&quot;Usage&quot;, &quot;PeakUsage&quot;, &quot;CollectionUsage&quot;]
+tag_keys   = [&quot;name&quot;]
+tag_prefix = &quot;pool_&quot;
+### ACTIVEMQ
+[[inputs.jolokia2_agent.metric]]
+name     = &quot;queue&quot;
+mbean    = &quot;org.apache.activemq:brokerName=*,destinationName=*,destinationType=Queue,type=Broker&quot;
+paths    = [&quot;QueueSize&quot;,&quot;EnqueueCount&quot;,&quot;ConsumerCount&quot;,&quot;DispatchCount&quot;,&quot;DequeueCount&quot;,&quot;ProducerCount&quot;,&quot;InFlightCount&quot;]
+tag_keys = [&quot;brokerName&quot;,&quot;destinationName&quot;]
+[[inputs.jolokia2_agent.metric]]
+name     = &quot;topic&quot;
+mbean    = &quot;org.apache.activemq:brokerName=*,destinationName=*,destinationType=Topic,type=Broker&quot;
+paths    = [&quot;ProducerCount&quot;,&quot;DequeueCount&quot;,&quot;ConsumerCount&quot;,&quot;QueueSize&quot;,&quot;EnqueueCount&quot;]
+tag_keys = [&quot;brokerName&quot;,&quot;destinationName&quot;]
+[[inputs.jolokia2_agent.metric]]
+name     = &quot;broker&quot;
+mbean    = &quot;org.apache.activemq:brokerName=*,type=Broker&quot;
+paths    = [&quot;TotalConsumerCount&quot;,&quot;TotalMessageCount&quot;,&quot;TotalEnqueueCount&quot;,&quot;TotalDequeueCount&quot;,&quot;MemoryLimit&quot;,&quot;MemoryPercentUsage&quot;,&quot;StoreLimi
+t&quot;,&quot;StorePercentUsage&quot;,&quot;TempPercentUsage&quot;,&quot;TempLimit&quot;]
+tag_keys = [&quot;brokerName&quot;]
+</code></pre></div>
+
+<ul>
+<li>InfluxDB: Not required.</li>
+<li>Defautl /etc/telegraf/telegraf.conf file is modified to allow Prometheus to collect ActiveMQ metrics by pulling Telegraf metrics:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>  # # Configuration for the Prometheus client to spawn
+  [[outputs.prometheus_client]]
+  #   ## Address to listen on
+      listen = &quot;:9273&quot;
+      ## Path to publish the metrics on.
+      path = &quot;/metrics&quot;
+  ...
+  ...
+  # # Gather ActiveMQ metrics
+  [[inputs.activemq]]
+  #   ## ActiveMQ WebConsole URL
+  url = &quot;http://127.0.0.1:8161&quot;
+  #   ## Credentials for basic HTTP authentication
+  username = &quot;admin&quot;
+  password = &quot;admin&quot;
+  ...
+  ...
+</code></pre></div>
+
+<ul>
+<li>scrape_configs in /opt/prometheus/prometheus.yml </li>
+</ul>
+<div class="highlight"><pre><span></span><code>  scrape_configs:
+  # The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.
+  - job_name: &#39;prometheus&#39;
+      # metrics_path defaults to &#39;/metrics&#39;
+      # scheme defaults to &#39;http&#39;.
+      static_configs:
+      - targets: [&#39;localhost:9090&#39;]
+  - job_name: &#39;broker&#39;
+      static_configs:
+      - targets: [&#39;localhost:9273&#39;]
+</code></pre></div>
+
+<ul>
+<li>Grafana Dashboard <a href="https://grafana.com/grafana/dashboards/10702">10702</a> is imported from Grafana UI -&gt; &ldquo;import dashboard&rdquo;. Prometheus data source is connected manually with Grafana via Grafana UI.</li>
+</ul>
+<h3 id="poc-activemq-artemis-monitoring-with-prometheus-metrics-plugin-micrometer-collector-and-prometheus-grafana-dashboard-not-available">PoC: ActiveMQ Artemis Monitoring with Prometheus Metrics Plugin (Micrometer Collector) and Prometheus. Grafana Dashboard not available<a class="headerlink" href="#poc-activemq-artemis-monitoring-with-prometheus-metrics-plugin-micrometer-collector-and-prometheus-grafana-dashboard-not-available" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Latest releases of ActiveMQ Artemis and Prometheus have been used in this Proof of Concept:<ul>
+<li><a href="https://grafana.com/">grafana-6.7.2-1.x86_64.rpm</a></li>
+<li><a href="https://prometheus.io">prometheus-2.17.1.linux-amd64</a></li>
+<li><a href="https://activemq.apache.org/components/artemis/">apache-artemis-2.11.0</a> </li>
+<li><a href="https://maven.apache.org/">apache-maven-3.6.3</a></li>
+</ul>
+</li>
+<li>ActiveMQ Artemis can export metrics to several monitoring systems via <a href="https://github.com/rh-messaging/artemis-prometheus-metrics-plugin">Artemis Prometheus Metrics Plugin</a>, which uses <a href="https://micrometer.io/">Micrometer Collector</a>. Check <a href="http://activemq.apache.org/components/artemis/documentation/latest/metrics.html">this link</a>.</li>
+<li>Unfortunately, there&rsquo;s no Grafana Dashboard available for this plugin. In consequence <a href="https://www.openlogic.com/blog/how-visualize-prometheus-data-grafana">a new Grafana Dashboard has to be developed from scratch</a>.</li>
+<li><a href="https://github.com/rh-messaging/artemis-prometheus-metrics-plugin">Artemis Prometheus Metrics Plugin</a> is the recommended approach. Use <a href="https://github.com/prometheus/jmx_exporter">JMX Exporter</a> to export other metrics.</li>
+<li>References:<ul>
+<li><a href="https://activemq.apache.org/components/artemis/documentation/latest/using-server.html">Apache ActiveMQ Artemis Using the Server</a></li>
+<li><a href="https://activemq.apache.org/components/artemis/documentation/latest/management-console.html">Apache ActiveMQ Artemis Management Console</a></li>
+<li><a href="http://activemq.apache.org/components/artemis/documentation/latest/metrics.html">Apache ActiveMQ Artemis Metrics</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="deployment-and-configuration_1">Deployment and Configuration<a class="headerlink" href="#deployment-and-configuration_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>systemd</li>
+</ul>
+<div class="highlight"><pre><span></span><code>/etc/systemd/system/prometheus.service
+/etc/systemd/system/artemis.service
+/usr/lib/systemd/system/grafana-server.service
+</code></pre></div>
+
+<ul>
+<li>systemctl</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl enable artemis</span>
+<span class="c1"># systemctl daemon-reload</span>
+
+ <span class="k">for</span> service in artemis prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl status <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+ <span class="k">for</span> service in artemis prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl restart <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+ <span class="k">for</span> service in artemis prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl stop <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+ <span class="k">for</span> service in artemis prometheus grafana-server<span class="p">;</span> <span class="k">do</span> systemctl start <span class="nv">$service</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
+<ul>
+<li>Creation of Artemis Broker</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /var/lib
+/opt/artemis/bin/artemis create --addresses <span class="m">192</span>.168.1.38 --allow-anonymous --home /opt/artemis --host &lt;my_servername.my_domain&gt; --http-host &lt;my_servername.my_domain&gt; --name &lt;my_servername.my_domain&gt; --queues queue1,queue2 --user artemisuser --password artemispassword artemisbroker
+
+Creating ActiveMQ Artemis instance at: /var/lib/artemisbroker
+
+Auto tuning journal ...
+<span class="k">done</span>! Your system can make <span class="m">13</span>.89 writes per millisecond, your journal-buffer-timeout will be <span class="m">72000</span>
+
+You can now start the broker by executing:
+
+   <span class="s2">&quot;/var/lib/artemisbroker/bin/artemis&quot;</span> run
+
+Or you can run the broker in the background using:
+
+   <span class="s2">&quot;/var/lib/artemisbroker/bin/artemis-service&quot;</span> start
+</code></pre></div>
+
+<ul>
+<li>Permissions change in broker directory</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># chown -R activemq. /var/lib/artemisbroker/</span>
+</code></pre></div>
+
+<ul>
+<li>Running artemis broker</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># su - activemq</span>
+$ <span class="nb">cd</span> /var/lib/artemisbroker/
+$ /var/lib/artemisbroker/bin/artemis run
+</code></pre></div>
+
+<ul>
+<li>
+<p>Artemis Prometehus Console Access. We can now access to Artemis Console via <a href="http://my_servername.my_domain:8161/console">http://my_servername.my_domain:8161/console</a> using the credentials specified during the CLI deployment (artemisuser / artemispassword)</p>
+</li>
+<li>
+<p><a href="https://github.com/rh-messaging/artemis-prometheus-metrics-plugin">Artemis Prometheus Plugin</a></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>activemq@my_servername ~<span class="o">]</span>$ <span class="nb">pwd</span>
+/home/activemq
+<span class="o">[</span>activemq@my_servername ~<span class="o">]</span>$ <span class="nb">cd</span> artemis-prometheus-metrics-plugin/
+<span class="o">[</span>activemq@my_servername artemis-prometheus-metrics-plugin<span class="o">]</span>$ mvn install
+...
+<span class="o">[</span>INFO<span class="o">]</span> Replacing /home/activemq/artemis-prometheus-metrics-plugin/artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics-plug
+in-1.0.0.CR1.jar with /home/activemq/artemis-prometheus-metrics-plugin/artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics
+-plugin-1.0.0.CR1-shaded.jar
+<span class="o">[</span>INFO<span class="o">]</span> Dependency-reduced POM written at: /home/activemq/artemis-prometheus-metrics-plugin/artemis-prometheus-metrics-plugin/dependency-re
+duced-pom.xml
+<span class="o">[</span>INFO<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> --- maven-install-plugin:2.4:install <span class="o">(</span>default-install<span class="o">)</span> @ artemis-prometheus-metrics-plugin ---
+<span class="o">[</span>INFO<span class="o">]</span> Installing /home/activemq/artemis-prometheus-metrics-plugin/artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics-plu
+gin-1.0.0.CR1.jar to /home/activemq/.m2/repository/org/apache/activemq/artemis-prometheus-metrics-plugin/1.0.0.CR1/artemis-prometheus-metr
+ics-plugin-1.0.0.CR1.jar
+<span class="o">[</span>INFO<span class="o">]</span> Installing /home/activemq/artemis-prometheus-metrics-plugin/artemis-prometheus-metrics-plugin/dependency-reduced-pom.xml to /home/a
+ctivemq/.m2/repository/org/apache/activemq/artemis-prometheus-metrics-plugin/1.0.0.CR1/artemis-prometheus-metrics-plugin-1.0.0.CR1.pom
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> Reactor Summary <span class="k">for</span> artemis-prometheus-metrics-pom <span class="m">1</span>.0.0.CR1:
+<span class="o">[</span>INFO<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> artemis-prometheus-metrics-pom ..................... SUCCESS <span class="o">[</span>  <span class="m">0</span>.328 s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ActiveMQ Artemis Prometheus Metrics Plugin Servlet . SUCCESS <span class="o">[</span>  <span class="m">7</span>.964 s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ActiveMQ Artemis Prometheus Metrics Plugin ......... SUCCESS <span class="o">[</span> <span class="m">34</span>.596 s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> BUILD SUCCESS
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> Total time:  <span class="m">43</span>.030 s
+<span class="o">[</span>INFO<span class="o">]</span> Finished at: <span class="m">2020</span>-04-10T13:36:27+02:00
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+</code></pre></div>
+
+<ul>
+<li>New artifact is copied to artemis broker. Artefact artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics-plugin-VERSION.jar is copied to our broker:  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>activemq@my_servername artemis-prometheus-metrics-plugin<span class="o">]</span>$ cp artemis-prometheus-metrics-plugin/target/artemis-prometheus-metrics-plugin-
+<span class="m">1</span>.0.0.CR1.jar /var/lib/artemisbroker/lib/
+</code></pre></div>
+
+<ul>
+<li>Edition of file /var/lib/artemisbroker/etc/broker.xml</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&lt;metrics-plugin class-name=&quot;org.apache.activemq.artemis.core.server.metrics.plugins.ArtemisPrometheusMetricsPlugin&quot;/&gt;
+</code></pre></div>
+
+<ul>
+<li>Creation of <artemis_instance>/web</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[activemq@my_servername artemisbroker]$ mkdir /var/lib/artemisbroker/web
+</code></pre></div>
+
+<ul>
+<li>Artifact artemis-prometheus-metrics-plugin-servlet/target/metrics.war is copied to <ARTEMIS_INSTANCE>/web :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>activemq@my_servername artemis-prometheus-metrics-plugin<span class="o">]</span>$ cp artemis-prometheus-metrics-plugin-servlet/target/metrics.war /var/lib/artem
+isbroker/web/
+</code></pre></div>
+
+<ul>
+<li>Below web component added to <ARTEMIS_INSTANCE>/etc/bootstrap.xml :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[activemq@my_servername artemis-prometheus-metrics-plugin]$ vim /var/lib/artemisbroker/etc/bootstrap.xml
+...
+&lt;app url=&quot;metrics&quot; war=&quot;metrics.war&quot;/&gt;
+...
+</code></pre></div>
+
+<ul>
+<li>Restart of Artemis Broker</li>
+<li>Prometheus configuration, scrape_configs in /opt/prometheus/prometheus.yml :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>scrape_configs:
+  # The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.
+  - job_name: &#39;prometheus&#39;
+
+    # metrics_path defaults to &#39;/metrics&#39;
+    # scheme defaults to &#39;http&#39;.
+
+    static_configs:
+    - targets: [&#39;localhost:9090&#39;]
+  - job_name: &#39;broker&#39;
+    static_configs:
+    - targets: [&#39;localhost:8161&#39;]
+</code></pre></div>
+
+<ul>
+<li>Last step: Apparently there&rsquo;s not Grafana Dashboard available for this use case. It is required to <a href="https://www.openlogic.com/blog/how-visualize-prometheus-data-grafana">develop a new Grafana Dashboard</a>.</li>
+</ul>
+<h3 id="validation-of-artemis-broker-monitoring-with-jmeter">Validation of Artemis Broker Monitoring with JMeter<a class="headerlink" href="#validation-of-artemis-broker-monitoring-with-jmeter" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In order to validate our Artemis Broker Monitoring solution we need to &ldquo;inject traffic/data/metrics&rdquo; with for example Pub/Sub messages. </li>
+<li>We can achieve this with a little of java code or by sending messages via Artemis Web Console -&gt; <strong>&ldquo;Operations&rdquo;</strong> tab. </li>
+<li>Another option is running the jmeter test plans available on <a href="https://github.com/apache/activemq-artemis/tree/master/examples/perf/jmeter">Artemis&rsquo; github repo</a>. The procedure is described below. Remember to create the queues and addresses (topics) defined in jmeter example test plans.</li>
+</ul>
+<h4 id="jmeter-example-test-plans">JMeter Example Test Plans<a class="headerlink" href="#jmeter-example-test-plans" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Latest release of <a href="https://jmeter.apache.org/">Apache JMeter</a> deployed in /opt</li>
+<li>Library artemis-jms-client-all-2.11.0.jar is copied to $JMETER_HOME/lib :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ cp /opt/artemis/lib/client/artemis-jms-client-all-2.11.0.jar /opt/apache-jmeter-5.2.1/lib/
+</code></pre></div>
+
+<ul>
+<li>jndi.properties file is modified with Artemis&rsquo; IP address (it is not listening on localhost):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ vim /opt/artemis/examples/perf/jmeter/jndi.properties
+$ cat /opt/artemis/examples/perf/jmeter/jndi.properties
+connectionFactory.ConnectionFactory=tcp://192.168.1.38:61616
+</code></pre></div>
+
+<ul>
+<li>jndi.properties is packaged in a jar file and moved to $JMETER_HOME/lib :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[activemq@my_servername ~]$ cd /opt/artemis/examples/perf/jmeter/
+[activemq@my_servername jmeter]$ ls -l
+total 28
+-rw-rw-r-- 1 activemq activemq 11887 Jan 10 16:22 1.jms_p2p_test.jmx
+-rw-rw-r-- 1 activemq activemq  8442 Jan 10 16:22 2.pub_sub_test.jmx
+-rw-rw-r-- 1 activemq activemq   833 Jan 10 16:22 jndi.properties
+[activemq@my_servername jmeter]$ jar -cf artemis-jndi.jar jndi.properties
+[activemq@my_servername jmeter]$ ls -l
+total 32
+-rw-rw-r-- 1 activemq activemq 11887 Jan 10 16:22 1.jms_p2p_test.jmx
+-rw-rw-r-- 1 activemq activemq  8442 Jan 10 16:22 2.pub_sub_test.jmx
+-rw-rw-r-- 1 activemq activemq   946 May 15 08:46 artemis-jndi.jar
+-rw-rw-r-- 1 activemq activemq   833 Jan 10 16:22 jndi.properties
+[activemq@my_servername jmeter]$ cp artemis-jndi.jar /opt/apache-jmeter-5.2.1/lib/
+</code></pre></div>
+
+<ul>
+<li>Example Test Plans available at Artemis GitHub Repo are run by JMeter (from within the GUI or the CLI):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[activemq@my_servername ~]$ cd /opt/artemis/examples/perf/jmeter/
+[activemq@my_servername jmeter]$ ls -la
+total 32
+drwxrwxr-x 2 activemq activemq   101 May 15 08:46 .
+drwxrwxr-x 3 activemq activemq    19 Jan 10 16:22 ..
+-rw-rw-r-- 1 activemq activemq 11887 Jan 10 16:22 1.jms_p2p_test.jmx
+-rw-rw-r-- 1 activemq activemq  8442 Jan 10 16:22 2.pub_sub_test.jmx
+-rw-rw-r-- 1 activemq activemq   946 May 15 08:46 artemis-jndi.jar
+-rw-rw-r-- 1 activemq activemq   833 Jan 10 16:22 jndi.properties
+[activemq@my_servername jmeter]$
+[activemq@my_servername bin]$ cd
+[activemq@my_servername ~]$ pwd
+/home/activemq
+[activemq@my_servername ~]$ /opt/apache-jmeter-5.2.1/bin/jmeter.sh -n -t /opt/artemis/examples/perf/jmeter/1.jms_p2p_test.jmx -l results-file-1.txt -j 1.log
+[activemq@my_servername ~]$ /opt/apache-jmeter-5.2.1/bin/jmeter.sh -n -t /opt/artemis/examples/perf/jmeter/2.pub_sub_test.jmx -l results-file-2.txt -j 2.log
+</code></pre></div>
+
+<ul>
+<li>We can now see metrics displayed on Grafana and Artemis Dashboard:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">JMeter</th>
+<th align="center">Artemis Grafana</th>
+<th align="center">Artemis Dashboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="jmeter artemis" src="../images/jmeter_artemis.png" /></td>
+<td align="center"><img alt="artemis grafana" src="../images/artemis_grafana.png" /></td>
+<td align="center"><img alt="artemis dashboard monitoring" src="../images/artemis_dashboard_mon.png" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="prometheus-and-azure">Prometheus and Azure<a class="headerlink" href="#prometheus-and-azure" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://promitor.io">Promitor 🌟</a> An Azure Monitor scraper for Prometheus </li>
+</ul>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<p><details>
+  <summary>Click to expand!</summary></p>
+<p><center>
+<iframe src="https://www.youtube.com/embed/r8UvWSX3KA8" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+</details></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../monitoring/" title="Monitoring and Performance" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Monitoring and Performance
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../grafana/" title="Grafana" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Grafana
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2021 <a href="https://twitter.com/RedHatSpain">Red Hat Spain</a>, <a href="https://redhatspain.com/about/">about</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/redhatspain" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/groups/1937212/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://github.com/redhatspain" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.youtube.com/channel/UCCGQ2G2rGAkHzVFhhed-xVw/playlists" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://speakerdeck.com/redhatspain/stars" target="_blank" rel="noopener" title="speakerdeck.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M213.86 296H100a100 100 0 0 1 0-200h132.84a40 40 0 0 1 0 80H98c-26.47 0-26.45 40 0 40h113.82a100 100 0 0 1 0 200H40a40 40 0 0 1 0-80h173.86c26.48 0 26.46-40 0-40zM298 416a120.21 120.21 0 0 0 51.11-80h64.55a19.83 19.83 0 0 0 19.66-20V196a19.83 19.83 0 0 0-19.66-20H296.42a60.77 60.77 0 0 0 0-80h136.93c43.44 0 78.65 35.82 78.65 80v160c0 44.18-35.21 80-78.65 80z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://es.slideshare.net/RedHatSpain/favorites" target="_blank" rel="noopener" title="es.slideshare.net" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M187.7 153.7c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7s61.7-26 61.7-57.7c0-32-27.7-57.7-61.7-57.7zm143.4 0c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7 34.3 0 61.7-26 61.7-57.7.1-32-27.4-57.7-61.7-57.7zm156.6 90l-6 4.3V49.7c0-27.4-20.6-49.7-46-49.7H76.6c-25.4 0-46 22.3-46 49.7V248c-2-1.4-4.3-2.9-6.3-4.3-15.1-10.6-25.1 4-16 17.7 18.3 22.6 53.1 50.3 106.3 72C58.3 525.1 252 555.7 248.9 457.5c0-.7.3-56.6.3-96.6 5.1 1.1 9.4 2.3 13.7 3.1 0 39.7.3 92.8.3 93.5-3.1 98.3 190.6 67.7 134.3-124 53.1-21.7 88-49.4 106.3-72 9.1-13.8-.9-28.3-16.1-17.8zm-30.5 19.2c-68.9 37.4-128.3 31.1-160.6 29.7-23.7-.9-32.6 9.1-33.7 24.9-10.3-7.7-18.6-15.5-20.3-17.1-5.1-5.4-13.7-8-27.1-7.7-31.7 1.1-89.7 7.4-157.4-28V72.3c0-34.9 8.9-45.7 40.6-45.7h317.7c30.3 0 40.9 12.9 40.9 45.7v190.6z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://redhatspain.slack.com/" target="_blank" rel="noopener" title="redhatspain.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

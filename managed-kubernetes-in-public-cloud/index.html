@@ -1,0 +1,3092 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A curated list of awesome IT projects and resources. Inspired by the awesome list.">
+      
+      
+        <link rel="canonical" href="https://redhatspain.com/managed-kubernetes-in-public-cloud/">
+      
+      
+        <meta name="author" content="info@redhatspain.com">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Managed kubernetes in public clouds - Awesome Kubernetes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../static/extra.css">
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-168051035-1","redhatspain.com"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#managed-kubernetes-in-public-cloud" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-header-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Awesome Kubernetes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Managed kubernetes in public clouds
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Awesome Kubernetes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes" class="md-nav__link">
+      From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Microservices FAQ & Kubernetes Native" class="md-nav__link">
+      Microservices FAQ & Kubernetes Native
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sre/" title="SRE Site Reliability Engineering" class="md-nav__link">
+      SRE Site Reliability Engineering
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      DevOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheets/" title="Cheat Sheets" class="md-nav__link">
+      Cheat Sheets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitops/" title="GitOps" class="md-nav__link">
+      GitOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mlops/" title="MLOps" class="md-nav__link">
+      MLOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chaos-engineering/" title="Chaos Engineering" class="md-nav__link">
+      Chaos Engineering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Demos and Boilerplates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Demos and Boilerplates" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Demos and Boilerplates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../demos/" title="Demos, Boilerplates & Screencasts" class="md-nav__link">
+      Demos, Boilerplates & Screencasts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Security and DevSecOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Security and DevSecOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Security and DevSecOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devsecops/" title="DevSecOps. Container Security" class="md-nav__link">
+      DevSecOps. Container Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../securityascode/" title="Security Policy as Code" class="md-nav__link">
+      Security Policy as Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      NoOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="NoOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        NoOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noops/" title="NoOps" class="md-nav__link">
+      NoOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../finops/" title="FinOps - Cloud Financial Management" class="md-nav__link">
+      FinOps - Cloud Financial Management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      TestOps - Continuous Testing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TestOps - Continuous Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        TestOps - Continuous Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testops/" title="TestOps and Continuous Testing" class="md-nav__link">
+      TestOps and Continuous Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qa/" title="QA" class="md-nav__link">
+      QA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Project Management Methodology
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Project Management Methodology" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Project Management Methodology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-methodology/" title="Project Management Methodology" class="md-nav__link">
+      Project Management Methodology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-tools/" title="Project Management Tools" class="md-nav__link">
+      Project Management Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appointment-scheduling/" title="Appointment Scheduling" class="md-nav__link">
+      Appointment Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workfromhome/" title="Work From Home" class="md-nav__link">
+      Work From Home
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
+    
+    <label class="md-nav__link" for="nav-13">
+      Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-tools/" title="Kubernetes Plugins, Tools, Extensions and Projects" class="md-nav__link">
+      Kubernetes Plugins, Tools, Extensions and Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubectl-commands/" title="kubectl commands" class="md-nav__link">
+      kubectl commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-networking/" title="Kubernetes Networking" class="md-nav__link">
+      Kubernetes Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-monitoring/" title="Kubernetes Monitoring and Logging" class="md-nav__link">
+      Kubernetes Monitoring and Logging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-security/" title="Kubernetes security" class="md-nav__link">
+      Kubernetes security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-storage/" title="Kubernetes Storage" class="md-nav__link">
+      Kubernetes Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-backup-migrations/" title="Kubernetes Backup and Migrations" class="md-nav__link">
+      Kubernetes Backup and Migrations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-autoscaling/" title="Kubernetes autoscaling" class="md-nav__link">
+      Kubernetes autoscaling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-operators-controllers/" title="Kubernetes Operators and Controllers" class="md-nav__link">
+      Kubernetes Operators and Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-based-devel/" title="Kubernetes Based Development" class="md-nav__link">
+      Kubernetes Based Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-on-premise/" title="Kubernetes on premise" class="md-nav__link">
+      Kubernetes on premise
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Managed kubernetes in public clouds
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Managed kubernetes in public clouds" class="md-nav__link md-nav__link--active">
+      Managed kubernetes in public clouds
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gke-vs-eks-vs-aks" class="md-nav__link">
+    GKE vs EKS vs AKS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-managed-kubernetes" class="md-nav__link">
+    Other Managed Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-eks-hostedmanaged-kubernetes-on-aws" class="md-nav__link">
+    AWS EKS (Hosted/Managed Kubernetes on AWS)
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS EKS (Hosted/Managed Kubernetes on AWS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-eks-vs-ecs-vs-fargate" class="md-nav__link">
+    AWS EKS Vs ECS Vs Fargate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eks-anywhere-on-premises" class="md-nav__link">
+    EKS Anywhere (on premises)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eks-distro-eks-d" class="md-nav__link">
+    EKS Distro (EKS-D)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-kubernetes-canary-deployment-on-eks" class="md-nav__link">
+    Testing Kubernetes Canary deployment on EKS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aks-azure-kubernetes-service" class="md-nav__link">
+    AKS Azure Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gke-google-kubernetes-engine" class="md-nav__link">
+    GKE Google Kubernetes Engine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iks-ibm-cloud-kubernetes-service" class="md-nav__link">
+    IKS IBM Cloud Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubesphere" class="md-nav__link">
+    Kubesphere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-for-multi-cloud-kubernetes-management" class="md-nav__link">
+    Tools for multi-cloud Kubernetes management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-releases/" title="Kubernetes Releases" class="md-nav__link">
+      Kubernetes Releases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matrix-table/" title="Kubernetes Matrix Table" class="md-nav__link">
+      Kubernetes Matrix Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-alternatives/" title="Kubernetes alternatives" class="md-nav__link">
+      Kubernetes alternatives
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      SUSE Rancher
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="SUSE Rancher" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        SUSE Rancher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rancher/" title="Rancher - Enterprise management for Kubernetes" class="md-nav__link">
+      Rancher - Enterprise management for Kubernetes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Red Hat OpenShift
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Red Hat OpenShift" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Red Hat OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift/" title="OpenShift docs" class="md-nav__link">
+      OpenShift docs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp3/" title="OCP 3" class="md-nav__link">
+      OCP 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp4/" title="OCP 4" class="md-nav__link">
+      OCP 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Software Delivery Pipeline
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Software Delivery Pipeline" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Software Delivery Pipeline
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd/" title="CI/CD - Continuous Integration & Continuous Delivery" class="md-nav__link">
+      CI/CD - Continuous Integration & Continuous Delivery
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs" class="md-nav__link">
+      Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins/" title="Jenkins & Cloudbees" class="md-nav__link">
+      Jenkins & Cloudbees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift-pipelines/" title="OpenShift Pipelines with Jenkins, Tekton and more..." class="md-nav__link">
+      OpenShift Pipelines with Jenkins, Tekton and more...
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../performance-testing-with-jenkins-and-jmeter/" title="Performance testing with Jenkins and JMeter or Gatling" class="md-nav__link">
+      Performance testing with Jenkins and JMeter or Gatling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins-alternatives/" title="Jenkins Alternatives for Continuous Integration" class="md-nav__link">
+      Jenkins Alternatives for Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-7" type="checkbox" id="nav-16-7">
+    
+    <label class="md-nav__link" for="nav-16-7">
+      Toolchain
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Toolchain" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Toolchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../container-managers/" title="Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo" class="md-nav__link">
+      Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maven-gradle/" title="Maven, Gradle & SDKMAN" class="md-nav__link">
+      Maven, Gradle & SDKMAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sonarqube/" title="SonarQube" class="md-nav__link">
+      SonarQube
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../registries/" title="Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more" class="md-nav__link">
+      Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../selenium-appium-zephyr/" title="Selenium, Cucumber, Appium & Zephyr Jira plugin" class="md-nav__link">
+      Selenium, Cucumber, Appium & Zephyr Jira plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Linux & SSH" class="md-nav__link">
+      Linux & SSH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs/" title="MkDocs & GitHub Pages" class="md-nav__link">
+      MkDocs & GitHub Pages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-8" type="checkbox" id="nav-16-8">
+    
+    <label class="md-nav__link" for="nav-16-8">
+      Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-servers/" title="Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more" class="md-nav__link">
+      Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_app_servers/" title="Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more" class="md-nav__link">
+      Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../embedded-servlet-containers/" title="Embedded Servlet Containers in SpringBoot" class="md-nav__link">
+      Embedded Servlet Containers in SpringBoot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../caching/" title="Caching Solutions" class="md-nav__link">
+      Caching Solutions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+    
+    <label class="md-nav__link" for="nav-17">
+      Monitoring and Performance. Prometheus, Grafana, APMs and more
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Monitoring and Performance. Prometheus, Grafana, APMs and more" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Monitoring and Performance. Prometheus, Grafana, APMs and more
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monitoring/" title="Monitoring and Performance" class="md-nav__link">
+      Monitoring and Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
+      Prometheus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafana/" title="Grafana" class="md-nav__link">
+      Grafana
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Configuration Management
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration Management" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Configuration Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible/" title="Ansible" class="md-nav__link">
+      Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../argocd/" title="Argo CD - Declarative GitOps for Kubernetes" class="md-nav__link">
+      Argo CD - Declarative GitOps for Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd-kubernetes-plugins/" title="CI/CD Kubernetes Plugins" class="md-nav__link">
+      CI/CD Kubernetes Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-client-libraries/" title="Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK" class="md-nav__link">
+      Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helm/" title="Helm Kubernetes Tool" class="md-nav__link">
+      Helm Kubernetes Tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../liquibase/" title="Liquibase & Flyway" class="md-nav__link">
+      Liquibase & Flyway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kustomize/" title="Template-Free Kubernetes Configuration Customization with Kustomize" class="md-nav__link">
+      Template-Free Kubernetes Configuration Customization with Kustomize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files" class="md-nav__link">
+      Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Infrastructure Management Tools
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Infrastructure Management Tools" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Infrastructure Management Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../iac/" title="IaC Infrastructure as Code" class="md-nav__link">
+      IaC Infrastructure as Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pulumi/" title="Pulumi" class="md-nav__link">
+      Pulumi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform & Packer. K8s boilerplates" class="md-nav__link">
+      Terraform & Packer. K8s boilerplates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crossplane/" title="Crossplane" class="md-nav__link">
+      Crossplane
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Databases on Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Databases on Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Databases on Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../databases/" title="Relational Databases and Database DevOps" class="md-nav__link">
+      Relational Databases and Database DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nosql/" title="NoSQL Databases" class="md-nav__link">
+      NoSQL Databases
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../message-queue/" title="Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)" class="md-nav__link">
+      Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+    
+    <label class="md-nav__link" for="nav-22">
+      Service Mesh
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Service Mesh" data-md-level="1">
+      <label class="md-nav__title" for="nav-22">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Service Mesh
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../servicemesh/" title="Service Mesh" class="md-nav__link">
+      Service Mesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../istio/" title="Istio" class="md-nav__link">
+      Istio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23">
+    
+    <label class="md-nav__link" for="nav-23">
+      APIs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="APIs" data-md-level="1">
+      <label class="md-nav__title" for="nav-23">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="APIs with SOAP, REST and gRPC" class="md-nav__link">
+      APIs with SOAP, REST and gRPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swagger-code-generator-for-rest-apis/" title="Swagger code generator for REST APIs" class="md-nav__link">
+      Swagger code generator for REST APIs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postman/" title="API Test Automation with Postman" class="md-nav__link">
+      API Test Automation with Postman
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developerportals/" title="API Marketplaces. API Management with API Gateways & Developer Portals" class="md-nav__link">
+      API Marketplaces. API Management with API Gateways & Developer Portals
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24" type="checkbox" id="nav-24">
+    
+    <label class="md-nav__link" for="nav-24">
+      Development & Frameworks
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development & Frameworks" data-md-level="1">
+      <label class="md-nav__title" for="nav-24">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Development & Frameworks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dom/" title="Document Object Model (DOM)" class="md-nav__link">
+      Document Object Model (DOM)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript - node.js & npm" class="md-nav__link">
+      JavaScript - node.js & npm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python - Django & Flask" class="md-nav__link">
+      Python - Django & Flask
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xamarin/" title="Microsoft Xamarin" class="md-nav__link">
+      Microsoft Xamarin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dotnet/" title="Microsoft .NET" class="md-nav__link">
+      Microsoft .NET
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devel-sites/" title="Websites for web developers" class="md-nav__link">
+      Websites for web developers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-9" type="checkbox" id="nav-24-9">
+    
+    <label class="md-nav__link" for="nav-24-9">
+      Java
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_frameworks/" title="Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more" class="md-nav__link">
+      Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java-and-java-performance-optimization/" title="Java Memory Management & Java Performance Optimization" class="md-nav__link">
+      Java Memory Management & Java Performance Optimization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jvm-parameters-matrix-table/" title="Java Parameters Matrix Table" class="md-nav__link">
+      Java Parameters Matrix Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-10" type="checkbox" id="nav-24-10">
+    
+    <label class="md-nav__link" for="nav-24-10">
+      Dev Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dev Environment" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Dev Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../visual-studio/" title="Visual Studio Code" class="md-nav__link">
+      Visual Studio Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-dev-env/" title="WSL - Linux Dev Environment on Windows" class="md-nav__link">
+      WSL - Linux Dev Environment on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scaffolding/" title="Scaffolding Tools" class="md-nav__link">
+      Scaffolding Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ChromeDevTools/" title="Chrome & Firefox DevTools. HTTP Protocols & WebSockets" class="md-nav__link">
+      Chrome & Firefox DevTools. HTTP Protocols & WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowcode-nocode/" title="Low Code and No Code" class="md-nav__link">
+      Low Code and No Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web3/" title="Web 3" class="md-nav__link">
+      Web 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digital-money/" title="Digital Money" class="md-nav__link">
+      Digital Money
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25">
+    
+    <label class="md-nav__link" for="nav-25">
+      Public Cloud
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Public Cloud" data-md-level="1">
+      <label class="md-nav__title" for="nav-25">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Public Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../public-cloud-solutions/" title="Public Cloud Solutions" class="md-nav__link">
+      Public Cloud Solutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edge-computing/" title="Edge Computing" class="md-nav__link">
+      Edge Computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloud-arch-diagrams/" title="Cloud Architecture Diagram Tools" class="md-nav__link">
+      Cloud Architecture Diagram Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws/" title="AWS" class="md-nav__link">
+      AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GoogleCloudPlatform/" title="Google Cloud Platform" class="md-nav__link">
+      Google Cloud Platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../azure/" title="Microsoft Azure" class="md-nav__link">
+      Microsoft Azure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ibm_cloud/" title="IBM & IBM Cloud" class="md-nav__link">
+      IBM & IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oraclecloud/" title="Oracle Cloud" class="md-nav__link">
+      Oracle Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digitalocean/" title="Digital Ocean" class="md-nav__link">
+      Digital Ocean
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloudflare/" title="Cloudflare" class="md-nav__link">
+      Cloudflare
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bigdata/" title="Big Data" class="md-nav__link">
+      Big Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-27" type="checkbox" id="nav-27">
+    
+    <label class="md-nav__link" for="nav-27">
+      More References
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="More References" data-md-level="1">
+      <label class="md-nav__title" for="nav-27">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        More References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../elearning/" title="E-Learning" class="md-nav__link">
+      E-Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../newsfeeds/" title="Subreddits" class="md-nav__link">
+      Subreddits
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other-awesome-lists/" title="Other Awesome Lists" class="md-nav__link">
+      Other Awesome Lists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-28" type="checkbox" id="nav-28">
+    
+    <label class="md-nav__link" for="nav-28">
+      Recruitment and Freelancing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Recruitment and Freelancing" data-md-level="1">
+      <label class="md-nav__title" for="nav-28">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Recruitment and Freelancing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../recruitment/" title="Recruitment" class="md-nav__link">
+      Recruitment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../freelancing/" title="Freelancing" class="md-nav__link">
+      Freelancing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../remote-tech-jobs/" title="Remote Tech Jobs" class="md-nav__link">
+      Remote Tech Jobs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customer/" title="Customer Success Stories" class="md-nav__link">
+      Customer Success Stories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gke-vs-eks-vs-aks" class="md-nav__link">
+    GKE vs EKS vs AKS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-managed-kubernetes" class="md-nav__link">
+    Other Managed Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-eks-hostedmanaged-kubernetes-on-aws" class="md-nav__link">
+    AWS EKS (Hosted/Managed Kubernetes on AWS)
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS EKS (Hosted/Managed Kubernetes on AWS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-eks-vs-ecs-vs-fargate" class="md-nav__link">
+    AWS EKS Vs ECS Vs Fargate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eks-anywhere-on-premises" class="md-nav__link">
+    EKS Anywhere (on premises)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eks-distro-eks-d" class="md-nav__link">
+    EKS Distro (EKS-D)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-kubernetes-canary-deployment-on-eks" class="md-nav__link">
+    Testing Kubernetes Canary deployment on EKS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aks-azure-kubernetes-service" class="md-nav__link">
+    AKS Azure Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gke-google-kubernetes-engine" class="md-nav__link">
+    GKE Google Kubernetes Engine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iks-ibm-cloud-kubernetes-service" class="md-nav__link">
+    IKS IBM Cloud Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubesphere" class="md-nav__link">
+    Kubesphere
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-for-multi-cloud-kubernetes-management" class="md-nav__link">
+    Tools for multi-cloud Kubernetes management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/redhatspain/awesome-kubernetes/edit/master/docs/managed-kubernetes-in-public-cloud.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="managed-kubernetes-in-public-cloud">Managed Kubernetes in Public Cloud<a class="headerlink" href="#managed-kubernetes-in-public-cloud" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#gke-vs-eks-vs-aks">GKE vs EKS vs AKS</a></li>
+<li><a href="#other-managed-kubernetes">Other Managed Kubernetes</a></li>
+<li><a href="#aws-eks-hostedmanaged-kubernetes-on-aws">AWS EKS (Hosted/Managed Kubernetes on AWS)</a><ul>
+<li><a href="#aws-eks-vs-ecs-vs-fargate">AWS EKS Vs ECS Vs Fargate</a></li>
+<li><a href="#eks-anywhere-on-premises">EKS Anywhere (on premises)</a></li>
+<li><a href="#eks-distro-eks-d">EKS Distro (EKS-D)</a></li>
+<li><a href="#testing-kubernetes-canary-deployment-on-eks">Testing Kubernetes Canary deployment on EKS</a></li>
+</ul>
+</li>
+<li><a href="#aks-azure-kubernetes-service">AKS Azure Kubernetes Service</a></li>
+<li><a href="#gke-google-kubernetes-engine">GKE Google Kubernetes Engine</a></li>
+<li><a href="#iks-ibm-cloud-kubernetes-service">IKS IBM Cloud Kubernetes Service</a></li>
+<li><a href="#kubesphere">Kubesphere</a></li>
+<li><a href="#tools-for-multi-cloud-kubernetes-management">Tools for multi-cloud Kubernetes management</a></li>
+<li><a href="#videos">Videos</a></li>
+</ul>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.infoworld.com/article/3614605/6-reasons-to-switch-to-managed-kubernetes.html">infoworld.com: 6 reasons to switch to managed Kubernetes</a> Managed Kubernetes services have matured to the point where many enterprises are handing over the keys to their clusters. Here we identify some of the main drivers behind that trend.</li>
+<li><a href="https://learnk8s.io/allocatable-resources">Allocatable memory and CPU in Kubernetes Nodes 🌟</a> Not all CPU and memory in your Kubernetes nodes can be used to run Pods. In this article, you will learn how managed Kubernetes Services such AKS, EKS and GKE reserve resources for workloads, operating systems, daemons and Kubernetes agent.</li>
+<li><a href="https://www.armosec.io/blog/which-managed-kubernetes-is-right-for-me">armosec.io: Which Managed Kubernetes Is Right for Me?</a></li>
+</ul>
+<h2 id="gke-vs-eks-vs-aks">GKE vs EKS vs AKS<a class="headerlink" href="#gke-vs-eks-vs-aks" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://medium.com/@Platform9Sys/kubernetes-cloud-services-comparing-gke-eks-and-aks-1fe42770cad3">medium.com: Kubernetes Cloud Services: Comparing GKE, EKS and AKS</a></li>
+<li><a href="https://www.stackrox.com/post/2020/02/eks-vs-gke-vs-aks/">stackrox.com: EKS vs GKE vs AKS - Evaluating Kubernetes in the Cloud</a></li>
+<li><a href="https://www.youtube.com/watch?v=xM9jpcVGTzY">youtube: Kubernetes Comparison</a> A beautiful comparison of Kubernetes Services from GCP, AWS and Azure by learnk8s.<ul>
+<li><a href="https://learnk8s.io/research">learnk8s.io/research:  Comparison of Kubernetes managed services 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://medium.com/swlh/state-of-managed-kubernetes-2020-4be006643360">medium: State of Managed Kubernetes 2020</a> EKS vs. AKS vs. GKE from a Developer’s Perspective</li>
+<li><a href="https://medium.com/better-programming/managed-kubernetes-services-compared-gke-vs-eks-vs-aks-df1ecb22bba0">medium: Managed Kubernetes Services Compared: GKE vs. EKS vs. AKS</a> Comparing the three most popular managed Kubernetes platforms in features and overall experience.</li>
+<li><a href="https://acloudguru.com/blog/engineering/aks-vs-eks-vs-gke-managed-kubernetes-services-compared">acloudguru.com: AKS vs EKS vs GKE: Managed Kubernetes services compared</a></li>
+</ul>
+<h2 id="other-managed-kubernetes">Other Managed Kubernetes<a class="headerlink" href="#other-managed-kubernetes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://thenewstack.io/otomi-container-platform-offers-an-integrated-kubernetes-bundle/">thenewstack.io: Otomi Container Platform Offers an Integrated Kubernetes Bundle</a> If you want to enjoy the benefits of Kubernetes, configuring and installing the software itself can be just the first of many deeply technical and oftentimes confusing steps. To simplify this, many major cloud providers offer managed Kubernetes services, but even then you may need to install secondary services to handle tasks such as tracing, logging, monitoring, identity access management, and so on. The Otomi Container Platform looks to address this complexity by bundling together more than 30 different Kubernetes add-ons, as well as providing what it calls an “OSX like interface,” and today the project has open sourced a community edition under the Apache 2.0 license.<ul>
+<li><a href="https://otomi.io/">otomi.io 🌟</a></li>
+<li><a href="https://github.com/redkubes/otomi-core">github: Otomi</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="aws-eks-hostedmanaged-kubernetes-on-aws">AWS EKS (Hosted/Managed Kubernetes on AWS)<a class="headerlink" href="#aws-eks-hostedmanaged-kubernetes-on-aws" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dzone.com/articles/kops-vs-eks-a-comparison-guide">dzone: kops vs EKS</a></li>
+<li><a href="https://www.udemy.com/course/amazon-eks-starter-kubernetes-on-aws/">udemy.com: amazon eks starter kubernetes on aws</a></li>
+<li><a href="https://github.com/weaveworks/eksctl">eksctl: EKS installer</a></li>
+<li><a href="https://medium.com/@devopsadvocate/how-to-setup-kubernetes-cluster-using-aws-eks-aws-managed-kubernetes-181d5567a8ef">medium: Implementing Kubernetes Cluster using AWS EKS (AWS Managed Kubernetes)</a></li>
+<li><a href="https://www.stackrox.com/post/2019/09/amazon-eks-security-best-practices/">Amazon EKS Security Best Practices</a></li>
+<li><a href="https://thenewstack.io/tutorial-install-and-configure-openebs-on-amazon-elastic-kubernetes-service/">thenewstack.io: Install and Configure OpenEBS on Amazon Elastic Kubernetes Service</a></li>
+<li><a href="https://cloudonaut.io/scaling-container-clusters-on-aws-ecs-eks/">cloudonaut.io: Scaling Container Clusters on AWS: ECS and EKS 🌟</a></li>
+<li><a href="https://www.magalix.com/blog/deploying-kubernetes-cluster-with-eks">magalix.com: Deploying Kubernetes Cluster With EKS 🌟</a> Fargate Deployment vs. Linux Workload</li>
+<li><a href="https://medium.com/@ghumare64/deploying-infrastructure-frontend-backend-on-aws-using-amazon-eks-5f1f426d618e">Deploying Infrastructure (FrontEnd + BackEnd) on AWS using Amazon EKS</a></li>
+<li><a href="https://fika.works/blog/eks-service-accounts/">EKS Service Accounts Explained</a> In AWS you can assign IAM permissions to pods in your cluster. This article explains how it works.</li>
+<li><a href="https://medium.com/swlh/building-the-ci-cd-of-the-future-creating-the-eks-cluster-e4cce4eb3500">medium: Building the CI/CD of the Future, Creating the EKS Cluster 🌟</a></li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2020/08/announcing-the-aws-controllers-for-kubernetes-preview/">Announcing the AWS Controllers for Kubernetes Preview</a></li>
+<li><a href="https://daveops.xyz/2020/08/25/administrar-usuarios-en-eks/">daveops.xyz: Administrar usuarios en EKS</a></li>
+<li><a href="https://aws.github.io/aws-controllers-k8s/">aws.github.io: AWS Controllers for Kubernetes</a></li>
+<li><a href="https://www.stacksimplify.com/aws-eks/aws-alb-ingress/lean-kubernetes-aws-alb-ingress-basics/">stacksimplify.com: AWS ALB Ingress Service - Basics 🌟</a></li>
+<li><a href="https://www.padok.fr/en/blog/efs-provisioner-kubernetes">Kubernetes PVCs with EFS provisioner</a></li>
+<li><a href="https://medium.com/analytics-vidhya/using-helm-with-amazon-eks-without-a-kubeconfig-733f44a31b1d">Using Helm with Amazon EKS without kubeconfigs</a></li>
+<li><a href="https://m.signalvnoise.com/running-spot-instances-effectively-with-amazon-eks">Running spot instances effectively with Amazon EKS</a></li>
+<li><a href="https://medium.com/adobetech/designing-a-kubernetes-cluster-with-amazon-eks-from-scratch-4b4ee9d1b8f">medium: Designing a Kubernetes Cluster with Amazon EKS From Scratch 🌟</a></li>
+<li><a href="https://en.sokube.ch/post/aws-kubernetes-aws-elastic-kubernetes-service-eks">en.sokube.ch: AWS + Kubernetes = AWS Elastic Kubernetes Service (EKS) 🌟</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/operating-a-multi-regional-stateless-application-using-amazon-eks/">aws.amazon.com: Operating a multi-regional stateless application using Amazon EKS</a></li>
+<li><a href="https://www.clickittech.com/aws/amazon-ecs-vs-eks/">clickittech.com: Amazon ECS vs EKS : The Best Container Orchestration Platform 🌟</a></li>
+<li><a href="https://github.com/bit-cloner/poke">POKE - Provision Opinionated Kubernetes on EKS</a> Poke is infrastructure as software to provision EKS cluster in an opinianated way. Code is written in nodejs utilising pulumi framework. It is opinionated in such a way to improve security and simplicity.Consider this similar to terraform module. This package can be used to provision eks clusters declaratively with immutability and repeatability.</li>
+<li><a href="https://www.clickittech.com/saas/kubernetes-multi-tenancy/">clickittech.com: Kubernetes Multi tenancy with Amazon EKS: Best practices and considerations</a></li>
+<li><a href="https://automateinfra.com/2021/04/01/the-only-ultimate-for-beginners-getting-started-with-amazon-eks/">automateinfra.com: Getting Started with Amazon Elastic kubernetes Service (AWS EKS)</a></li>
+<li><a href="https://medium.com/riskified-technology/run-kubernetes-on-aws-ec2-spot-instances-with-zero-downtime-f7327a95dea">medium: Run Kubernetes Production Environment on EC2 Spot Instances With Zero Downtime: A Complete Guide</a></li>
+<li><a href="https://releaseops.io/blog/scaling-kubernetes-deployments-in-aws-with-container-insights-metrics">releaseops.io: Scaling Kubernetes Deployments in AWS with Container Insights Metrics</a></li>
+<li><a href="https://medium.com/codex/create-kubernetes-cluster-on-aws-eks-6ced4c488e62">medium: Create Kubernetes Cluster On AWS EKS</a> Setup AWS credentials and install kubectl, eksctl on Ubuntu. Create Kubernetes cluster using eksctl.</li>
+<li><a href="https://aws.amazon.com/blogs/aws/eks-price-reduction/">Amazon EKS Price Reduction</a></li>
+<li><a href="https://cloudonaut.io/scaling-container-clusters-on-aws-ecs-eks/">cloudonaut.io: Scaling Container Clusters on AWS: ECS and EKS 🌟</a></li>
+<li><a href="https://aws.github.io/aws-eks-best-practices/">Amazon EKS Best Practices Guide for Security 🌟</a></li>
+<li><a href="https://info.acloud.guru/resources/kubernetes-aws-cloud-scaling-hey">info.acloud.guru: Scaling the hottest app in tech on AWS and Kubernetes</a></li>
+<li><a href="https://itnext.io/using-aws-nlb-manually-targeting-an-eks-service-exposing-udp-traffic-17053ecd8f52">itnext.io: Using AWS NLB manually targeting an EKS Service exposing UDP traffic</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/amazon-eks-now-supports-ec2-inf1-instances/">Amazon EKS Now Supports EC2 Inf1 Instances</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/create-a-pipeline-with-canary-deployments-for-amazon-eks-with-aws-app-mesh/">Create a pipeline with canary deployments for Amazon EKS with AWS App Mesh 🌟</a></li>
+<li><a href="https://medium.com/analytics-vidhya/using-helm-with-amazon-eks-without-a-kubeconfig-733f44a31b1d">medium: Using Helm with Amazon EKS without kubeconfigs</a></li>
+<li><a href="https://www.linkedin.com/pulse/amazon-eks-distro-eks-d-kubernetes-distribution-used-gokul-chandra/">linkedin.com: Amazon EKS Distro (EKS-D): The Kubernetes Distribution Used by Amazon EKS 🌟</a></li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2021/01/introducing-federated-amazon-eks-clusters-aws/">aws.amazon.com: Introducing Federated Amazon EKS Clusters on AWS</a></li>
+<li><a href="https://medium.com/avmconsulting-blog/how-to-deploy-an-eks-stack-to-kubernetes-aws-5ec9c5a07247">medium: How to Deploy an EKS stack in AWS?</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/fluent-bit-integration-in-cloudwatch-container-insights-for-eks/">aws.amazon.com: Fluent Bit Integration in CloudWatch Container Insights for EKS</a></li>
+<li><a href="https://aws.amazon.com/blogs/apn/optimizing-your-kubernetes-clusters-with-rancher-and-amazon-eks/">Optimizing Your Kubernetes Clusters with Rancher and Amazon EKS 🌟</a></li>
+<li><a href="https://www.clickittech.com/aws/amazon-ecs-vs-eks/">clickittech.com: Amazon ECS vs EKS : The Best Container Orchestration Platform 🌟</a></li>
+<li><a href="https://faun.pub/upgrading-and-scaling-kubernetes-cluster-in-aws-6971b3936465">faun.pub: Upgrading and Scaling Kubernetes cluster in AWS</a></li>
+<li><a href="https://www.youtube.com/watch?v=vZK_W-fpft0&amp;ab_channel=StackSimplify">youtube/StackSimplify: Kubernetes Deployments on AWS EKS | Amazon Elastic Kubernetes Service | Amazon EKS 🌟</a></li>
+<li><a href="https://cloudify.co/blog/simplifying-hybrid-cloud-deployments-with-aws-eks-and-outpost">cloudify.co: Simplifying Hybrid Cloud Deployments With AWS EKS And Outpost</a></li>
+<li><a href="https://www.eksworkshop.com/">eksworkshop.com 🌟</a></li>
+<li><a href="https://cast.ai/blog/aws-eks-vs-ecs-vs-fargate-where-to-manage-your-kubernetes/">cast.ai: AWS EKS vs. ECS vs. Fargate: Where to manage your Kubernetes?</a></li>
+<li><a href="https://cast.ai/blog/8-best-practices-to-reduce-your-aws-bill-for-kubernetes">cast.ai: 8 best practices to reduce your AWS bill for Kubernetes</a></li>
+<li><a href="https://d1.awsstatic.com/whitepapers/architecting-amazon-eks-for-pci-dss-compliance.pdf">aws whitepapers: Architecting Amazon EKS for PCI DSS Compliance (pdf) 🌟🌟</a></li>
+<li><a href="https://github.com/aws/eks-charts">github.com/aws/eks-charts 🌟</a></li>
+<li><a href="https://kubernetes-sigs.github.io/aws-load-balancer-controller">AWS Load Balancer Controller 🌟</a></li>
+<li><a href="https://docs.aws.amazon.com/eks/latest/userguide/update-managed-node-group.html">Updating a managed node group</a> amazon eks managed node groups now supports parallel node upgrades</li>
+<li><a href="https://particule.io/en/blog/aws-federated-eks/">particule.io: Create Kubernetes federated clusters on AWS</a></li>
+<li><a href="https://aws.github.io/aws-eks-best-practices/">aws.github.io/aws-eks-best-practices 🌟</a><ul>
+<li><a href="https://aws.github.io/aws-eks-best-practices/reliability/docs/networkmanagement">aws.github.io/aws-eks-best-practices: Networking in EKS</a></li>
+</ul>
+</li>
+<li><a href="https://betterprogramming.pub/amazon-eks-is-eating-my-ips-e18ea057e045">betterprogramming.pub: Amazon EKS Is Eating My IPs!</a> Understand how AWS EKS manages IP addresses and what you can do about it</li>
+<li><a href="https://engineering.salesforce.com/optimizing-eks-networking-for-scale-1325706c8f6d">engineering.salesforce.com: Optimizing EKS networking for scale</a></li>
+<li><a href="https://blog.usejournal.com/spice-up-your-kubernetes-environment-with-aws-lambda-a07d81347607">blog.usejournal.com: Spice up Your Kubernetes Environment with AWS Lambda 🌟</a> In this blog you will learn a simple yet effective and secure way to integrate AWS Lambda with an existing Kubernetes environment without codes changes.</li>
+<li><a href="https://github.com/aws/amazon-eks-pod-identity-webhook">azon EKS Pod Identity Webhook</a> Amazon EKS Pod Identity Webhook</li>
+<li><a href="https://aws.amazon.com/blogs/devops/chaos-engineering-on-amazon-eks-using-aws-fault-injection-simulator/">Chaos engineering on Amazon EKS using AWS Fault Injection Simulator</a></li>
+<li><a href="https://pages.awscloud.com/GLOBAL-partner-DL-DevOps-weaveworks-ebook-2020-learn.html">pages.awscloud.com: GitOps on AWS for High Performing Team Operations (eBook)</a> Realize the full value of Kubernetes by leveraging GitOps to manage operational complexity</li>
+<li><a href="https://thenewstack.io/deploy-gremlin-to-amazon-eks-using-aws-cloudformation/">thenewstack.io: Deploy Gremlin to Amazon EKS Using AWS CloudFormation</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/easy-as-one-two-three-policy-management-with-kyverno-on-amazon-eks/">aws.amazon.com: Easy as one-two-three policy management with Kyverno on Amazon EKS 🌟</a></li>
+<li><a href="https://nextlinklabs.com/insights/handling-authentication-in-EKS-clusters-kubernetes-AWS-IAM">nextlinklabs.com: Handling Auth in EKS Clusters: Setting Up Kubernetes User Access Using AWS IAM</a></li>
+<li><a href="https://neal-davis.medium.com/ecs-vs-ec2-vs-lambda-36b8ca380dea">neal-davis.medium.com: ECS vs EC2 vs Lambda 🌟</a></li>
+<li><a href="https://faun.pub/kubernetes-multi-tenancy-with-amazon-eks-best-practices-and-considerations-60bfd78c2f9a">faun.pub: Kubernetes Multi-tenancy with Amazon EKS: Best practices and considerations 🌟</a></li>
+<li><a href="https://www.nginx.com/blog/deploying-nginx-ingress-controller-on-amazon-eks-how-we-tested">nginx.com: Deploying NGINX Ingress Controller on Amazon EKS: How We Tested</a></li>
+<li><a href="https://www.hackerxone.com/2021/08/20/13-steps-guide-to-create-kubernetes-cluster-on-amazon-web-serviceaws/">hackerxone.com: 13 Steps Guide to Create Kubernetes Cluster on AWS</a> </li>
+<li><a href="https://www.hackerxone.com/2021/08/25/steps-to-create-amazon-eks-node-group-on-amazon-web-service-aws/">hackerxone.com: Steps to Create Amazon EKS node group on Amazon web Service (AWS)</a></li>
+<li><a href="https://dev.to/aws-builders/eks-iam-deep-dive-136d">dev.to: EKS IAM Deep Dive 🌟</a></li>
+<li><a href="https://aws.plainenglish.io/6-tips-to-improve-availability-with-aws-load-balancers-and-kubernetes-ad8d4d1c0f61">aws.plainenglish.io: 6 Tips to Improve Availability with AWS Load Balancers and Kubernetes</a></li>
+<li><a href="https://aws.amazon.com/blogs/mt/automated-scaling-of-applications-running-on-eks-using-custom-metric-collected-by-amazon-prometheus-using-prometheus-adapter/">aws.amazon.com: Using Prometheus Adapter to autoscale applications running on Amazon EKS</a></li>
+<li><a href="https://www.youtube.com/watch?v=OFZYIr66Ku4&amp;ab_channel=cloudgeeksinc">youtube: CloudGeeks - Terraform Eks Kubernetes RDS Secrets Manager Eksctl Cloudformation ALB Controller (Redmine App)</a> - <a href="https://github.com/quickbooks2018/eks-redmin">quickbooks2018/eks-redmin</a></li>
+<li><a href="https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/">aws.amazon.com: Kubernetes Ingress with AWS ALB Ingress Controller</a></li>
+<li><a href="https://automateinfra.com/2021/10/19/the-ultimate-guide-on-aws-eks-for-beginners-easiest-way/">automateinfra.com: The Ultimate Guide on AWS EKS for Beginners (Easiest Way)</a></li>
+</ul>
+<h3 id="aws-eks-vs-ecs-vs-fargate">AWS EKS Vs ECS Vs Fargate<a class="headerlink" href="#aws-eks-vs-ecs-vs-fargate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://cloudify.co/blog/aws-eks-vs-ecs-vs-fargate/">cloudify.co: AWS EKS Vs. ECS Vs. Fargate: The Breakdown</a></li>
+</ul>
+<h3 id="eks-anywhere-on-premises">EKS Anywhere (on premises)<a class="headerlink" href="#eks-anywhere-on-premises" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/aws/eks-anywhere">EKS Anywhere: github.com/aws/eks-anywhere</a> Run Amazon EKS on your own infrastructure</li>
+<li><a href="https://aws.amazon.com/blogs/aws/amazon-eks-anywhere-now-generally-available-to-create-and-manage-kubernetes-clusters-on-premises/">aws.amazon.com: Amazon EKS Anywhere – Now Generally Available to Create and Manage Kubernetes Clusters on Premises</a></li>
+<li><a href="https://www.solo.io/blog/amazon-eks-anywhere-and-solo-istio/">solo.io: Connect Your Services Seamlessly with Amazon EKS Anywhere and Istio</a></li>
+<li><a href="https://anywhere.eks.amazonaws.com/docs/concepts/eksafeatures/">anywhere.eks.amazonaws.com: Compare EKS Anywhere and EKS</a></li>
+<li><a href="https://aws.amazon.com/blogs/containers/introducing-general-availability-of-amazon-eks-anywhere/">aws.amazon.com: Getting started with Amazon EKS Anywhere</a></li>
+</ul>
+<h3 id="eks-distro-eks-d">EKS Distro (EKS-D)<a class="headerlink" href="#eks-distro-eks-d" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/aws/eks-distro">aws/eks-distro</a> Amazon EKS Distro (EKS-D) is a Kubernetes distribution based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters.</li>
+</ul>
+<h3 id="testing-kubernetes-canary-deployment-on-eks">Testing Kubernetes Canary deployment on EKS<a class="headerlink" href="#testing-kubernetes-canary-deployment-on-eks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://medium.com/@jerome.decoster/kubernetes-eks-canary-deployment-1ef79ae89dfc">medium: Kubernetes + EKS + Canary Deployment</a></li>
+</ul>
+<h2 id="aks-azure-kubernetes-service">AKS Azure Kubernetes Service<a class="headerlink" href="#aks-azure-kubernetes-service" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices">docs.microsoft.com: Microservices architecture on Azure Kubernetes Service (AKS) 🌟</a> This reference architecture shows a microservices application deployed to Azure Kubernetes Service (AKS). It describes a basic AKS configuration that can be the starting point for most deployments. The architecture consists of the following components:<ul>
+<li>Azure Kubernetes Service (AKS)</li>
+<li>Kubernetes cluster</li>
+<li>Virtual network</li>
+<li>Ingress</li>
+<li>Azure Load Balancer</li>
+<li>External data stores</li>
+<li>Azure Active Directory</li>
+<li>Azure Container Registry</li>
+<li>Azure Pipelines</li>
+<li>Helm</li>
+<li>Azure Monitor</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/configure-kubenet">docs.microsoft.com: Use kubenet networking with your own IP address ranges in Azure Kubernetes Service (AKS) 🌟</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni">docs.microsoft.com: Configure Azure CNI networking in Azure Kubernetes Service (AKS)</a></li>
+<li><a href="https://trstringer.com/run-kubernetes-pods-on-vm-types/">trstringer.com: Run Kubernetes Pods on Specific VM Types in AKS</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad">docs.microsoft.com: AKS-managed Azure Active Directory integration</a></li>
+<li><a href="https://build5nines.com/terraform-create-an-aks-cluster/">build5nines.com: Terraform: Create an AKS Cluster 🌟</a></li>
+<li><a href="https://github.com/dfrappart/articles/blob/master/podidentityjourney.md">github.com: AKS: Use AAD identity for pods and make your SecOps happy</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices">docs.microsoft.com: Microservices architecture on Azure Kubernetes Service (AKS) 🌟</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/azure-migration/containerize-and-migrate-applications-to-aks-with-the-azure/ba-p/2178551">techcommunity.microsoft.com: Containerize and migrate applications to AKS with the Azure Migrate’s new App Containerization tool</a></li>
+<li><a href="https://mehmetozkaya.medium.com/deploying-net-microservices-to-azure-kubernetes-services-aks-and-automating-with-azure-devops-c50bdd51b702">mehmetozkaya.medium.com: Deploying .Net Microservices to Azure Kubernetes Services(AKS) and Automating with Azure DevOps</a></li>
+<li><a href="https://faun.pub/azure-kubernetes-service-aks-d1e71c7ecbe6">faun.pub: How to implement Azure Kubernetes Service (AKS) in Cloud?</a></li>
+<li><a href="https://adamrushuk.github.io/increasing-the-volumeclaimtemplates-disk-size-in-a-statefulset-on-aks/">adamrushuk.github.io: Increasing the volumeClaimTemplates Disk Size in a Statefulset on AKS</a></li>
+<li><a href="https://nillsf.com/index.php/2020/11/17/running-windows-containers-on-the-azure-kubernetes-service-aks">nillsf.com: Running Windows containers on the Azure Kubernetes Service (AKS)</a></li>
+<li><a href="https://itnext.io/running-your-microservices-securely-on-aks-417a110b2e76">itnext.io: Running Your Microservices Securely on AKS</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/ingress-tls">docs.microsoft.com: Create an HTTPS ingress controller on Azure Kubernetes Service (AKS)</a></li>
+<li><a href="https://blog.nillsf.com/index.php/2020/12/06/customize-core-dump-in-azure-kubernetes/">blog.nillsf.com: Customize core dump in Azure Kubernetes</a></li>
+<li><a href="https://itnext.io/running-your-microservices-securely-on-aks-417a110b2e76">medium: Secure your Microservices on AKS — Part 1 🌟</a><ul>
+<li><a href="https://medium.com/microsoftazure/secure-your-microservices-on-aks-part-2-5496bf2ba00c">medium: Secure your Microservices on AKS — Part 2 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://www.zartis.com/minimizing-costs-aks/">zartis.com: How To Save A Fortune On Azure Kubernetes Service</a></li>
+<li><a href="https://itnext.io/aks-performance-limit-ranges-8e18cbebe351">itnext.io: AKS Performance: Limit Ranges</a> Limit Ranges can be used to fine tune your resource consumption by limiting your min/max requests/limits in namespaces.</li>
+<li><a href="https://nl.devoteam.com/en/blog-post/azure-kubernetes-service-aks-with-azure-devops/">devoteam.com: Azure Kubernetes Service (AKS) with Azure DevOps</a></li>
+<li><a href="https://itnext.io/kubernetes-ingress-on-azure-using-the-application-gateway-2779b647deb5">itnext.io: Kubernetes Ingress on Azure using the Application Gateway</a> How to expose multiple services on a single host</li>
+<li><a href="https://joachim8675309.medium.com/aks-with-grpc-and-ingress-nginx-32481a792a1">joachim8675309.medium.com: AKS with GRPC and ingress-nginx</a> Using GRPC with ingress-nginx add-on with AKS</li>
+<li><a href="https://thenewstack.io/microsoft-takes-practical-approach-to-kubernetes-management/">thenewstack.io: Microsoft’s Practical Approach to Kubernetes Management</a></li>
+<li><a href="https://medium.com/geekculture/aks-with-calico-network-policies-8cdfa996e6bb">medium: AKS with Calico Network Policies</a> Using Calico Network Policy with Azure Kubernetes Server</li>
+<li><a href="https://itnext.io/network-isolated-aks-part-1-controlling-network-traffic-2cd0e045352d">itnext.io: Network Isolated AKS — Part 1: Controlling network traffic</a></li>
+<li><a href="https://thenewstack.io/turbocharging-aks-networking-with-calico-ebpf/">thenewstack.io: Turbocharging AKS Networking with Calico eBPF</a></li>
+<li><a href="https://carlos.mendible.com/2021/08/02/aks-persistent-volume-claim-with-an-azure-file-storage-protected-with-a-private-endpoint/">carlos.mendible.com: AKS: Persistent Volume Claim with an Azure File Storage protected with a Private Endpoint</a></li>
+<li><a href="https://joachim8675309.medium.com/istio-service-mesh-on-aks-1b6ed16f6890">joachim8675309.medium.com: AKS with Istio Service Mesh</a> Securing traffic with Istio service mesh on AKS</li>
+<li><a href="https://www.optisolbusiness.com/insight/implementing-microservices-architecture-in-aks">optisolbusiness.com: Implementing Microservices Architecture in AKS</a></li>
+<li><a href="https://blog.kasten.io/aks-and-storage-how-to-design-storage-for-cloud-native-applications">blog.kasten.io: AKS and Storage: How to Design Storage for Cloud Native Applications</a></li>
+<li><a href="https://blog.kasten.io/aks-and-storage-performance-differences-among-kubernetes-storage-services">blog.kasten.io: AKS and Storage: Performance Differences Among K8s Storage Services</a></li>
+<li><a href="https://medium.com/microsoftazure/aks-different-load-balancing-options-for-a-single-cluster-when-to-use-what-abd2c22c2825">medium: AKS — different load balancing options. When to use what?</a></li>
+<li><a href="https://medium.com/microsoftazure/going-multicloud-with-kubernetes-and-azure-front-door-f34a2f39068a">medium: Going multicloud with kubernetes and Azure Front Door</a> Kubernetes/AKS/GKE/MultiCloud/Azure Front Door</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/operator-best-practices-cluster-isolation">docs.microsoft.com: Best practices for cluster isolation in Azure Kubernetes Service (AKS)</a></li>
+<li><a href="https://docs.cloudblue.com/cbc/20.5/premium/content/Deployment-of-Product-to-Azure-Cloud-Guide/Deploying-AKS-Cluster-with-Custom-IP-Ranges.htm">docs.cloudblue.com: Deploying an AKS Cluster with Custom IP Ranges (ARM template)</a></li>
+<li><a href="https://k21academy.com/microsoft-azure/az-303/azure-container-instances-and-kubernetes-service">k21academy.com: Azure Kubernetes Service &amp; Azure Container Instances For Beginners 🌟</a></li>
+<li><a href="https://azurecloudai.blog/2019/09/27/deploy-azure-kubernetes-service-aks-to-a-preexisting-vnet/">azurecloudai.blog: Deploy Azure Kubernetes Service (AKS) to a preexisting VNET</a></li>
+</ul>
+<h2 id="gke-google-kubernetes-engine">GKE Google Kubernetes Engine<a class="headerlink" href="#gke-google-kubernetes-engine" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/darkbitio/gcp-iam-role-permissions">Fetches all Primitive and Predefined GCP IAM Roles</a></li>
+<li><a href="https://cloudblog.withgoogle.com/products/networking/how-to-use-new-traffic-control-features-in-cloud-load-balancing/amp/">Using new traffic control features in External HTTP(S) load balancer</a></li>
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/nodelocal-dns-cache">Setting up NodeLocal DNSCache</a></li>
+<li><a href="https://cloudblog.withgoogle.com/products/containers-kubernetes/5-ways-google-cloud-is-making-gke-the-best-place-to-run-kubernetes/amp/">Looking ahead as GKE, the original managed Kubernetes, turns 5</a></li>
+<li><a href="https://blog.doit-intl.com/how-to-setup-multi-cluster-load-balancing-with-gke-4b407e1f3dff">blog.doit-intl.com: How to Set Up Multi-Cluster Load Balancing with GKE</a></li>
+<li><a href="https://codeburst.io/google-kubernetes-engine-logging-by-example-df6946dcba6b">codeburst.io: Google Kubernetes Engine Logging by Example</a></li>
+<li><a href="https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-multi-cluster-services">cloud.google.com: Discover and invoke services across clusters with GKE multi-cluster services</a></li>
+<li><a href="https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-autopilot">Introducing GKE Autopilot: a revolution in managed Kubernetes 🌟</a></li>
+<li><a href="https://techcrunch.com/2021/02/24/google-cloud-puts-its-kubernetes-engine-on-autopilot/">techcrunch.com: Google Cloud puts its Kubernetes Engine on autopilot</a></li>
+<li><a href="https://www.zdnet.com/article/google-introduces-gke-autopilot-for-hands-off-kubernetes/">zdnet.com: Google introduces GKE Autopilot for hands-off Kubernetes</a> The new GKE Autopilot, generally available now, steps up the level of automation involved in Kubernetes management, down to eliminating all node management.</li>
+<li><a href="https://thenewstack.io/googles-new-autopilot-for-kubernetes">thenewstack.io: Google’s New ‘Autopilot’ for Kubernetes</a></li>
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview">cloud.google.com: GKE Autopilot 🌟</a></li>
+<li><a href="https://medium.com/avmconsulting-blog/kubernetes-google-kubernetes-engine-gke-99abf912f912">medium: How to provision Kubernetes Cluster in GCP Cloud (K8s)? 🌟</a></li>
+<li><a href="https://youtu.be/Zztufl4mFQ4">youtube: GKE Autopilot - Fully Managed Kubernetes Service From Google 🌟</a></li>
+<li><a href="https://insights.project-a.com/using-github-actions-to-deploy-to-kubernetes-122c653c0b09">insights.project-a.com: Using GitHub Actions to deploy to Kubernetes in GKE 🌟</a></li>
+<li><a href="https://faun.pub/how-to-automate-the-setup-of-a-kubernetes-cluster-on-gcp-e97918bf41de">faun.pub: How to automate the setup of a Kubernetes cluster on GCP</a> Using Ansible to install, setup, and configure a Google Kubernetes Cluster (GKE) on Google Cloud Platform (GCP).</li>
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/cloud-dns#vpc_scope_dns">Kubernetes Cloud DNS</a> GCP now makes it easy to query DNS for Kubernetes services across multiple clusters from anywhere inside the VPC! The less stuff users have to run in their clusters, the more they can use for their own apps. It was always problematic to make users admin their own DNS.</li>
+<li><a href="https://seroter.com/2021/08/18/using-the-new-google-cloud-config-controller-to-provision-and-manage-cloud-services-via-the-kubernetes-resource-model/">seroter.com: Using the new Google Cloud Config Controller to provision and manage cloud services via the Kubernetes Resource Model</a> I look at a new managed service that provisions cloud-native services as if they were k8s resources.</li>
+<li><a href="https://cloud.google.com/blog/products/storage-data-transfer/google-cloud-launches-backups-for-gke">cloud.google.com: Announcing Backup for GKE: the easiest way to protect GKE workloads 🌟</a></li>
+<li>Features of Google Kubernetes Engine that NO other K8s provider has or are rapidly copying :<ul>
+<li>Autopilot</li>
+<li>Backup</li>
+<li>Multi-cluster Ingress</li>
+<li>OOTB SRE Dashboards with ASM</li>
+<li>Config Management across clouds</li>
+</ul>
+</li>
+</ul>
+<h2 id="iks-ibm-cloud-kubernetes-service">IKS IBM Cloud Kubernetes Service<a class="headerlink" href="#iks-ibm-cloud-kubernetes-service" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.ibm.com/cloud/kubernetes-service">IKS</a></li>
+<li><a href="https://medium.com/vmacwrites/multizone-kubernetes-and-vpc-load-balancer-setup-9664b3c9ea5d">medium: Multizone Kubernetes and VPC Load Balancer Setup with terraform</a></li>
+</ul>
+<h2 id="kubesphere">Kubesphere<a class="headerlink" href="#kubesphere" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://kubesphere.io/">kubesphere.io</a> The Kubernetes platform tailored for hybrid multicloud. KubeSphere is a distributed operating system managing cloud native applications with Kubernetes as its kernel, and provides plug-and-play architecture for the seamless integration of third-party applications to boost its ecosystem.</li>
+<li><a href="https://github.com/kubesphere/kubekey">kubekey</a> The Next-gen Installer: Installing Kubernetes and KubeSphere v3.0.0 fastly, flexibly and easily</li>
+<li><a href="https://kubesphere.io/blogs/scale-kubernetes-cluster-using-kubekey/">kubesphere.io: Scaling a Kubernetes Cluster: One of the Best Practices for Using KubeKey</a></li>
+<li><a href="https://itnext.io/adding-master-nodes-to-achieve-ha-one-of-the-best-practices-for-using-kubekey-6207e94b0bdd">itnext.io: Adding Master Nodes to Achieve HA: One of the Best Practices for Using KubeKey</a></li>
+<li><a href="https://www.youtube.com/watch?v=MU5LdM83x9s&amp;t=40s&amp;ab_channel=KubeSphere">youtube: Create a Jenkins Pipeline on Kubernetes with CI/CD Pipeline Template in KubeSphere</a> Two built-in Jenkins pipeline templates are available in KubeSphere 3.1. DevOps team can generate CICD or customize the workflow as you need by simple drag-and-drop.</li>
+<li><a href="https://itnext.io/kubesphere-a-new-pluggable-kubernetes-application-management-platform-bf078b9f3330">itnext.io: KubeSphere: A New Pluggable Kubernetes Application Management Platform</a></li>
+</ul>
+<h2 id="tools-for-multi-cloud-kubernetes-management">Tools for multi-cloud Kubernetes management<a class="headerlink" href="#tools-for-multi-cloud-kubernetes-management" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://banzaicloud.com/">Banzai Cloud 🌟</a><ul>
+<li><a href="https://banzaicloud.com/blog/kubernetes-nodepool-upgrades/">Kubernetes node pool upgrades with Banzai Pipeline</a></li>
+</ul>
+</li>
+<li><a href="https://searchcloudcomputing.techtarget.com/tip/Compare-tools-for-multi-cloud-Kubernetes-management">Compare tools for multi-cloud Kubernetes management 🌟</a><ul>
+<li>NetApp Kubernetes Service &ndash; formerly StackPointCloud</li>
+<li>Cloudify</li>
+<li>Terraform</li>
+<li>Rancher</li>
+<li>Platform9 Managed Kubernetes </li>
+<li>Red Hat OpenShift</li>
+<li>Juke, from HTBase, now owned by Juniper Networks. </li>
+</ul>
+</li>
+</ul>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<p><details>
+  <summary>Click to expand!</summary></p>
+<p><center>
+<iframe src="https://www.youtube.com/embed/xM9jpcVGTzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+</details>  </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../kubernetes-on-premise/" title="Kubernetes on premise" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Kubernetes on premise
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../kubernetes-releases/" title="Kubernetes Releases" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Kubernetes Releases
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2021 <a href="https://twitter.com/RedHatSpain">Red Hat Spain</a>, <a href="https://redhatspain.com/about/">about</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/redhatspain" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/groups/1937212/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://github.com/redhatspain" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.youtube.com/channel/UCCGQ2G2rGAkHzVFhhed-xVw/playlists" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://speakerdeck.com/redhatspain/stars" target="_blank" rel="noopener" title="speakerdeck.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M213.86 296H100a100 100 0 0 1 0-200h132.84a40 40 0 0 1 0 80H98c-26.47 0-26.45 40 0 40h113.82a100 100 0 0 1 0 200H40a40 40 0 0 1 0-80h173.86c26.48 0 26.46-40 0-40zM298 416a120.21 120.21 0 0 0 51.11-80h64.55a19.83 19.83 0 0 0 19.66-20V196a19.83 19.83 0 0 0-19.66-20H296.42a60.77 60.77 0 0 0 0-80h136.93c43.44 0 78.65 35.82 78.65 80v160c0 44.18-35.21 80-78.65 80z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://es.slideshare.net/RedHatSpain/favorites" target="_blank" rel="noopener" title="es.slideshare.net" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M187.7 153.7c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7s61.7-26 61.7-57.7c0-32-27.7-57.7-61.7-57.7zm143.4 0c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7 34.3 0 61.7-26 61.7-57.7.1-32-27.4-57.7-61.7-57.7zm156.6 90l-6 4.3V49.7c0-27.4-20.6-49.7-46-49.7H76.6c-25.4 0-46 22.3-46 49.7V248c-2-1.4-4.3-2.9-6.3-4.3-15.1-10.6-25.1 4-16 17.7 18.3 22.6 53.1 50.3 106.3 72C58.3 525.1 252 555.7 248.9 457.5c0-.7.3-56.6.3-96.6 5.1 1.1 9.4 2.3 13.7 3.1 0 39.7.3 92.8.3 93.5-3.1 98.3 190.6 67.7 134.3-124 53.1-21.7 88-49.4 106.3-72 9.1-13.8-.9-28.3-16.1-17.8zm-30.5 19.2c-68.9 37.4-128.3 31.1-160.6 29.7-23.7-.9-32.6 9.1-33.7 24.9-10.3-7.7-18.6-15.5-20.3-17.1-5.1-5.4-13.7-8-27.1-7.7-31.7 1.1-89.7 7.4-157.4-28V72.3c0-34.9 8.9-45.7 40.6-45.7h317.7c30.3 0 40.9 12.9 40.9 45.7v190.6z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://redhatspain.slack.com/" target="_blank" rel="noopener" title="redhatspain.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

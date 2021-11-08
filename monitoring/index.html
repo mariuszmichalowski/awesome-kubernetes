@@ -1,0 +1,4084 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A curated list of awesome IT projects and resources. Inspired by the awesome list.">
+      
+      
+        <link rel="canonical" href="https://redhatspain.com/monitoring/">
+      
+      
+        <meta name="author" content="info@redhatspain.com">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Monitoring and Performance - Awesome Kubernetes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../static/extra.css">
+    
+    
+      
+        
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-168051035-1","redhatspain.com"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#monitoring-and-performance-prometheus-grafana-apms-and-more" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-header-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Awesome Kubernetes
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Monitoring and Performance
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://redhatspain.com/" title="Awesome Kubernetes" class="md-nav__button md-logo" aria-label="Awesome Kubernetes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Awesome Kubernetes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/redhatspain/awesome-kubernetes/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes" class="md-nav__link">
+      From Java EE To Cloud Native. Microservice Architecture. Openshift VS Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="Microservices FAQ & Kubernetes Native" class="md-nav__link">
+      Microservices FAQ & Kubernetes Native
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sre/" title="SRE Site Reliability Engineering" class="md-nav__link">
+      SRE Site Reliability Engineering
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      DevOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devops/" title="DevOps" class="md-nav__link">
+      DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheets/" title="Cheat Sheets" class="md-nav__link">
+      Cheat Sheets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gitops/" title="GitOps" class="md-nav__link">
+      GitOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mlops/" title="MLOps" class="md-nav__link">
+      MLOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chaos-engineering/" title="Chaos Engineering" class="md-nav__link">
+      Chaos Engineering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Demos and Boilerplates
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Demos and Boilerplates" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Demos and Boilerplates
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../demos/" title="Demos, Boilerplates & Screencasts" class="md-nav__link">
+      Demos, Boilerplates & Screencasts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Security and DevSecOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Security and DevSecOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Security and DevSecOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devsecops/" title="DevSecOps. Container Security" class="md-nav__link">
+      DevSecOps. Container Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../securityascode/" title="Security Policy as Code" class="md-nav__link">
+      Security Policy as Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      NoOps
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="NoOps" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        NoOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../noops/" title="NoOps" class="md-nav__link">
+      NoOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../serverless/" title="Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless" class="md-nav__link">
+      Serverless Architectures & Frameworks. OpenFaaS, Knative & Kubeless
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../finops/" title="FinOps - Cloud Financial Management" class="md-nav__link">
+      FinOps - Cloud Financial Management
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      TestOps - Continuous Testing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="TestOps - Continuous Testing" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        TestOps - Continuous Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testops/" title="TestOps and Continuous Testing" class="md-nav__link">
+      TestOps and Continuous Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qa/" title="QA" class="md-nav__link">
+      QA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Project Management Methodology
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Project Management Methodology" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Project Management Methodology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-methodology/" title="Project Management Methodology" class="md-nav__link">
+      Project Management Methodology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-management-tools/" title="Project Management Tools" class="md-nav__link">
+      Project Management Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appointment-scheduling/" title="Appointment Scheduling" class="md-nav__link">
+      Appointment Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workfromhome/" title="Work From Home" class="md-nav__link">
+      Work From Home
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-tools/" title="Kubernetes Plugins, Tools, Extensions and Projects" class="md-nav__link">
+      Kubernetes Plugins, Tools, Extensions and Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubectl-commands/" title="kubectl commands" class="md-nav__link">
+      kubectl commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-networking/" title="Kubernetes Networking" class="md-nav__link">
+      Kubernetes Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-monitoring/" title="Kubernetes Monitoring and Logging" class="md-nav__link">
+      Kubernetes Monitoring and Logging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-security/" title="Kubernetes security" class="md-nav__link">
+      Kubernetes security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-storage/" title="Kubernetes Storage" class="md-nav__link">
+      Kubernetes Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-backup-migrations/" title="Kubernetes Backup and Migrations" class="md-nav__link">
+      Kubernetes Backup and Migrations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-autoscaling/" title="Kubernetes autoscaling" class="md-nav__link">
+      Kubernetes autoscaling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-operators-controllers/" title="Kubernetes Operators and Controllers" class="md-nav__link">
+      Kubernetes Operators and Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-based-devel/" title="Kubernetes Based Development" class="md-nav__link">
+      Kubernetes Based Development
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-on-premise/" title="Kubernetes on premise" class="md-nav__link">
+      Kubernetes on premise
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../managed-kubernetes-in-public-cloud/" title="Managed kubernetes in public clouds" class="md-nav__link">
+      Managed kubernetes in public clouds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-releases/" title="Kubernetes Releases" class="md-nav__link">
+      Kubernetes Releases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matrix-table/" title="Kubernetes Matrix Table" class="md-nav__link">
+      Kubernetes Matrix Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-alternatives/" title="Kubernetes alternatives" class="md-nav__link">
+      Kubernetes alternatives
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      SUSE Rancher
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="SUSE Rancher" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        SUSE Rancher
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rancher/" title="Rancher - Enterprise management for Kubernetes" class="md-nav__link">
+      Rancher - Enterprise management for Kubernetes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Red Hat OpenShift
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Red Hat OpenShift" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Red Hat OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift/" title="OpenShift docs" class="md-nav__link">
+      OpenShift docs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp3/" title="OCP 3" class="md-nav__link">
+      OCP 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ocp4/" title="OCP 4" class="md-nav__link">
+      OCP 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+    
+    <label class="md-nav__link" for="nav-16">
+      Software Delivery Pipeline
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Software Delivery Pipeline" data-md-level="1">
+      <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Software Delivery Pipeline
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd/" title="CI/CD - Continuous Integration & Continuous Delivery" class="md-nav__link">
+      CI/CD - Continuous Integration & Continuous Delivery
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs" class="md-nav__link">
+      Git & Git Patterns. Trunk Devel, Git Flow & Feature Flags. Merge BOTs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins/" title="Jenkins & Cloudbees" class="md-nav__link">
+      Jenkins & Cloudbees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openshift-pipelines/" title="OpenShift Pipelines with Jenkins, Tekton and more..." class="md-nav__link">
+      OpenShift Pipelines with Jenkins, Tekton and more...
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../performance-testing-with-jenkins-and-jmeter/" title="Performance testing with Jenkins and JMeter or Gatling" class="md-nav__link">
+      Performance testing with Jenkins and JMeter or Gatling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jenkins-alternatives/" title="Jenkins Alternatives for Continuous Integration" class="md-nav__link">
+      Jenkins Alternatives for Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-7" type="checkbox" id="nav-16-7">
+    
+    <label class="md-nav__link" for="nav-16-7">
+      Toolchain
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Toolchain" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Toolchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../container-managers/" title="Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo" class="md-nav__link">
+      Container Runtimes/Managers & Base Images. Podman, Buildah & Skopeo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maven-gradle/" title="Maven, Gradle & SDKMAN" class="md-nav__link">
+      Maven, Gradle & SDKMAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sonarqube/" title="SonarQube" class="md-nav__link">
+      SonarQube
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../registries/" title="Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more" class="md-nav__link">
+      Docker Registries. Quay, Nexus, JFrog Artifactory, Harbor and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../selenium-appium-zephyr/" title="Selenium, Cucumber, Appium & Zephyr Jira plugin" class="md-nav__link">
+      Selenium, Cucumber, Appium & Zephyr Jira plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Linux & SSH" class="md-nav__link">
+      Linux & SSH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mkdocs/" title="MkDocs & GitHub Pages" class="md-nav__link">
+      MkDocs & GitHub Pages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16-8" type="checkbox" id="nav-16-8">
+    
+    <label class="md-nav__link" for="nav-16-8">
+      Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions" data-md-level="2">
+      <label class="md-nav__title" for="nav-16-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Web Servers, Reverse Proxies, Java Runtimes & Caching Solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web-servers/" title="Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more" class="md-nav__link">
+      Web Servers & Reverse Proxies - Apache, Nginx, HAProxy, Traefik and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_app_servers/" title="Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more" class="md-nav__link">
+      Java EE/Jakarta EE and MicroProfile Runtimes - Payara, JBoss EAP, WebSphere Liberty, WildFly and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../embedded-servlet-containers/" title="Embedded Servlet Containers in SpringBoot" class="md-nav__link">
+      Embedded Servlet Containers in SpringBoot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../caching/" title="Caching Solutions" class="md-nav__link">
+      Caching Solutions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17" checked>
+    
+    <label class="md-nav__link" for="nav-17">
+      Monitoring and Performance. Prometheus, Grafana, APMs and more
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Monitoring and Performance. Prometheus, Grafana, APMs and more" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Monitoring and Performance. Prometheus, Grafana, APMs and more
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Monitoring and Performance
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Monitoring and Performance" class="md-nav__link md-nav__link--active">
+      Monitoring and Performance
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    Monitoring and Observability
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-performance-indicator-kpi" class="md-nav__link">
+    Key Performance Indicator (KPI)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openshift-cluster-monitoring-built-in-solutions" class="md-nav__link">
+    OpenShift Cluster Monitoring Built-in solutions
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenShift Cluster Monitoring Built-in solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openshift-311-metrics-and-logging" class="md-nav__link">
+    OpenShift 3.11 Metrics and Logging
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenShift 3.11 Metrics and Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-and-grafana" class="md-nav__link">
+    Prometheus and Grafana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-grafana-dashboard-for-openshift-311" class="md-nav__link">
+    Custom Grafana Dashboard for OpenShift 3.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-management-grafana-dashboard" class="md-nav__link">
+    Capacity Management Grafana Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-delivery-metrics-grafana-dashboard" class="md-nav__link">
+    Software Delivery Metrics Grafana Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-for-openshift-311" class="md-nav__link">
+    Prometheus for OpenShift 3.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openshift-4" class="md-nav__link">
+    OpenShift 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    Prometheus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    Grafana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    Kibana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-grafana-interactive-learning" class="md-nav__link">
+    Prometheus and Grafana Interactive Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-centralized-log-management" class="md-nav__link">
+    Logging &amp; Centralized Log Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging &amp; Centralized Log Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    ElasticSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensearch" class="md-nav__link">
+    OpenSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efk" class="md-nav__link">
+    EFK
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-performance-analysis-tools" class="md-nav__link">
+    List of Performance Analysis Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="List of Performance Analysis Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thread-dumps-debugging-java-applications" class="md-nav__link">
+    Thread Dumps. Debugging Java Applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-java-applications-on-openshift-and-kubernetes" class="md-nav__link">
+    Debugging Java Applications on OpenShift and Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-tracing-opentelemetry-and-jaeger" class="md-nav__link">
+    Distributed Tracing. OpenTelemetry and Jaeger
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed Tracing. OpenTelemetry and Jaeger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microservice-observability-with-distributed-tracing-opentelemetryio" class="md-nav__link">
+    Microservice Observability with Distributed Tracing. OpenTelemetry.io
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaeger-vs-opentelemetry-how-jaeger-works-with-opentelemetry" class="md-nav__link">
+    Jaeger VS OpenTelemetry. How Jaeger works with OpenTelemetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaeger-vs-zipkin" class="md-nav__link">
+    Jaeger vs Zipkin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-tempo-distributed-tracing-system" class="md-nav__link">
+    Grafana Tempo distributed tracing system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-performance-management-apm" class="md-nav__link">
+    Application Performance Management (APM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Performance Management (APM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elastic-apm" class="md-nav__link">
+    Elastic APM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-apm" class="md-nav__link">
+    Dynatrace APM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-queue-monitoring" class="md-nav__link">
+    Message Queue Monitoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Queue Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-amq-7-broker-monitoring-solutions-based-on-prometheus-and-grafana" class="md-nav__link">
+    Red Hat AMQ 7 Broker Monitoring solutions based on Prometheus and Grafana
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serverless-monitoring" class="md-nav__link">
+    Serverless Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-tracing-in-apache-beam" class="md-nav__link">
+    Distributed Tracing in Apache Beam
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krossboard-converged-kubernetes-usage-analytics" class="md-nav__link">
+    Krossboard Converged Kubernetes usage analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instana-apm" class="md-nav__link">
+    Instana APM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-etcd" class="md-nav__link">
+    Monitoring Etcd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zabbix" class="md-nav__link">
+    Zabbix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    Other Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-awesome-lists" class="md-nav__link">
+    Other Awesome Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tweets" class="md-nav__link">
+    Tweets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
+      Prometheus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grafana/" title="Grafana" class="md-nav__link">
+      Grafana
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Configuration Management
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration Management" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Configuration Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible/" title="Ansible" class="md-nav__link">
+      Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../argocd/" title="Argo CD - Declarative GitOps for Kubernetes" class="md-nav__link">
+      Argo CD - Declarative GitOps for Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cicd-kubernetes-plugins/" title="CI/CD Kubernetes Plugins" class="md-nav__link">
+      CI/CD Kubernetes Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes-client-libraries/" title="Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK" class="md-nav__link">
+      Client Libraries for Kubernetes - Go client, Python, Fabric8, JKube & Java Operator SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helm/" title="Helm Kubernetes Tool" class="md-nav__link">
+      Helm Kubernetes Tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../liquibase/" title="Liquibase & Flyway" class="md-nav__link">
+      Liquibase & Flyway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kustomize/" title="Template-Free Kubernetes Configuration Customization with Kustomize" class="md-nav__link">
+      Template-Free Kubernetes Configuration Customization with Kustomize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files" class="md-nav__link">
+      Templating YAML with YAML Processors. Static Checking of Kubernetes YAML Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19">
+    
+    <label class="md-nav__link" for="nav-19">
+      Infrastructure Management Tools
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Infrastructure Management Tools" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Infrastructure Management Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../iac/" title="IaC Infrastructure as Code" class="md-nav__link">
+      IaC Infrastructure as Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pulumi/" title="Pulumi" class="md-nav__link">
+      Pulumi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform & Packer. K8s boilerplates" class="md-nav__link">
+      Terraform & Packer. K8s boilerplates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crossplane/" title="Crossplane" class="md-nav__link">
+      Crossplane
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      Databases on Kubernetes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Databases on Kubernetes" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Databases on Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../databases/" title="Relational Databases and Database DevOps" class="md-nav__link">
+      Relational Databases and Database DevOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nosql/" title="NoSQL Databases" class="md-nav__link">
+      NoSQL Databases
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../message-queue/" title="Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)" class="md-nav__link">
+      Cloud Based Integration & Messaging. Data Processing & Streaming (aka Data Pipeline)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-22" type="checkbox" id="nav-22">
+    
+    <label class="md-nav__link" for="nav-22">
+      Service Mesh
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Service Mesh" data-md-level="1">
+      <label class="md-nav__title" for="nav-22">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Service Mesh
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../servicemesh/" title="Service Mesh" class="md-nav__link">
+      Service Mesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../istio/" title="Istio" class="md-nav__link">
+      Istio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-23" type="checkbox" id="nav-23">
+    
+    <label class="md-nav__link" for="nav-23">
+      APIs
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="APIs" data-md-level="1">
+      <label class="md-nav__title" for="nav-23">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="APIs with SOAP, REST and gRPC" class="md-nav__link">
+      APIs with SOAP, REST and gRPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swagger-code-generator-for-rest-apis/" title="Swagger code generator for REST APIs" class="md-nav__link">
+      Swagger code generator for REST APIs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postman/" title="API Test Automation with Postman" class="md-nav__link">
+      API Test Automation with Postman
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developerportals/" title="API Marketplaces. API Management with API Gateways & Developer Portals" class="md-nav__link">
+      API Marketplaces. API Management with API Gateways & Developer Portals
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24" type="checkbox" id="nav-24">
+    
+    <label class="md-nav__link" for="nav-24">
+      Development & Frameworks
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development & Frameworks" data-md-level="1">
+      <label class="md-nav__title" for="nav-24">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Development & Frameworks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../angular/" title="Angular" class="md-nav__link">
+      Angular
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dom/" title="Document Object Model (DOM)" class="md-nav__link">
+      Document Object Model (DOM)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../golang/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="JavaScript - node.js & npm" class="md-nav__link">
+      JavaScript - node.js & npm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python - Django & Flask" class="md-nav__link">
+      Python - Django & Flask
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xamarin/" title="Microsoft Xamarin" class="md-nav__link">
+      Microsoft Xamarin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dotnet/" title="Microsoft .NET" class="md-nav__link">
+      Microsoft .NET
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../devel-sites/" title="Websites for web developers" class="md-nav__link">
+      Websites for web developers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-9" type="checkbox" id="nav-24-9">
+    
+    <label class="md-nav__link" for="nav-24-9">
+      Java
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_frameworks/" title="Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more" class="md-nav__link">
+      Java & Open Source Microservices Frameworks. SpringBoot, MicroProfile, Quarkus and more
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java-and-java-performance-optimization/" title="Java Memory Management & Java Performance Optimization" class="md-nav__link">
+      Java Memory Management & Java Performance Optimization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jvm-parameters-matrix-table/" title="Java Parameters Matrix Table" class="md-nav__link">
+      Java Parameters Matrix Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-24-10" type="checkbox" id="nav-24-10">
+    
+    <label class="md-nav__link" for="nav-24-10">
+      Dev Environment
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dev Environment" data-md-level="2">
+      <label class="md-nav__title" for="nav-24-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Dev Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../visual-studio/" title="Visual Studio Code" class="md-nav__link">
+      Visual Studio Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-dev-env/" title="WSL - Linux Dev Environment on Windows" class="md-nav__link">
+      WSL - Linux Dev Environment on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scaffolding/" title="Scaffolding Tools" class="md-nav__link">
+      Scaffolding Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ChromeDevTools/" title="Chrome & Firefox DevTools. HTTP Protocols & WebSockets" class="md-nav__link">
+      Chrome & Firefox DevTools. HTTP Protocols & WebSockets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lowcode-nocode/" title="Low Code and No Code" class="md-nav__link">
+      Low Code and No Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web3/" title="Web 3" class="md-nav__link">
+      Web 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digital-money/" title="Digital Money" class="md-nav__link">
+      Digital Money
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-25" type="checkbox" id="nav-25">
+    
+    <label class="md-nav__link" for="nav-25">
+      Public Cloud
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Public Cloud" data-md-level="1">
+      <label class="md-nav__title" for="nav-25">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Public Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../public-cloud-solutions/" title="Public Cloud Solutions" class="md-nav__link">
+      Public Cloud Solutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edge-computing/" title="Edge Computing" class="md-nav__link">
+      Edge Computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloud-arch-diagrams/" title="Cloud Architecture Diagram Tools" class="md-nav__link">
+      Cloud Architecture Diagram Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws/" title="AWS" class="md-nav__link">
+      AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GoogleCloudPlatform/" title="Google Cloud Platform" class="md-nav__link">
+      Google Cloud Platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../azure/" title="Microsoft Azure" class="md-nav__link">
+      Microsoft Azure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ibm_cloud/" title="IBM & IBM Cloud" class="md-nav__link">
+      IBM & IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oraclecloud/" title="Oracle Cloud" class="md-nav__link">
+      Oracle Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../digitalocean/" title="Digital Ocean" class="md-nav__link">
+      Digital Ocean
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloudflare/" title="Cloudflare" class="md-nav__link">
+      Cloudflare
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bigdata/" title="Big Data" class="md-nav__link">
+      Big Data
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-27" type="checkbox" id="nav-27">
+    
+    <label class="md-nav__link" for="nav-27">
+      More References
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="More References" data-md-level="1">
+      <label class="md-nav__title" for="nav-27">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        More References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../elearning/" title="E-Learning" class="md-nav__link">
+      E-Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../newsfeeds/" title="Subreddits" class="md-nav__link">
+      Subreddits
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other-awesome-lists/" title="Other Awesome Lists" class="md-nav__link">
+      Other Awesome Lists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-28" type="checkbox" id="nav-28">
+    
+    <label class="md-nav__link" for="nav-28">
+      Recruitment and Freelancing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Recruitment and Freelancing" data-md-level="1">
+      <label class="md-nav__title" for="nav-28">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Recruitment and Freelancing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../recruitment/" title="Recruitment" class="md-nav__link">
+      Recruitment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../freelancing/" title="Freelancing" class="md-nav__link">
+      Freelancing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../remote-tech-jobs/" title="Remote Tech Jobs" class="md-nav__link">
+      Remote Tech Jobs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customer/" title="Customer Success Stories" class="md-nav__link">
+      Customer Success Stories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    Monitoring and Observability
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-performance-indicator-kpi" class="md-nav__link">
+    Key Performance Indicator (KPI)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openshift-cluster-monitoring-built-in-solutions" class="md-nav__link">
+    OpenShift Cluster Monitoring Built-in solutions
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenShift Cluster Monitoring Built-in solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openshift-311-metrics-and-logging" class="md-nav__link">
+    OpenShift 3.11 Metrics and Logging
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenShift 3.11 Metrics and Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-and-grafana" class="md-nav__link">
+    Prometheus and Grafana
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-grafana-dashboard-for-openshift-311" class="md-nav__link">
+    Custom Grafana Dashboard for OpenShift 3.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-management-grafana-dashboard" class="md-nav__link">
+    Capacity Management Grafana Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-delivery-metrics-grafana-dashboard" class="md-nav__link">
+    Software Delivery Metrics Grafana Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prometheus-for-openshift-311" class="md-nav__link">
+    Prometheus for OpenShift 3.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openshift-4" class="md-nav__link">
+    OpenShift 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    Prometheus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    Grafana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    Kibana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-and-grafana-interactive-learning" class="md-nav__link">
+    Prometheus and Grafana Interactive Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-centralized-log-management" class="md-nav__link">
+    Logging &amp; Centralized Log Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging &amp; Centralized Log Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    ElasticSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensearch" class="md-nav__link">
+    OpenSearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efk" class="md-nav__link">
+    EFK
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-performance-analysis-tools" class="md-nav__link">
+    List of Performance Analysis Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="List of Performance Analysis Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thread-dumps-debugging-java-applications" class="md-nav__link">
+    Thread Dumps. Debugging Java Applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-java-applications-on-openshift-and-kubernetes" class="md-nav__link">
+    Debugging Java Applications on OpenShift and Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-tracing-opentelemetry-and-jaeger" class="md-nav__link">
+    Distributed Tracing. OpenTelemetry and Jaeger
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed Tracing. OpenTelemetry and Jaeger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microservice-observability-with-distributed-tracing-opentelemetryio" class="md-nav__link">
+    Microservice Observability with Distributed Tracing. OpenTelemetry.io
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaeger-vs-opentelemetry-how-jaeger-works-with-opentelemetry" class="md-nav__link">
+    Jaeger VS OpenTelemetry. How Jaeger works with OpenTelemetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jaeger-vs-zipkin" class="md-nav__link">
+    Jaeger vs Zipkin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-tempo-distributed-tracing-system" class="md-nav__link">
+    Grafana Tempo distributed tracing system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-performance-management-apm" class="md-nav__link">
+    Application Performance Management (APM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Performance Management (APM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elastic-apm" class="md-nav__link">
+    Elastic APM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-apm" class="md-nav__link">
+    Dynatrace APM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-queue-monitoring" class="md-nav__link">
+    Message Queue Monitoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Queue Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-amq-7-broker-monitoring-solutions-based-on-prometheus-and-grafana" class="md-nav__link">
+    Red Hat AMQ 7 Broker Monitoring solutions based on Prometheus and Grafana
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serverless-monitoring" class="md-nav__link">
+    Serverless Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-tracing-in-apache-beam" class="md-nav__link">
+    Distributed Tracing in Apache Beam
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krossboard-converged-kubernetes-usage-analytics" class="md-nav__link">
+    Krossboard Converged Kubernetes usage analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instana-apm" class="md-nav__link">
+    Instana APM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-etcd" class="md-nav__link">
+    Monitoring Etcd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zabbix" class="md-nav__link">
+    Zabbix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    Other Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-awesome-lists" class="md-nav__link">
+    Other Awesome Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    Slides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tweets" class="md-nav__link">
+    Tweets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/redhatspain/awesome-kubernetes/edit/master/docs/monitoring.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="monitoring-and-performance-prometheus-grafana-apms-and-more">Monitoring and Performance. Prometheus, Grafana, APMs and more<a class="headerlink" href="#monitoring-and-performance-prometheus-grafana-apms-and-more" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#monitoring-and-observability">Monitoring and Observability</a><ul>
+<li><a href="#key-performance-indicator-kpi">Key Performance Indicator (KPI)</a></li>
+</ul>
+</li>
+<li><a href="#openshift-cluster-monitoring-built-in-solutions">OpenShift Cluster Monitoring Built-in solutions</a><ul>
+<li><a href="#openshift-311-metrics-and-logging">OpenShift 3.11 Metrics and Logging</a><ul>
+<li><a href="#prometheus-and-grafana">Prometheus and Grafana</a></li>
+<li><a href="#custom-grafana-dashboard-for-openshift-311">Custom Grafana Dashboard for OpenShift 3.11</a></li>
+<li><a href="#capacity-management-grafana-dashboard">Capacity Management Grafana Dashboard</a></li>
+<li><a href="#software-delivery-metrics-grafana-dashboard">Software Delivery Metrics Grafana Dashboard</a></li>
+<li><a href="#prometheus-for-openshift-311">Prometheus for OpenShift 3.11</a></li>
+</ul>
+</li>
+<li><a href="#openshift-4">OpenShift 4</a></li>
+</ul>
+</li>
+<li><a href="#prometheus">Prometheus</a></li>
+<li><a href="#grafana">Grafana</a></li>
+<li><a href="#kibana">Kibana</a></li>
+<li><a href="#prometheus-and-grafana-interactive-learning">Prometheus and Grafana Interactive Learning</a></li>
+<li><a href="#logging--centralized-log-management">Logging &amp; Centralized Log Management</a><ul>
+<li><a href="#elasticsearch">ElasticSearch</a></li>
+<li><a href="#opensearch">OpenSearch</a></li>
+<li><a href="#efk">EFK</a></li>
+</ul>
+</li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#list-of-performance-analysis-tools">List of Performance Analysis Tools</a><ul>
+<li><a href="#thread-dumps-debugging-java-applications">Thread Dumps. Debugging Java Applications</a></li>
+</ul>
+</li>
+<li><a href="#debugging-java-applications-on-openshift-and-kubernetes">Debugging Java Applications on OpenShift and Kubernetes</a></li>
+<li><a href="#distributed-tracing-opentelemetry-and-jaeger">Distributed Tracing. OpenTelemetry and Jaeger</a><ul>
+<li><a href="#microservice-observability-with-distributed-tracing-opentelemetryio">Microservice Observability with Distributed Tracing. OpenTelemetry.io</a></li>
+<li><a href="#jaeger-vs-opentelemetry-how-jaeger-works-with-opentelemetry">Jaeger VS OpenTelemetry. How Jaeger works with OpenTelemetry</a></li>
+<li><a href="#jaeger-vs-zipkin">Jaeger vs Zipkin</a></li>
+<li><a href="#grafana-tempo-distributed-tracing-system">Grafana Tempo distributed tracing system</a></li>
+</ul>
+</li>
+<li><a href="#application-performance-management-apm">Application Performance Management (APM)</a><ul>
+<li><a href="#elastic-apm">Elastic APM</a></li>
+<li><a href="#dynatrace-apm">Dynatrace APM</a></li>
+</ul>
+</li>
+<li><a href="#message-queue-monitoring">Message Queue Monitoring</a><ul>
+<li><a href="#red-hat-amq-7-broker-monitoring-solutions-based-on-prometheus-and-grafana">Red Hat AMQ 7 Broker Monitoring solutions based on Prometheus and Grafana</a></li>
+</ul>
+</li>
+<li><a href="#serverless-monitoring">Serverless Monitoring</a></li>
+<li><a href="#distributed-tracing-in-apache-beam">Distributed Tracing in Apache Beam</a></li>
+<li><a href="#krossboard-converged-kubernetes-usage-analytics">Krossboard Converged Kubernetes usage analytics</a></li>
+<li><a href="#instana-apm">Instana APM</a></li>
+<li><a href="#monitoring-etcd">Monitoring Etcd</a></li>
+<li><a href="#zabbix">Zabbix</a></li>
+<li><a href="#other-tools">Other Tools</a></li>
+<li><a href="#other-awesome-lists">Other Awesome Lists</a></li>
+<li><a href="#slides">Slides</a></li>
+<li><a href="#tweets">Tweets</a></li>
+</ul>
+<h2 id="monitoring-and-observability">Monitoring and Observability<a class="headerlink" href="#monitoring-and-observability" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Apdex">Wikipedia: Application Performance Index</a></li>
+<li><a href="https://thenewstack.io/the-challenges-of-monitoring-kubernetes-and-openshift/">thenewstack.io: The Challenges of Monitoring Kubernetes and OpenShift</a></li>
+<li><a href="https://dzone.com/articles/kubernetes-monitoring-best-practices-methods-and-e">dzone.com: Kubernetes Monitoring: Best Practices, Methods, and Existing Solutions</a> Kubernetes handles containers in several computers, removing the complexity of handling distributed processing. But what&rsquo;s the best way to perform Kubernetes monitoring?</li>
+<li><a href="https://blog.cloud-mercato.com/new-http-benchmark-tool-pycurlb/">blog.cloud-mercato.com: New HTTP benchmark tool <strong>pycurlb</strong></a></li>
+<li><a href="https://dzone.com/articles/comparison-of-open-source-api-analytics-and-monito">Dzone: Comparison of Open Source API Analytics and Monitoring Tools 🌟</a> There are a variety of open-source projects you can leverage to build a complete API analytics platform. This articles compares them.</li>
+<li><a href="https://sysdig.com/blog/kubernetes-monitoring-best-practices/">sysdig.com: Seven Kubernetes monitoring best practices every monitoring solution should enable</a></li>
+<li><a href="https://www.cncf.io/blog/2020/09/11/cncf-end-user-technology-radar-observability-september-2020/">CNCF End User Technology Radar: Observability, September 2020 🌟</a></li>
+<li><a href="https://www.magalix.com/blog/monitoring-of-kubernetes-cluster-through-prometheus-and-grafana">magalix.com: Monitoring Kubernetes Clusters Through Prometheus &amp; Grafana 🌟</a></li>
+<li><a href="https://www.instana.com/blog/cf-the-hidden-cost-of-observability-data-volume/">instana.com: The Hidden Cost of Observability: Data Volume</a></li>
+<li><a href="https://www.learnsteps.com/monitoring-infrastructure-system-design/">learnsteps.com: Monitoring Infrastructure System Design</a></li>
+<li><a href="https://bravenewgeek.com/the-observability-pipeline/">bravenewgeek.com: The Observability Pipeline</a></li>
+<li><a href="https://thenewstack.io/3-key-configuration-challenges-for-kubernetes-monitoring-with-prometheus/">thenewstack.io: 3 Key Configuration Challenges for Kubernetes Monitoring with Prometheus</a></li>
+<li><a href="https://sysdig.com/blog/kubernetes-monitoring-prometheus/">sysdig.com: Kubernetes Monitoring with Prometheus, the ultimate guide 🌟</a></li>
+<li><a href="https://sysdig.com/blog/monitor-kube-proxy/">sysdig.com: How to monitor kube-proxy 🌟</a> In this article, you will learn how to monitor kube-proxy to ensure the correct health of your cluster network.</li>
+<li><a href="https://thenewstack.io/monitoring-vs-observability-whats-the-difference/">thenewstack.io: Monitoring vs. Observability: What’s the Difference?</a></li>
+<li><a href="https://getenroute.io/blog/leverage-open-source-oss-derive-insights-grafana-prometheus-tsdb-kubernetes-standalone-api-gateway/">getenroute.io: TSDB, Prometheus, Grafana In Kubernetes: Tracing A Variable Across The OSS Monitoring Stack</a></li>
+<li><a href="https://dashbird.io/blog/monitoring-vs-observability/">dashbird.io: Monitoring vs Observability: Can you tell the difference? 🌟</a></li>
+<li><a href="https://thenewstack.io/monitoring-as-code-what-it-is-and-why-you-need-it/">thenewstack.io: Monitoring as Code: What It Is and Why You Need It 🌟</a></li>
+<li><a href="https://thenewstack.io/observability-wont-replace-monitoring-because-it-shouldnt/">thenewstack.io: Observability Won’t Replace Monitoring (Because It Shouldn’t) 🌟</a></li>
+<li><a href="https://devopscurry.com/understaning-container-monitoring-and-popular-container-monitoring-tools-in-2021/">devopscurry.com: Understanding Container Monitoring and popular Container Monitoring Tools in 2021</a></li>
+<li><a href="https://matiasmct.medium.com/observability-at-scale-52d0d9a5fb9b">matiasmct.medium.com: Observability at Scale</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/how-to-solve-the-challenges-of-multicloud-aws-azure-and-gcp-observability/">dynatrace.com: How to solve the challenges of multicloud AWS, Azure and GCP observability</a></li>
+<li><a href="https://logz.io/blog/open-source-monitoring-tools-for-kubernetes/">logz.io: Top 11 Open Source Monitoring Tools for Kubernetes 🌟</a></li>
+<li><a href="https://thenewstack.io/kubernetes-observability-challenges-in-cloud-native-architecture/">thenewstack.io: Kubernetes Observability Challenges in Cloud Native Architecture 🌟</a></li>
+<li><a href="https://opsdis.com/custom-monitoring-solution-with-grafana-prometheus-and-loki/">opsdis.com: Building a custom monitoring solution with Grafana, Prometheus and Loki</a></li>
+<li><a href="https://harness.io/blog/continuous-integration/continuous-integration-performance-metrics/">harness.io: Metrics to Improve Continuous Integration Performance</a></li>
+<li><a href="https://thenewstack.io/best-practices-to-optimize-infrastructure-monitoring-within-devops-teams/">thenewstack.io: Best Practices to Optimize Infrastructure Monitoring within DevOps Teams</a></li>
+<li><a href="https://faun.pub/devops-meets-observability-78775c021b0e">faun.pub: DevOps Meets Observability 🌟</a></li>
+<li><a href="https://skilledfield.com.au/monitoring-kubernetes-and-docker-container-logs/">skilledfield.com.au: Monitoring Kubernetes and Docker Container Logs</a></li>
+<li><a href="https://thenewstack.io/growing-adoption-of-observability-powers-business-transformation/">thenewstack.io: Growing Adoption of Observability Powers Business Transformation</a></li>
+<li><a href="https://blog.thundra.io/what-ci-observability-means-for-devops">blog.thundra.io: What CI Observability Means for DevOps 🌟</a></li>
+<li><a href="https://thenewstack.io/monitoring-api-latencies-after-releases-4-mistakes-to-avoid">thenewstack.io: Monitoring API Latencies After Releases: 4 Mistakes to Avoid</a> Find 4 common mistakes engineers make when using histograms to monitor API latencies from release to release.</li>
+<li><a href="https://thenewstack.io/monitoring-api-latencies-after-releases-4-mistakes-to-avoid/">thenewstack.io: Monitoring API Latencies After Releases: 4 Mistakes to Avoid</a></li>
+<li><a href="https://thenewstack.io/devops-observability-from-code-to-cloud/">thenewstack.io: DevOps Observability from Code to Cloud</a></li>
+<li><a href="https://ortelius.io/blog/2021/03/26/microservice-monitoring-and-visualization/">ortelius.io: Microservice Monitoring and Visualization with Ortelius open source project</a></li>
+<li><a href="https://thenewstack.io/ci-observability-for-effective-change-management/">thenewstack.io: CI Observability for Effective Change Management 🌟</a></li>
+<li><a href="https://thenewstack.io/monitor-your-containers-with-sysdig/">thenewstack.io: Monitor Your Containers with Sysdig</a></li>
+<li><a href="https://medium.com/geekculture/monitoring-microservices-part-1-observability-b2b44fa3e67e">medium: Monitoring Microservices - Part 1: Observability 🌟</a> Achieving observability with probes, logs, metrics, and traces</li>
+<li><a href="https://thenewstack.io/applying-basic-vs-advanced-monitoring-techniques/">thenewstack.io: Applying Basic vs. Advanced Monitoring Techniques</a></li>
+<li><a href="https://cloudforecast.io/blog/cadvisor-and-kubernetes-monitoring-guide/">cloudforecast.io: cAdvisor and Kubernetes Monitoring Guide 🌟</a></li>
+<li><a href="https://hmh.engineering/musings-on-microservice-observability-f7052ac42f04">hmh.engineering: Musings on microservice observability!</a></li>
+<li><a href="https://stackoverflow.blog/2021/09/08/observability-is-key-to-the-future-of-software-and-your-devops-career/">stackoverflow.blog: Observability is key to the future of software (and your DevOps career)</a> Observability platforms enable you to easily figure out what’s happening with every request and to identify the cause of issues fast. Learning the principles of observability and OpenTelemetry will set you apart from the crowd and provide you with a skill set that will be in increasing demand as more companies perform cloud migrations.</li>
+<li><a href="https://www.forbes.com/sites/forbestechcouncil/2021/09/03/who-should-own-the-job-of-observability-in-devops/">forbes.com: Who Should Own The Job Of Observability In DevOps?</a></li>
+<li><a href="https://dzone.com/articles/monitoring-web-servers-should-never-be-complex">dzone: Monitoring Web Servers Should Never Be Complex</a> Monitoring Web Services can become very very complex. But what really is needed to detect a failure? And how can setup and simplify your monitoring?</li>
+<li><a href="https://www.dynatrace.com/news/blog/what-is-observability-2/">dynatrace.com: What is observability? Not just logs, metrics and traces</a></li>
+<li><a href="https://thenewstack.io/observability-is-the-new-kubernetes/">thenewstack.io: Observability Is the New Kubernetes 🌟</a></li>
+<li><a href="https://www.learnsteps.com/logging-infrastructure-system-design/">learnsteps.com: Logging Infrastructure System Design</a> Logging infrastructure system design is very important for each and every infrastructure as you need to look into logs. When you have a huge number of applications talking to each other there is an enormous amount of logs that they produce. Handling this amount of logs can be very costly and a headache. Let’s look at this problem for handling your logs at scale and Logging infrastructure System Design.</li>
+<li>
+<p><a href="https://medium.com/geekculture/monitoring-microservices-part-1-observability-b2b44fa3e67e">medium.com: Monitoring Microservices - Part 1: Observability | Anderson Carvalho</a> Achieving observability with probes, logs, metrics, and traces. <strong>The Observability Pyramid comprises Probes, Logs, Metrics, and Traces:</strong></p>
+<ul>
+<li>
+<p><strong>Probes:</strong> Probes are often exposed as endpoints and used by external agents like load balancers, container orchestrators, application servers, and sysadmins before deciding what to do next. The most common probes are starting, ready, and live. The startup probe is on during the component bootstrap phase. The liveness probe is on from the time the component starts until it stops running. The readiness probe is on during the period where the component is ready/open to receive requests or process workload.</p>
+</li>
+<li>
+<p><strong>Logs:</strong> Logs are messages produced during the component execution that capture a piece of relevant information. Usually, we classify log messages into all, debug, info, warn, error, and fatal. Logs can produce a huge amount of data and contain sensitive information. A good practice is to apply different log levels depending on the environment. </p>
+</li>
+<li>
+<p><strong>Log Aggregation:</strong> Each component generates one or more log files. Since distributed systems are composed of multiples components, it’s a daunting and miserable task to dig into a bunch of log files during troubleshooting. Thus, log aggregation is highly recommended for Microservices.</p>
+</li>
+<li>
+<p><strong>Metrics:</strong> Metrics give us the visibility of good and bad events that happen inside of an application. Metrics help us to distinguish between normal and abnormal application behavior. Usually, we collect, count, summarize and compare events related to rate, errors, duration, and saturation to produce metrics.</p>
+</li>
+<li>
+<p><strong>Traces:</strong> Traces record the flow of data between different components and execution details of each one along the way. By tracing we can discover the relationships, dependencies between components, identify bottlenecks, comprehend the data flow, and the time span on each component.</p>
+</li>
+<li><a href="https://www.infoworld.com/article/3638693/the-red-method-a-new-strategy-for-monitoring-microservices.html">infoworld.com: The RED method: A new strategy for monitoring microservices</a> By using the RED metrics—rate, error, and duration—you can get a solid understanding of how your services are performing for end-users.</li>
+</ul>
+</li>
+</ul>
+<h3 id="key-performance-indicator-kpi">Key Performance Indicator (KPI)<a class="headerlink" href="#key-performance-indicator-kpi" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://kpi.org/KPI-Basics">KPIs</a></li>
+</ul>
+<h2 id="openshift-cluster-monitoring-built-in-solutions">OpenShift Cluster Monitoring Built-in solutions<a class="headerlink" href="#openshift-cluster-monitoring-built-in-solutions" title="Permanent link">&para;</a></h2>
+<h3 id="openshift-311-metrics-and-logging">OpenShift 3.11 Metrics and Logging<a class="headerlink" href="#openshift-311-metrics-and-logging" title="Permanent link">&para;</a></h3>
+<p>OpenShift Container Platform Monitoring ships with a Prometheus instance for cluster monitoring and a central Alertmanager cluster. In addition to Prometheus and Alertmanager, OpenShift Container Platform Monitoring also includes a <a href="https://grafana.com/">Grafana</a> instance as well as pre-built dashboards for cluster monitoring troubleshooting. <strong>The Grafana instance that is provided with the monitoring stack, along with its dashboards, is read-only.</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Monitoring Component</th>
+<th align="left">Release</th>
+<th align="left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ElasticSearch</td>
+<td align="left">5</td>
+<td align="left"><a href="https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-311-metrics-and-logging">OpenShift 3.11 Metrics &amp; Logging</a></td>
+</tr>
+<tr>
+<td align="left">Fluentd</td>
+<td align="left">0.12</td>
+<td align="left"><a href="https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-311-metrics-and-logging">OpenShift 3.11 Metrics &amp; Logging</a></td>
+</tr>
+<tr>
+<td align="left">Kibana</td>
+<td align="left">5.6.13</td>
+<td align="left"><a href="https://www.elastic.co/guide/en/kibana/5.6/introduction.html">kibana 5.6.13</a></td>
+</tr>
+<tr>
+<td align="left">Prometheus</td>
+<td align="left">2.3.2</td>
+<td align="left"><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#prometheus-cluster-monitoring">OpenShift 3.11 Prometheus Cluster Monitoring</a></td>
+</tr>
+<tr>
+<td align="left">Prometheus Operator</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.redhat.com/en/blog/generally-available-today-red-hat-openshift-container-platform-311-ready-power-enterprise-kubernetes-deployments">Prometheus Operator technical preview</a></td>
+</tr>
+<tr>
+<td align="left">Prometheus Alert Manager</td>
+<td align="left">0.15.1</td>
+<td align="left"><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#configuring-alertmanager_prometheus-cluster-monitoring">OpenShift 3.11 Configuring Prometheus Alert Manager</a></td>
+</tr>
+<tr>
+<td align="left">Grafana</td>
+<td align="left">5.2.3</td>
+<td align="left"><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#prometheus-cluster-monitoring">OpenShift 3.11 Prometheus Cluster Monitoring</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="prometheus-and-grafana">Prometheus and Grafana<a class="headerlink" href="#prometheus-and-grafana" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://github.com/prometheus-operator">github.com/prometheus-operator</a></li>
+<li><a href="https://www.redhat.com/en/blog/how-gather-and-display-metrics-red-hat-openshift">redhat.com: <strong>How to gather and display metrics in Red Hat OpenShift</strong> (Prometheus + Grafana)</a></li>
+<li><a href="https://www.redhat.com/en/blog/generally-available-today-red-hat-openshift-container-platform-311-ready-power-enterprise-kubernetes-deployments">Generally Available today: Red Hat OpenShift Container Platform 3.11 is ready to power enterprise Kubernetes deployments 🌟</a></li>
+<li><a href="https://thenewstack.io/the-challenges-of-monitoring-kubernetes-and-openshift/">The Challenges of Monitoring Kubernetes and OpenShift 3.11 🌟</a></li>
+<li><a href="https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-311-metrics-and-logging">OCP 3.11 Metrics and Logging</a></li>
+<li><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html">Prometheus Cluster Monitoring 🌟</a></li>
+<li><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html#configuring-alertmanager_prometheus-cluster-monitoring">Prometheus Alert Manager</a></li>
+<li><a href="https://developers.redhat.com/blog/2018/11/22/automated-performance-testing-kubernetes-openshift/">Leveraging Kubernetes and OpenShift for automated performance tests (part 1)</a></li>
+<li><a href="https://developers.redhat.com/blog/2019/01/03/leveraging-openshift-or-kubernetes-for-automated-performance-tests-part-2/">Building an observability stack for automated performance tests on Kubernetes and OpenShift (part 2) 🌟</a></li>
+<li><a href="http://github.com/flaviostutz/promster">Promster: Use Prometheus in huge deployments with dynamic clustering and scrape sharding capabilities based on ETCD service registration</a></li>
+<li><a href="https://developers.redhat.com/blog/2020/08/05/monitoring-net-core-applications-on-kubernetes/">developers.redhat.com: Monitoring .NET Core applications on Kubernetes</a></li>
+<li><a href="https://flightaware.engineering/systems-monitoring-with-prometheus-grafana/">Systems Monitoring with Prometheus and Grafana</a></li>
+</ul>
+<p><a href="https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html"><img alt="openshift3 Monitoring" src="../images/ocp_monitoring.png" /></a></p>
+<h4 id="custom-grafana-dashboard-for-openshift-311">Custom Grafana Dashboard for OpenShift 3.11<a class="headerlink" href="#custom-grafana-dashboard-for-openshift-311" title="Permanent link">&para;</a></h4>
+<p>By default OpenShift 3.11 Grafana is a read-only instance. Many organizations may want to add new custom dashboards. This custom grafana will interact with existing Prometheus and will also add all out-of-the-box dashboards plus few more interesting dashboards which may require from day to day operation. Custom Grafana pod uses OpenShift oAuth to authenticate users and assigns &ldquo;Admin&rdquo; role to all users so that users can create their own dashboards for additional monitoring.</p>
+<p><a href="https://github.com/redhat-cop/openshift-toolkit/tree/master/custom-dashboards">Getting Started with Custom Dashboarding on OpenShift using Grafana</a>. This repository contains scaffolding and automation for developing a custom dashboarding strategy on OpenShift using the OpenShift Monitoring stac</p>
+<h4 id="capacity-management-grafana-dashboard">Capacity Management Grafana Dashboard<a class="headerlink" href="#capacity-management-grafana-dashboard" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/redhat-cop/openshift-toolkit/tree/master/capacity-dashboard">This repo</a> adds a capacity management Grafana dashboard. The intent of this dashboard is to answer a single question: Do I need a new node? . We believe this is the most important question when setting up a capacity management process. We are aware that this is not the only question a capacity management process may need to be able to answer. Thus, this should be considered as the starting point for organizations to build their capacity management process.</p>
+<h4 id="software-delivery-metrics-grafana-dashboard">Software Delivery Metrics Grafana Dashboard<a class="headerlink" href="#software-delivery-metrics-grafana-dashboard" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/redhat-cop/pelorus">This repo</a> contains tooling to help organizations measure Software Delivery and Value Stream metrics. </p>
+<h4 id="prometheus-for-openshift-311">Prometheus for OpenShift 3.11<a class="headerlink" href="#prometheus-for-openshift-311" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/openshift/origin/tree/release-3.11/examples/prometheus">This repo</a> contains example components for running either an operational Prometheus setup for your OpenShift cluster, or deploying a standalone secured Prometheus instance for configurating yourself.</p>
+<h3 id="openshift-4">OpenShift 4<a class="headerlink" href="#openshift-4" title="Permanent link">&para;</a></h3>
+<p>OpenShift Container Platform includes a pre-configured, pre-installed, and self-updating monitoring stack that is based on the Prometheus open source project and its wider eco-system. It provides monitoring of cluster components and includes a set of alerts to immediately notify the cluster administrator about any occurring problems and a set of Grafana dashboards. The cluster monitoring stack is only supported for monitoring OpenShift Container Platform clusters.</p>
+<p>OpenShift Cluster Monitoring components cannot be extended since they are read only. </p>
+<p><a href="https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html">Monitor your own services (technology preview)</a>: The existing monitoring stack can be extended so you can configure monitoring for your own Services.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Monitoring Component</th>
+<th align="center">Deployed By Default</th>
+<th align="left">OCP 4.1</th>
+<th align="left">OCP 4.2</th>
+<th align="left">OCP 4.3</th>
+<th align="left">OCP 4.4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ElasticSearch</td>
+<td align="center">No</td>
+<td align="left">5.6.13.6</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Fluentd</td>
+<td align="center">No</td>
+<td align="left">0.12.43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Kibana</td>
+<td align="center">No</td>
+<td align="left">5.6.13</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Prometheus</td>
+<td align="center">Yes</td>
+<td align="left">2.7.2</td>
+<td align="left"></td>
+<td align="left">2.14.0</td>
+<td align="left">2.15.2</td>
+</tr>
+<tr>
+<td align="left">Prometheus Operator</td>
+<td align="center">Yes</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0.34.0</td>
+<td align="left">0.35.1</td>
+</tr>
+<tr>
+<td align="left">Prometheus Alert Manager</td>
+<td align="center">Yes</td>
+<td align="left">0.16.2</td>
+<td align="left"></td>
+<td align="left">0.19.0</td>
+<td align="left">0.20.0</td>
+</tr>
+<tr>
+<td align="left">kube-state-metrics</td>
+<td align="center">Yes</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1.8.0</td>
+<td align="left">1.9.5</td>
+</tr>
+<tr>
+<td align="left">Grafana</td>
+<td align="center">Yes</td>
+<td align="left">5.4.3</td>
+<td align="left">6.2.4</td>
+<td align="left">6.4.3</td>
+<td align="left">6.5.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prometheus">Prometheus<a class="headerlink" href="#prometheus" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../prometheus/">Prometheus</a></li>
+</ul>
+<h2 id="grafana">Grafana<a class="headerlink" href="#grafana" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../grafana/">Grafana</a></li>
+</ul>
+<h2 id="kibana">Kibana<a class="headerlink" href="#kibana" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.elastic.co/kibana">Kibana</a><ul>
+<li><a href="https://www.elastic.co/guide/index.html">Kibana Docs</a></li>
+</ul>
+</li>
+<li><a href="https://dzone.com/articles/kibana-tutorial-getting-started-part-1">dzone: Kibana Tutorial: Part 1 - Getting Started</a><ul>
+<li><a href="https://logz.io/blog/kibana-tutorial-2/">dzone: Kibana Tutorial: Part 2 - Creating Visualizations</a></li>
+</ul>
+</li>
+<li><a href="https://dzone.com/articles/getting-started-with-kibana-advanced-searches">dzone: Getting Started With Kibana Advanced Searches</a></li>
+<li><a href="https://dzone.com/articles/kibana-hacks-5-tips-and-tricks">dzone: Kibana Hacks: 5 Tips and Tricks</a></li>
+<li><a href="https://www.juanonlab.com/blog/es/dashboards-de-kibana">juanonlab.com: Dashboards de Kibana</a></li>
+<li><a href="https://www.skedler.com/blog/kibana-customization-brilliant-beginners-guide-simplifying-kibana-non-technical-users/">skedler.com: Kibana Customization – The brilliant beginner’s guide to simplifying Kibana for non-technical users</a></li>
+<li><a href="https://dev.to/lisahjung/beginner-s-guide-to-understanding-the-relevance-of-your-search-with-elasticsearch-and-kibana-29n6">dev.to: Beginner&rsquo;s guide to understanding the relevance of your search with Elasticsearch and Kibana</a></li>
+</ul>
+<h2 id="prometheus-and-grafana-interactive-learning">Prometheus and Grafana Interactive Learning<a class="headerlink" href="#prometheus-and-grafana-interactive-learning" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.katacoda.com/courses/prometheus/getting-started">katacoda.com: Getting Started with Prometheus</a></li>
+<li><a href="https://www.katacoda.com/courses/prometheus/creating-dashboards-with-grafana">katacoda.com: Creating Dashboards with Grafana</a></li>
+</ul>
+<h2 id="logging-centralized-log-management">Logging &amp; Centralized Log Management<a class="headerlink" href="#logging-centralized-log-management" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://devops.com/how-centralized-log-management-can-save-your-company/">devops.com: How Centralized Log Management Can Save Your Company</a></li>
+</ul>
+<h3 id="elasticsearch">ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://pythonsimplified.com/elasticsearch-core-concepts-explained/">pythonsimplified.com: Elasticsearch Core Concepts Explained</a></li>
+<li><a href="https://www.zdnet.com/article/aws-as-predicted-is-forking-elasticsearch/">zdnet.com: AWS, as predicted, is forking Elasticsearch</a> Amazon Web Services, however, isn&rsquo;t the only one who dislikes Elastic&rsquo;s move to relicense Elasticsearch under the non-open-source Server Side Public License.</li>
+<li><a href="https://aws.amazon.com/blogs/opensource/stepping-up-for-a-truly-open-source-elasticsearch/">amazon.com: Stepping up for a truly open source Elasticsearch</a></li>
+<li><a href="https://banzaicloud.com/docs/one-eye/logging-operator/quickstarts/es-nginx/">Store NGINX access logs in Elasticsearch with Logging operator 🌟</a> This guide describes how to collect application and container logs in Kubernetes using the Logging operator, and how to send them to Elasticsearch.<ul>
+<li><a href="https://rancher.com/docs/rancher/v2.x/en/logging/v2.5/">Rancher Logging Operator 🌟</a></li>
+</ul>
+</li>
+<li><a href="https://blog.streammonkey.com/how-we-serverlessly-migrated-1-58-billion-elasticsearch-documents-33ad3d0d7c4f">blog.streammonkey.com: How We Serverlessly Migrated 1.58 Billion Elasticsearch Documents</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLWZKNB9waqIX00uj5q4nX_TOFiX3if1z3">youtube: ELK for beginners - by XavkiEn 🌟</a></li>
+<li><a href="https://blog.bigdataboutique.com/2021/07/tuning-elasticsearch-the-ideal-java-heap-size-2toq2j">blog.bigdataboutique.com: Tuning Elasticsearch: The Ideal Java Heap Size</a></li>
+<li><a href="https://javatechonline.com/how-to-monitor-spring-boot-microservices-using-elk-stack">javatechonline.com: How To Monitor Spring Boot Microservices Using ELK Stack?</a></li>
+<li><a href="https://dzone.com/articles/running-elasticsearch-on-kubernetes">dzone: Running Elasticsearch on Kubernetes</a> A bit of a cross-over with the Cloud Zone, we explore the structures of both Elasticsearch and Kubernetes, and how to deploy Elasticsearch on K8s.</li>
+</ul>
+<h3 id="opensearch">OpenSearch<a class="headerlink" href="#opensearch" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://opensearch.org/">opensearch.org 🌟</a></li>
+<li><a href="https://aws.amazon.com/blogs/opensource/introducing-opensearch/">amazon.com: Introducing OpenSearch</a></li>
+<li><a href="https://logz.io/news-posts/logz-io-announces-support-for-opensearch-a-community-driven-open-source-fork-of-elasticsearch-and-kibana/">logz.io: Logz.io Announces Support for OpenSearch; A Community-driven Open Source Fork of Elasticsearch and Kibana</a></li>
+<li><a href="https://www.techrepublic.com/article/opensearch-aws-rolls-out-its-open-source-elasticsearch-fork/">techrepublic.com: OpenSearch: AWS rolls out its open source Elasticsearch fork</a></li>
+<li><a href="https://thenewstack.io/this-week-in-programming-aws-completes-elasticsearch-fork-with-opensearch/">thenewstack.io: This Week in Programming: AWS Completes Elasticsearch Fork with OpenSearch</a></li>
+<li><a href="https://logz.io/blog/opensearch-1-0-ga-generally-available-elasticsearch-kibana-fork/">logz.io: OpenSearch Is Now Generally Available!</a></li>
+<li><a href="https://thenewstack.io/this-week-in-programming-the-elasticsearch-saga-continues/">thenewstack.io: This Week in Programming: The ElasticSearch Saga Continues</a></li>
+<li><a href="https://aws.amazon.com/blogs/opensource/keeping-clients-of-opensearch-and-elasticsearch-compatible-with-open-source/">aws.amazon.com: Keeping clients of OpenSearch and Elasticsearch compatible with open source</a></li>
+<li><a href="https://aws.amazon.com/es/blogs/aws/amazon-elasticsearch-service-is-now-amazon-opensearch-service-and-supports-opensearch-10">aws.amazon.com: Amazon Elasticsearch Service Is Now Amazon OpenSearch Service and Supports OpenSearch 1.0</a></li>
+</ul>
+<h3 id="efk">EFK<a class="headerlink" href="#efk" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://medium.com/@pratyush.mathur/logging-with-efk-1c2e131496d">medium: Logging with EFK - Pratyush Mathur</a></li>
+</ul>
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://dzone.com/articles/the-keys-to-performance-tuning-and-testing">dzone.com: The Keys to Performance Tuning and Testing</a></li>
+<li><a href="https://dzone.com/articles/how-performance-tuning-and-testing-are-changing">dzone.com: How Performance Tuning and Testing are Changing</a></li>
+<li><a href="https://dzone.com/articles/performance-patterns-in-microservices-based-integr-1">Performance Patterns in Microservices-Based Integrations 🌟</a> Almost all applications that perform anything useful for a given business need to be integrated with one or more applications. With microservices-based architecture, where a number of services are broken down based on the services or functionality offered, the number of integration points or touch points increases massively.</li>
+</ul>
+<h2 id="list-of-performance-analysis-tools">List of Performance Analysis Tools<a class="headerlink" href="#list-of-performance-analysis-tools" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Threadumps + heapdumps + GC analysis tools</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_performance_analysis_tools">en.wikipedia.org/wiki/List_of_performance_analysis_tools</a></li>
+<li><a href="https://en.wikipedia.org/wiki/InspectIT">InspectIT</a></li>
+<li><a href="https://en.wikipedia.org/wiki/VisualVM">VisualVM 🌟</a></li>
+<li><a href="https://en.wikipedia.org/wiki/OverOps">OverOps</a></li>
+<li><a href="https://en.wikipedia.org/wiki/FusionReactor">FusionReactor</a></li>
+<li><a href="https://tier1app.com/">tier1app.com</a></li>
+<li><a href="https://fastthread.io/">fastthread.io 🌟</a></li>
+<li><a href="https://gceasy.io/">gceasy.io 🌟</a></li>
+<li><a href="https://heaphero.io/">heaphero.io</a></li>
+</ul>
+<h3 id="thread-dumps-debugging-java-applications">Thread Dumps. Debugging Java Applications<a class="headerlink" href="#thread-dumps-debugging-java-applications" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://dzone.com/articles/how-to-read-a-thread-dump">How to read a Thread Dump</a></li>
+<li><a href="https://dzone.com/articles/performance-patterns-in-microservices-based-integr-1">Performance Patterns in Microservices-Based Integrations 🌟</a> <strong>A must read!</strong></li>
+<li><a href="https://dzone.com/articles/how-to-take-thread-dumps-7-options">Dzone: how to take thread dumps</a></li>
+<li>Thread Dump Analyzers: <a href="https://fastthread.io/">fastThread</a>, <a href="https://spotify.github.io/threaddump-analyzer/">Spotify TDA</a>, <a href="https://www.ibm.com/support/pages/ibm-thread-and-monitor-dump-analyzer-java-tmda">IBM Thread and Monitor Dump Analyzer for Java</a>, <a href="https://github.com/irockel/tda">TDA - Thread Dump Analyzer</a></li>
+<li><a href="https://blog.arkey.fr/2020/06/28/using-jdk-flight-recorder-and-jdk-mission-control/">blog.arkey.fr: Using JDK FlightRecorder and JDK Mission Control</a></li>
+<li><a href="https://fastthread.io/">FastThread.io</a>: Thread dumps can be uploaded via Web or API Call from within the POD (jstack must be available within the container):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="c1"># Generate N thread dumps of the process PID with an INTERVAL between each dump.</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">3</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+   <span class="nb">echo</span> Generates Java thread dumps using the jstack command.
+   <span class="nb">echo</span>
+   <span class="nb">echo</span> usage: <span class="nv">$0</span> process_id repetitions interval
+   <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span> 
+<span class="nv">PID</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">N</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">INTERVAL</span><span class="o">=</span><span class="nv">$3</span> 
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="nv">$N</span><span class="p">;</span>i++<span class="o">))</span>
+<span class="k">do</span>
+   <span class="nv">d</span><span class="o">=</span><span class="k">$(</span>date +%Y%m%d-%H%M%S<span class="k">)</span>
+   <span class="nv">dump</span><span class="o">=</span><span class="s2">&quot;threaddump-</span><span class="nv">$PID</span><span class="s2">-</span><span class="nv">$d</span><span class="s2">.txt&quot;</span>
+   <span class="nb">echo</span> <span class="nv">$i</span> of <span class="nv">$N</span>: <span class="nv">$dump</span>
+   jstack -l <span class="nv">$PID</span> &gt; <span class="nv">$dump</span>
+   curl -X POST --data-binary @./<span class="nv">$dump</span> https://fastthread.io/fastthread-api?apiKey<span class="o">=</span>&lt;APIKEY&gt; --header <span class="s2">&quot;Content-Type:text&quot;</span>
+   sleep <span class="nv">$INTERVAL</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<ul>
+<li>How to run this script from within the POD: <code>./script_thread_dump.sh 1 15 3</code>, where:<ul>
+<li>“1”: PID of java process (“1” in containers running a single process, check with “ps ux” command).</li>
+<li>“15”: 15 repetitions or thread dumps</li>
+<li>“3”: interval of 3 seconds between each thread dump.</li>
+</ul>
+</li>
+<li>According to some references only 3 thread dumps captured in a timeframe of 10 seconds is necessary (when we want to troubleshoot a Java issue during a service degradation).</li>
+<li>Sample thread dump analysis reports generated by fastThread: <ul>
+<li><a href="https://fastthread.io/ft-thread-report.jsp?dumpId=1&amp;s=t">Transitive blocks</a> </li>
+<li><a href="https://fastthread.io/ft-thread-report.jsp?dumpId=1&amp;s=t">Unresponsive JVM</a> </li>
+<li><a href="https://fastthread.io/ft-thread-report.jsp?dumpId=1&amp;s=t">Sudden CPU spike</a></li>
+<li><a href="https://fastthread.io/ft-thread-report.jsp?dumpId=1&amp;s=t">Thread Leaks</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="debugging-java-applications-on-openshift-and-kubernetes">Debugging Java Applications on OpenShift and Kubernetes<a class="headerlink" href="#debugging-java-applications-on-openshift-and-kubernetes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://developers.redhat.com/blog/2017/08/16/troubleshooting-java-applications-on-openshift/">developers.redhat.com: Troubleshooting java applications on openshift (Jolokia)</a></li>
+<li><a href="https://www.openshift.com/blog/debugging-java-applications-on-openshift-kubernetes">Debugging Java Applications On OpenShift and Kubernetes</a></li>
+<li><a href="https://servicesblog.redhat.com/2019/03/06/remote-debugging-of-java-applications-on-openshift/">Remote Debugging of Java Applications on OpenShift</a><ul>
+<li><a href="https://dzone.com/articles/remote-debugging-of-java-applications-on-openshift">Dzone: Remote Debugging of Java Applications on OpenShift (JMX + VisualVM)</a> </li>
+</ul>
+</li>
+<li><a href="https://fedidat.com/250-jvisualvm-openshift-pod/">VisualVM: JVisualVM to an Openshift pod</a>  </li>
+<li><a href="https://access.redhat.com/solutions/18301">redhat.com: How do I analyze a Java heap dump?</a></li>
+</ul>
+<h2 id="distributed-tracing-opentelemetry-and-jaeger">Distributed Tracing. OpenTelemetry and Jaeger<a class="headerlink" href="#distributed-tracing-opentelemetry-and-jaeger" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://opentelemetry.io/">Microservice Observability with Distributed Tracing: <strong>OpenTelemetry.io</strong> 🌟</a> (<strong>OpenTracing.io + OpenCensus.io = OpenTelemetry.io</strong>)</li>
+<li><a href="https://www.jaegertracing.io/"><strong>Jaeger</strong> 🌟</a><ul>
+<li><a href="https://github.com/obitech/micro-obs">Jaeger Demo1</a></li>
+<li><a href="https://github.com/open-telemetry/opentelemetry-collector/tree/master/examples/demo">Jaeger Demo 2</a></li>
+<li><a href="https://medium.com/jaegertracing/jaeger-embraces-opentelemetry-collector-90a545cbc24">medium.com: <strong>Jaeger embraces OpenTelemetry collector</strong> 🌟</a></li>
+<li><a href="https://thenewstack.io/best-practices-for-deploying-jaeger-on-kubernetes-in-production/">Best Practices for Deploying Jaeger on Kubernetes in Production</a></li>
+</ul>
+</li>
+<li><a href="https://zipkin.io/"><strong>zipkin.io</strong></a></li>
+<li><a href="https://opentracing.io/"><strong>OpenTracing.io</strong></a><ul>
+<li><a href="https://docs.lightstep.com/docs/understand-distributed-tracing">lightstep.com: Understand Distributed Tracing</a></li>
+</ul>
+</li>
+<li><a href="https://grafana.com/blog/2021/01/25/a-beginners-guide-to-distributed-tracing-and-how-it-can-increase-an-applications-performance/">grafana.com: A beginner&rsquo;s guide to distributed tracing and how it can increase an application&rsquo;s performance 🌟</a></li>
+<li><a href="https://awkwardferny.medium.com/setting-up-distributed-tracing-with-opentelemetry-jaeger-in-kubernetes-ingress-nginx-cfdda7d9441d">awkwardferny.medium.com: Setting up Distributed Tracing in Kubernetes with OpenTracing, Jaeger, and Ingress-NGINX</a></li>
+<li><a href="https://ploffay.medium.com/five-years-evolution-of-open-source-distributed-tracing-ec1c5a5dd1ac">ploffay.medium.com: Five years evolution of open-source distributed tracing 🌟</a></li>
+</ul>
+<h3 id="microservice-observability-with-distributed-tracing-opentelemetryio">Microservice Observability with Distributed Tracing. OpenTelemetry.io<a class="headerlink" href="#microservice-observability-with-distributed-tracing-opentelemetryio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Used for monitoring and troubleshooting microservices-based distributed systems.</li>
+<li><a href="https://opentelemetry.io/">OpenTelemetry.io</a>: <ul>
+<li><strong>Unified standard</strong> (open, vendor-neutral API), <strong>merge of <a href="https://opencensus.io/">OpenCensus.io</a> and <a href="https://opentracing.io/">OpenTracing.io</a></strong>. </li>
+<li>“A single set of system components and language-specific telemetry libraries” to standardize how the industry uses metrics, traces, and eventually logs to enable observability. </li>
+<li><a href="https://www.dynatrace.com/news/blog/what-is-opentelemetry-2/">dynatrace.com: What is  OpenTelemetry? An open-source standard for logs, metrics, and traces</a></li>
+</ul>
+</li>
+<li>A major component of the <a href="https://github.com/open-telemetry/opentelemetry-specification">OpenTelemetry specification</a> is <strong>distributed tracing</strong>. </li>
+<li><strong>Tracing</strong> is about analyzing, recording, and describing transactions.</li>
+<li><strong>Distributed Tracing:</strong> Troubleshooting requests between interconnected cloud-based microservices can’t always be done with logs and metrics alone. This is where distributed tracing comes into play: It provides developers with a  detailed view of individual requests as they “hop” through a system of microservices. With <strong>distributed tracing</strong> you can:<ul>
+<li>Trace the path of a request as it travels across a complex system.</li>
+<li>Discover the latency of the components along that path.</li>
+<li>Know which component in the path is creating a bottleneck or failure.</li>
+</ul>
+</li>
+<li><strong>Performance:</strong> Latency is a very important metric in microservices. Latency problems in one service will impact the overall request latency when chaining calls to different microservices. Every call to a microservice should record a trace, which is basically a record of how much time it took to respond. It&rsquo;s possible to add more details to the function level, including the action, the result, and the pass to the next service. The hard part is triaging all traces in a request from a client. Usually, a trace ID header has to be sent in every request. If there isn&rsquo;t one, the logging library creates it and it will represent the first trace in a request. <strong>Adding traces with <a href="https://opencensus.io/">OpenCensus</a> is simply a matter of including the libraries and registering an exporter.</strong> </li>
+<li><strong>Monitoring in a Microservices/Kubernetes World:</strong> In distributed system architectures like microservices, having visibility from different perspectives will be critical at troubleshooting time. Many things could happen in a request when there are many parts constantly interacting at the same time. The most common method is to write logs to the stdout and stderr streams.<ul>
+<li>For example, a latency problem in the system could exist because a microservice is not responding correctly. Maybe Kubernetes is restarting the pod too frequently, or perhaps the cluster is out of capacity and can&rsquo;t schedule any more pods. But for this reason, tools like <a href="https://istio.io/">Istio</a> exist; by injecting a container in every pod, you can get a pretty good baseline of telemetry. Additionally, when you add instrumentation with libraries like <a href="https://opencensus.io/">OpenCensus</a>, you can deeply understand what&rsquo;s happening with and within each service.</li>
+<li>All this information will need a storage location, and as a good practice, you might want to have it a centralized location to provide access to anyone in the team — not just for the operations team.</li>
+</ul>
+</li>
+<li><strong>Older Distributed Tracing Solutions:</strong> <ul>
+<li><a href="https://research.google/pubs/pub36356/">Dapper</a> (Google)</li>
+<li><a href="https://zipkin.io/">Zipkin</a> (A.K.A. OpenZipkin, created by Twitter, inspired by Dapper)</li>
+<li><a href="https://www.jaegertracing.io/">Jaeger</a> (Uber Technologies, inspired by Dapper &amp; Zipkin)</li>
+<li>etc.</li>
+</ul>
+</li>
+<li><a href="https://medium.com/@rghetia/distributed-tracing-and-monitoring-using-opencensus-fe5f6e9479fb">Medium: Distributed Tracing and Monitoring using OpenCensus</a></li>
+<li><a href="https://dzone.com/articles/zipkin-vs-jaeger-getting-started-with-tracing">Dzone: Zipkin vs. Jaeger: Getting Started With Tracing</a> Learn about Zipkin and Jaeger, how they work to add request tracing to your logging routine, and how to choose which one is the right fit for you.</li>
+<li><a href="https://opensource.com/article/18/9/distributed-tracing-microservices-world">opensource.com: Distributed tracing in a microservices world</a> What is distributed tracing and why is it so important in a microservices environment?</li>
+<li><a href="https://opensource.com/article/18/9/distributed-tracing-tools">opensource.com: 3 open source distributed tracing tools</a> Find performance issues quickly with these tools, which provide a graphical view of what&rsquo;s happening across complex software systems.</li>
+<li><a href="https://blog.newrelic.com/engineering/opentelemetry-opentracing-opencensus/">newrelic.com: OpenTracing, OpenCensus, OpenTelemetry, and New Relic (Best overview of OpenTelemetry)</a>  </li>
+<li>There’s no OpenTelemetry UI, instead Jaeger UI (or any APM like Dynatrace or New Relic) can be used as “Tracing backend + Visualization frontend + Data mining platform” of OpenTelemetry API/SDK.</li>
+<li><a href="https://thenewstack.io/tracing-why-logs-arent-enough-to-debug-your-microservices/">thenewstack.io: Tracing: Why Logs Aren’t Enough to Debug Your Microservices 🌟</a></li>
+</ul>
+<p><center>
+<a href="https://www.jaegertracing.io/"><img alt="Jaeger UI" src="../images/jaeger_ui.png" /></a></p>
+<p><a href="https://zipkin.io/"><img alt="Zipking UI" src="../images/zipkin_ui.png" /></a>
+</center>
+<br/></p>
+<h3 id="jaeger-vs-opentelemetry-how-jaeger-works-with-opentelemetry">Jaeger VS OpenTelemetry. How Jaeger works with OpenTelemetry<a class="headerlink" href="#jaeger-vs-opentelemetry-how-jaeger-works-with-opentelemetry" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://medium.com/jaegertracing/jaeger-and-opentelemetry-1846f701d9f2">medium: Jaeger VS OpenTracing VS OpenTelemetry</a></li>
+<li><a href="https://medium.com/jaegertracing/jaeger-clients-and-w3c-trace-context-c2ce1b9dc390">medium: Using Jaeger and OpenTelemetry SDKs in a mixed environment with W3C Trace-Context</a></li>
+</ul>
+<p><img alt="Jaeger Vs OpenTelemetry" src="../images/jaeger_vs_opentelemetry.png" /></p>
+<h3 id="jaeger-vs-zipkin">Jaeger vs Zipkin<a class="headerlink" href="#jaeger-vs-zipkin" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://thenewstack.io/jaeger-vs-zipkin-battle-of-the-open-source-tracing-tools/">thenewstack.io: Jaeger vs. Zipkin: Battle of the Open Source Tracing Tools</a></li>
+</ul>
+<h3 id="grafana-tempo-distributed-tracing-system">Grafana Tempo distributed tracing system<a class="headerlink" href="#grafana-tempo-distributed-tracing-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/grafana/tempo">Grafana Tempo</a> Grafana Tempo is an open source, easy-to-use and high-scale distributed tracing backend. Tempo requires only object storage to operate and is deeply integrated with Grafana, Prometheus, and Loki.</li>
+<li><a href="https://grafana.com/blog/2020/10/27/announcing-grafana-tempo-a-massively-scalable-distributed-tracing-system/">grafana.com: Announcing Grafana Tempo, a massively scalable distributed tracing system 🌟</a></li>
+<li><a href="https://opensource.com/article/21/2/tempo-distributed-tracing">opensource.com: Get started with distributed tracing using Grafana Tempo</a> Grafana Tempo is a new open source, high-volume distributed tracing backend.</li>
+</ul>
+<h2 id="application-performance-management-apm">Application Performance Management (APM)<a class="headerlink" href="#application-performance-management-apm" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Application_performance_management">APM in wikipedia</a>: The monitoring and management of performance and availability of software applications. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service. APM is &ldquo;the translation of IT metrics into business meaning.” </li>
+<li>Tip: <a href="https://www.itcentralstation.com/categories/application-performance-management-apm">Download APM report from IT Central Station</a></li>
+<li><a href="https://github.com/antonarhipov/awesome-apm">Awesome APM 🌟</a></li>
+<li><a href="https://dzone.com/articles/apm-tools-comparison-which-one-should-you-choose">dzone.com: APM Tools Comparison</a></li>
+<li><a href="https://dzone.com/articles/java-performance-monitoring-5-open-source-tools-you-should-know">dzone.com: Java Performance Monitoring: 5 Open Source Tools You Should Know</a></li>
+<li><a href="https://dzone.com/articles/14-best-performance-testing-tools-and-apm-solution">dzone.com: 14 best performance testing tools and APM solutions</a></li>
+<li>Exception Tracking:<ul>
+<li><a href="https://sentry.io/">sentry.io</a></li>
+<li>APMs like Dynatrace, etc.</li>
+</ul>
+</li>
+<li>APM Tools:<ul>
+<li><a href="https://www.datadoghq.com/">datadoghq.com</a><ul>
+<li><a href="https://blog.porter.run/datadog-and-kubernetes/">blog.porter.run: Datadog on Kubernetes: Avoiding Common Pitfalls</a> Install Datadog on Kubernetes and configure additional features like DogStatsD and APM while avoiding common pitfalls.</li>
+</ul>
+</li>
+<li><a href="https://www.honeycomb.io">honeycomb.io</a></li>
+<li><a href="https://lightstep.com">lightstep.com</a></li>
+<li><a href="https://skywalking.apache.org/">skywalking.apache.org 🌟</a><ul>
+<li><a href="https://www.tetrate.io/blog/27835-revision-v1/">tetrate.io: SkyWalking 8.4 provides infrastucture monitoring for VMs</a>   </li>
+<li><a href="https://thenewstack.io/end-user-tracing-in-a-skywalking-observed-browser/">thenewstack.io: End-User Tracing in a SkyWalking-Observed Browser</a></li>
+</ul>
+</li>
+<li><a href="https://www.appdynamics.com/">AppDynamics 🌟</a></li>
+<li><a href="https://newrelic.com/">New Relic 🌟</a></li>
+<li><a href="https://www.dynatrace.com/">Dynatrace 🌟</a></li>
+<li><a href="https://github.com/SigNoz/signoz">SigNoz 🌟</a> SigNoz helps developers monitor their applications &amp; troubleshoot problems, an open-source alternative to DataDog, NewRelic, etc. </li>
+</ul>
+</li>
+</ul>
+<h3 id="elastic-apm">Elastic APM<a class="headerlink" href="#elastic-apm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.elastic.co/products/apm">Elastic APM</a></li>
+<li><a href="https://www.elastic.co/guide/en/apm/get-started/current/components.html">Elastic APM Server</a>: </li>
+<li><a href="https://www.elastic.co/support/matrix#matrix_compatibility">Mininimum elasticsearch requirement is 6.2.x or higher</a></li>
+<li>Built-in elasticsearch 5.6 in Openshift 3 &amp; Openshift 4 cannot be integrated with Elastic APM Server.</li>
+<li>Solutions: Deploy a higher version of <a href="https://hub.docker.com/_/elasticsearch">Elasticsearch + Kibana</a> on a new Project dedicated to Elastic APM; or setup an Elastic Cloud account.</li>
+<li><a href="https://github.com/sls-dev1/openshift-elastic-apm-server">Elastic APM Server Docker image</a> (“oss” &amp; openshift compliant). </li>
+<li><a href="https://www.elastic.co/blog/using-elastic-apm-java-agent-on-kubernetes-k8s">elastic.co: Using the Elastic APM Java Agent on Kubernetes</a></li>
+<li><a href="https://www.elastic.co/blog/monitoring-java-applications-and-getting-started-with-the-elastic-apm-java-agent">Monitoring Java applications with Elastic: Getting started with the Elastic APM Java Agent</a></li>
+<li><a href="https://github.com/elastic/apm-pipeline-library">Jenkins pipeline shared library for the project Elastic APM 🌟</a></li>
+</ul>
+<p><img alt="Elastic APM" src="../images/elasticapm.png" /></p>
+<h3 id="dynatrace-apm">Dynatrace APM<a class="headerlink" href="#dynatrace-apm" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.adictosaltrabajo.com/tutoriales/monitorizacion-y-analisis-de-rendimiento-de-aplicaciones-con-dynatrace/">adictosaltrabajo.com: Monitorización y análisis de rendimiento de aplicaciones con Dynatrace APM</a></li>
+<li><a href="https://www.dynatrace.com/technologies/openshift-monitoring/">dynatrace.com: openshift monitoring</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/dynatrace-monitoring-for-kubernetes-and-openshift/">dynatrace.com: Dynatrace monitoring for Kubernetes and OpenShift</a></li>
+<li><a href="https://www.dynatrace.com/support/help/cloud-platforms/openshift/full-stack/deploy-oneagent-on-openshift-container-platform/">dynatrace.com: Deploy OneAgent on OpenShift Container Platform</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/successful-kubernetes-monitoring-3-pitfalls-to-avoid/">Successful Kubernetes Monitoring – Three Pitfalls to Avoid</a></li>
+<li><a href="https://github.com/redhatspain/awesome-kubernetes/blob/master/pdf/dynatrace_demo.pdf">My Dynatrace proof of concept 🌟</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/guide-to-automated-sre-driven-performance-engineering-analysis/">Tutorial: Guide to automated SRE-driven performance engineering 🌟</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/4-steps-to-modernize-your-it-service-operations-with-dynatrace/">dynatrace.com: 4 steps to modernize your IT service operations with Dynatrace</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/monitoring-of-kubernetes-infrastructure-for-day-2-operations/">dynatrace.com: Monitoring of Kubernetes Infrastructure for day 2 operations</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/the-power-of-openshift-the-visibility-of-dynatrace/">dynatrace.com: The Power of OpenShift, The Visibility of Dynatrace</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/why-conventional-observability-fails-in-kubernetes-environments-a-real-world-use-case">dynatrace.com: Why conventional observability fails in Kubernetes environments—A real-world use case 🌟</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/a-look-behind-the-scenes-of-aws-lambda-and-our-new-lambda-monitoring-extension/">dynatrace.com: A look behind the scenes of AWS Lambda and our new Lambda monitoring extension</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/amazon-cloudwatch-metric-streams-launch-partnership/">dynatrace.com: Analyze all AWS data in minutes with Amazon CloudWatch Metric Streams available in Dynatrace</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/new-dynatrace-operator-elevates-cloud-native-observability-for-kubernetes/">dynatrace.com: New Dynatrace Operator elevates cloud-native observability for Kubernetes</a></li>
+</ul>
+<h2 id="message-queue-monitoring">Message Queue Monitoring<a class="headerlink" href="#message-queue-monitoring" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Messaging Solution</th>
+<th align="left">Monitoring Solution</th>
+<th align="left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ActiveMQ 5.8.0+</td>
+<td align="left"><a href="https://www.dynatrace.com">Dynatrace</a></td>
+<td align="left"><a href="https://www.dynatrace.com/support/help/technology-support/application-software/other-technologies/supported-out-of-the-box/activemq/">ref</a></td>
+</tr>
+<tr>
+<td align="left">ActiveMQ Artemis</td>
+<td align="left"><a href="https://micrometer.io/">Micrometer Collector</a> + Prometheus</td>
+<td align="left"><a href="http://activemq.apache.org/components/artemis/documentation/latest/metrics.html">ref1</a>, <a href="https://micrometer.io/docs/registry/prometheus">ref2</a></td>
+</tr>
+<tr>
+<td align="left">IBM MQ</td>
+<td align="left"><a href="https://github.com/ibm-messaging">IBM MQ</a> Exporter for Prometheus</td>
+<td align="left"><a href="https://github.com/ibm-messaging/mq-metric-samples/tree/master/cmd/mq_prometheus">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left"><a href="https://www.dynatrace.com">Dynatrace</a></td>
+<td align="left"><a href="https://www.dynatrace.com/support/help/technology-support/application-software/other-technologies/supported-out-of-the-box/kafka/">ref1</a>, <a href="https://www.dynatrace.com/news/blog/introducing-kafka-process-monitoring-beta/">ref2</a>, <a href="https://answers.dynatrace.com/spaces/482/dynatrace-open-qa/questions/232421/dynatrace-distributed-tracing-with-kafka.html">ref3</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left"><a href="https://github.com/prometheus/jmx_exporter">Prometheus JMX Exporter</a></td>
+<td align="left"><a href="https://github.com/prometheus/jmx_exporter/blob/master/example_configs/zookeeper.yaml">ref1</a>, <a href="https://github.com/prometheus/jmx_exporter/blob/master/example_configs/kafka-2_0_0.yml">ref2</a>, <a href="https://github.com/prometheus/jmx_exporter/blob/master/example_configs/kafka-connect.yml">ref3</a>, <a href="https://strimzi.io/blog/2019/10/14/improving-prometheus-metrics/">ref4</a>, <a href="https://medium.com/activewizards-machine-learning-company/kafka-monitoring-with-prometheus-telegraf-and-grafana-6228fed736f1">ref5</a>, <a href="https://medium.com/@nblaye/exporting-kafka-jmx-metrics-to-grafana-1b9d32fe900a">ref6</a>, <a href="https://blog.knoldus.com/monitoring-kafka-with-prometheus-and-grafana/">ref7</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">Kafka Exporter<br/> Use <a href="https://github.com/prometheus/jmx_exporter">JMX Exporter</a> to export other Kafka&rsquo;s metrics</td>
+<td align="left"><a href="https://github.com/danielqsj/kafka_exporter">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">Kafdrop – Kafka Web UI</td>
+<td align="left"><a href="https://github.com/obsidiandynamics/kafdrop">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">ZooNavigator: Web-based ZooKeeper UI</td>
+<td align="left"><a href="https://zoonavigator.elkozmon.com/">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">CMAK (Cluster Manager for Apache Kafka, previously known as Kafka Manager)</td>
+<td align="left"><a href="https://github.com/patelh/kafka-manager">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">Xinfra Monitor (renamed from Kafka Monitor, created by Linkedin)</td>
+<td align="left"><a href="https://github.com/linkedin/kafka-monitor">ref</a></td>
+</tr>
+<tr>
+<td align="left">Kafka</td>
+<td align="left">Telegraf + InfluxDB</td>
+<td align="left"><a href="https://www.influxdata.com/integration/kafka-telegraf-integration/">ref</a></td>
+</tr>
+<tr>
+<td align="left">Red Hat AMQ Broker (ActiveMQ Artemis)</td>
+<td align="left">Prometheus plugin for AMQ Broker<br/>To monitor the health and performance of your broker instances, you can use the <strong>Prometheus plugin for AMQ Broker</strong> to monitor and store broker runtime metrics. Prometheus is software built for monitoring large, scalable systems and storing historical runtime data over an extended time period. The <strong>AMQ Broker Prometheus plugin exports the broker runtime metrics to Prometheus format</strong>, enabling you to use Prometheus itself to visualize and run queries on the data.<br/>You can also use a graphical tool, such as <strong>Grafana, to configure more advanced visualizations and dashboards</strong> for the metrics that the Prometheus plugin collects.<br/>The metrics that the plugin exports to Prometheus format are listed below. A description of each metric is exported along with the metric itself.</td>
+<td align="left"><a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/managing_amq_broker/prometheus-plugin-managing">ref1</a>, <a href="https://github.com/lbroudoux/openshift-cases/tree/master/jboss-amq7-custom">ref2</a>, <a href="https://www.openshift.com/blog/enhanced-openshift-jboss-amq-container-image-for-production">ref3</a></td>
+</tr>
+<tr>
+<td align="left">Red Hat AMQ Streams (Kafka)</td>
+<td align="left"><a href="https://www.oracle.com/java/technologies/javase/javamanagement.html">JMX</a>, OpenTracing+Jaeger <br/>ZooKeeper, the Kafka broker, Kafka Connect, and the Kafka clients all expose management information using <a href="https://www.oracle.com/java/technologies/javase/javamanagement.html">Java Management Extensions (JMX)</a>. Most management information is in the form of metrics that are useful for monitoring the condition and performance of your Kafka cluster. Like other Java applications, Kafka provides this management information through managed beans or MBeans.<br/> <strong>JMX</strong> works at the level of the JVM (Java Virtual Machine). To obtain management information, <strong>external tools can connect to the JVM that is running ZooKeeper, the Kafka broker, and so on.</strong> By default, only tools on the same machine and running as the same user as the JVM are able to connect.<br/><strong>Distributed Tracing with Jaeger:</strong><br/> - Kafka Producers, Kafka Consumers, and Kafka Streams applications (referred to as Kafka clients)<br/> - MirrorMaker and Kafka Connect <br/> - Kafka Bridge</td>
+<td align="left"><a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/using_amq_streams_on_rhel/index">ref1</a>,<a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/using_amq_streams_on_rhel/assembly-distributed-tracing-str">ref2</a></td>
+</tr>
+<tr>
+<td align="left">Red Hat AMQ Streams Operator</td>
+<td align="left">AMQ Streams Operator (Prometheus &amp; Jaeger), strimzi, jmxtrans<br/>How to monitor AMQ Streams Kafka, Zookeeper and Kafka Connect clusters using Prometheus to provide monitoring data for example Grafana dashboards.<br/>Support for distributed tracing in AMQ Streams, using <strong>Jaeger</strong>:<br/> - You instrument Kafka Producer, Consumer, and Streams API applications for distributed tracing using an OpenTracing client library. This involves adding instrumentation code to these clients, which monitors the execution of individual transactions in order to generate trace data.<br/>  - Distributed tracing support is built in to the Kafka Connect, MirrorMaker, and Kafka Bridge components of AMQ Streams. To configure these components for distributed tracing, you configure and update the relevant custom resources.</td>
+<td align="left"><a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/using_amq_streams_on_openshift/assembly-metrics-setup-str">ref1</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/using_amq_streams_on_openshift/assembly-distributed-tracing-str">ref2</a>, <a href="https://operatorhub.io/operator/strimzi-kafka-operator">ref3 strimzi</a>, <a href="https://github.com/jmxtrans/jmxtrans">ref4: <strong>jmxtrans</strong></a>, <a href="https://operatorhub.io/operator/banzaicloud-kafka-operator">ref5: banzai operator</a></td>
+</tr>
+<tr>
+<td align="left">Red Hat AMQ Broker Operator</td>
+<td align="left">Prometheus (recommended) or Jolokia REST to JMX <br/>To monitor runtime data for brokers in your deployment, use one of these approaches:<br/> - <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#assembly_br-monitoring-broker-runtime-data-using-prometheus_broker-ocp">Section 9.1, “Monitoring broker runtime data using Prometheus”</a><br/> - <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#proc_br-monitoring-broker_broker-ocp">Section 9.2, “Monitoring broker runtime data using JMX”</a> <br/>In general, using Prometheus is the recommended approach. However, you might choose to use the Jolokia REST interface to JMX if a metric that you need to monitor is not exported by the Prometheus plugin. For more information about the broker runtime metrics that the Prometheus plugin exports, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#con-br-overview-of-prometheus-metrics_broker-ocp">see Section 9.1.1, “Overview of Prometheus metrics”</a></td>
+<td align="left"><a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/deploying-broker-on-ocp-using-operator_broker-ocp">ref1</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp">ref2</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#assembly_br-monitoring-broker-runtime-data-using-prometheus_broker-ocp">ref3</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#proc_br-monitoring-broker_broker-ocp">ref4</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp#con-br-overview-of-prometheus-metrics_broker-ocp">ref5</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="red-hat-amq-7-broker-monitoring-solutions-based-on-prometheus-and-grafana">Red Hat AMQ 7 Broker Monitoring solutions based on Prometheus and Grafana<a class="headerlink" href="#red-hat-amq-7-broker-monitoring-solutions-based-on-prometheus-and-grafana" title="Permanent link">&para;</a></h3>
+<p>This is a selection of monitoring solutions suitable for RH AMQ 7 Broker based on Prometheus and Grafana:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Environment</th>
+<th align="center">Collector/Exporter</th>
+<th align="left">Details/URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">RHEL</td>
+<td align="center">Prometheus Plugin for AMQ Broker</td>
+<td align="left"><a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/managing_amq_broker/prometheus-plugin-managing">ref</a></td>
+</tr>
+<tr>
+<td align="left">RHEL</td>
+<td align="center">Prometheus JMX Exporter</td>
+<td align="left">Same solution applied to ActiveMQ Artemis</td>
+</tr>
+<tr>
+<td align="left">OpenShift 3</td>
+<td align="center">Prometheus Plugin for AMQ Broker</td>
+<td align="left"><strong>Grafana Dashboard not available</strong>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/deploying-broker-on-ocp-using-operator_broker-ocp">ref1</a>, <a href="https://access.redhat.com/documentation/en-us/red_hat_amq/7.6/html/deploying_amq_broker_on_openshift/assembly_br-broker-monitoring_broker-ocp">ref2</a></td>
+</tr>
+<tr>
+<td align="left">OpenShift 4</td>
+<td align="center">Prometheus Plugin for AMQ Broker</td>
+<td align="left">Check if Grafana Dashboard is automatically setup by Red Hat AMQ Operator</td>
+</tr>
+<tr>
+<td align="left">OpenShift 3</td>
+<td align="center">Prometheus JMX Exporter</td>
+<td align="left"><strong>Grafana Dashboard not available</strong>, <a href="https://www.openshift.com/blog/enhanced-openshift-jboss-amq-container-image-for-production">ref1</a>, <a href="https://github.com/lbroudoux/openshift-cases/tree/master/jboss-amq7-custom">ref2</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="serverless-monitoring">Serverless Monitoring<a class="headerlink" href="#serverless-monitoring" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://thenewstack.io/serverless-needs-more-observability-tools/">thenewstack.io: Serverless Needs More Observability Tools</a></li>
+</ul>
+<h2 id="distributed-tracing-in-apache-beam">Distributed Tracing in Apache Beam<a class="headerlink" href="#distributed-tracing-in-apache-beam" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://beam.apache.org/">Apache Beam</a></li>
+<li><a href="http://rion.io/2020/07/04/a-distributed-tracing-adventure-in-apache-beam/">A Distributed Tracing Adventure in Apache Beam</a></li>
+</ul>
+<h2 id="krossboard-converged-kubernetes-usage-analytics">Krossboard Converged Kubernetes usage analytics<a class="headerlink" href="#krossboard-converged-kubernetes-usage-analytics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://krossboard.app/">Krossboard</a> All in one single place, Krossboard tracks the usage of all your clusters over time, it helps forecast capacity scale up/down, thereby enabling you to easily anticipate and master operations costs.</li>
+<li><a href="https://itnext.io/in-search-of-converged-usage-analytics-for-multiple-managed-kubernetes-c5108cb7f0e1">Krossboard: A centralized usage analytics approach for multiple Kubernetes</a></li>
+</ul>
+<h2 id="instana-apm">Instana APM<a class="headerlink" href="#instana-apm" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.cloudbees.com/blog/automated-build-deploy-feedback-using-instana">cloudbees.com: Automated Build and Deploy Feedback Using Jenkins and Instana 🌟</a></li>
+</ul>
+<h2 id="monitoring-etcd">Monitoring Etcd<a class="headerlink" href="#monitoring-etcd" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://rancher.com/blog/2020/monitor-etcd-prometheus-grafana-rancher">rancher.com: Monitor Etcd with Prometheus and Grafana using Rancher</a></li>
+</ul>
+<h2 id="zabbix">Zabbix<a class="headerlink" href="#zabbix" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.openshift.com/blog/monitoring-infrastructure-openshift-4.x-using-zabbix-operator">openshift.com: Monitoring Infrastructure Openshift 4.x Using Zabbix Operator</a></li>
+<li><a href="https://www.openshift.com/blog/how-to-monitoring-openshift-4.x-with-zabbix-using-prometheus-part-2">openshift.com: How to Monitor Openshift 4.x with Zabbix using Prometheus - Part 2</a></li>
+<li><a href="https://cloud.redhat.com/blog/monitoring-infrastructure-openshift-4.x-using-zabbix-operator">cloud.redhat.com: Monitoring Infrastructure Openshift 4.x Using Zabbix Operator</a></li>
+</ul>
+<h2 id="other-tools">Other Tools<a class="headerlink" href="#other-tools" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/netdata/netdata">Netdata</a> Netdata&rsquo;s distributed, real-time monitoring Agent collects thousands of metrics from systems, hardware, containers, and applications with zero configuration.</li>
+<li><a href="https://github.com/Unitech/pm2">PM2</a> is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.</li>
+<li><a href="https://github.com/huginn/huginn">Huginn</a> Create agents that monitor and act on your behalf. Your agents are standing by!</li>
+<li><a href="https://github.com/osquery/osquery">OS Query</a> SQL powered operating system instrumentation, monitoring, and analytics.</li>
+<li><a href="https://github.com/nicolargo/glances">Glances</a> Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems. It is written in Python and uses libraries to grab information from your system. It is based on an open architecture where developers can add new plugins or exports modules.</li>
+<li><a href="https://github.com/taosdata/TDengine">TDengine</a> is an open-sourced big data platform under GNU AGPL v3.0, designed and optimized for the Internet of Things (IoT), Connected Cars, Industrial IoT, and IT Infrastructure and Application Monitoring.</li>
+<li><a href="https://stackpulse.com/blog/automated-kubernetes-pod-restarting-analysis-with-stackpulse/">stackpulse.com: Automated Kubernetes Pod Restarting Analysis with StackPulse</a></li>
+<li><a href="https://www.checklyhq.com/">Checkly</a> is the API &amp; E2E monitoring platform for the modern stack: programmable, flexible and loving JavaScript.<ul>
+<li><a href="https://www.hashicorp.com/blog/monitoring-as-code-with-terraform-cloud-and-checkly">hashicorp.com: Monitoring as Code with Terraform Cloud and Checkly</a></li>
+</ul>
+</li>
+<li><a href="https://network-king.net/iot-use-in-healthcare-grows-but-has-its-pitfalls/">network-king.net: IoT use in healthcare grows but has some pitfalls</a></li>
+<li><a href="https://www.zebrium.com/">Zebrium</a> Monitoring detects problems, Zebrium finds root cause 
+Resolve your software incidents 10x faster</li>
+</ul>
+<h2 id="other-awesome-lists">Other Awesome Lists<a class="headerlink" href="#other-awesome-lists" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/antonarhipov/awesome-apm">Awesome APM</a></li>
+</ul>
+<h2 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">&para;</a></h2>
+<p><details>
+  <summary>Click to expand!</summary></p>
+<p><center>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/J1S3NyN9ZeLjh9" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/MartinEtmajer/challenges-in-a-microservices-age-monitoring-logging-and-tracing-on-red-hat-openshift" title="Challenges in a Microservices Age: Monitoring, Logging and Tracing on Red Hat OpenShift" target="_blank">Challenges in a Microservices Age: Monitoring, Logging and Tracing on Red Hat OpenShift</a> </strong> from <strong><a href="https://www.slideshare.net/MartinEtmajer" target="_blank">Martin Etmajer</a></strong> </div></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/lr07J585Y86D7i" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+<p><div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/MartinEtmajer/monitoring-microservices-at-scale-on-openshift-67500621" title="Monitoring Microservices at Scale on OpenShift (OpenShift Commons Briefing #52)" target="_blank">Monitoring Microservices at Scale on OpenShift (OpenShift Commons Briefing #52)</a> </strong> from <strong><a href="//www.slideshare.net/MartinEtmajer" target="_blank">Martin Etmajer</a></strong> </div></p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/CDyLLoStp2omzE" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+<p><div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/PurnimaKurella/dynatrace-70789377" title="Dynatrace" target="_blank">Dynatrace</a> </strong> from <strong><a href="https://www.slideshare.net/PurnimaKurella" target="_blank">Purnima Kurella</a></strong> </div>
+</center>
+</details></p>
+<h2 id="tweets">Tweets<a class="headerlink" href="#tweets" title="Permanent link">&para;</a></h2>
+<p><details>
+  <summary>Click to expand!</summary></p>
+<p><center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The ecosystem of CI / CD tools that integrates in <a href="https://twitter.com/hashtag/OpenTelemetry?src=hash&amp;ref_src=twsrc%5Etfw">#OpenTelemetry</a> traces is growing rapidly with already <a href="https://twitter.com/hashtag/Jenkins?src=hash&amp;ref_src=twsrc%5Etfw">#Jenkins</a>, <a href="https://twitter.com/hashtag/Maven?src=hash&amp;ref_src=twsrc%5Etfw">#Maven</a>, <a href="https://twitter.com/hashtag/Ansible?src=hash&amp;ref_src=twsrc%5Etfw">#Ansible</a>, and the generic otel-cli<a href="https://t.co/GeKUMd5zl4"><a href="https://t.co/GeKUMd5zl4">https://t.co/GeKUMd5zl4</a></a><a href="https://t.co/KrMIGZ3vkp"><a href="https://t.co/KrMIGZ3vkp">https://t.co/KrMIGZ3vkp</a></a><a href="https://t.co/UiJ0Dk78Pd"><a href="https://t.co/UiJ0Dk78Pd">https://t.co/UiJ0Dk78Pd</a></a><a href="https://t.co/UdwnxXOUa4"><a href="https://t.co/UdwnxXOUa4">https://t.co/UdwnxXOUa4</a></a> <a href="https://t.co/MsYViY6jwf">pic.twitter.com/MsYViY6jwf</a></p>&mdash; Cyrille Le Clerc (@cyrilleleclerc) <a href="https://twitter.com/cyrilleleclerc/status/1430070961366257693?ref_src=twsrc%5Etfw">August 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Distributed tracing is like IPv6. The entire premise reveals itself when critical usage is achieved. Hence, there are few organizations that has resources to do the hard work of retrofitting it into their existing systems. For “green field” companies, it’s different.</p>&mdash; Jaana Dogan ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1434980799716102144?ref_src=twsrc%5Etfw">September 6, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One of the biggest frictions of the container ecosystem to me is the fact that I still have to deal with the node. Either directly or indirectly, managed or unmanaged, visible to me or not. And it sucks.</p>&mdash; Jaana Dogan ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1435849792542830594?ref_src=twsrc%5Etfw">September 9, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We want a stack debuggable all the way down to the bare metal and we want a stack that encapsulates all the complexity. We don&#39;t know what we want and all compute ended up being leaky abstractions.</p>&mdash; Jaana Dogan ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1435859851851165704?ref_src=twsrc%5Etfw">September 9, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">As someone who is working on monitoring and performance, my job is about leaking into abstractions. Whatever abstraction layer I am targeting, I often engage with all to cover everything down to bare metal.</p>&mdash; Jaana Dogan ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1438780504690466817?ref_src=twsrc%5Etfw">September 17, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If your observability strategy only relies on your service mesh, you are in the early stages of putting together a strategy. And you must have a very reliable service mesh.</p>&mdash; Jaana Dogan ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1443652442063704065?ref_src=twsrc%5Etfw">September 30, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This. I work with tens of companies &amp; they sometimes want to hire me to &quot;fix their observability&quot;. You can&#39;t throw some tools or a single person to this problem. Observability is like security, it&#39;s a vertical. You have to embed it to your eng culture. <a href="https://t.co/poFsLhsxq9">https://t.co/poFsLhsxq9</a></p>&mdash; Jaana Dogan at KubeCon ヤナ ドガン (@rakyll) <a href="https://twitter.com/rakyll/status/1448373809631817734?ref_src=twsrc%5Etfw">October 13, 2021</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+</details></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../caching/" title="Caching Solutions" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Caching Solutions
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../prometheus/" title="Prometheus" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Prometheus
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2021 <a href="https://twitter.com/RedHatSpain">Red Hat Spain</a>, <a href="https://redhatspain.com/about/">about</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://twitter.com/redhatspain" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.linkedin.com/groups/1937212/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://github.com/redhatspain" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://www.youtube.com/channel/UCCGQ2G2rGAkHzVFhhed-xVw/playlists" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://speakerdeck.com/redhatspain/stars" target="_blank" rel="noopener" title="speakerdeck.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M213.86 296H100a100 100 0 0 1 0-200h132.84a40 40 0 0 1 0 80H98c-26.47 0-26.45 40 0 40h113.82a100 100 0 0 1 0 200H40a40 40 0 0 1 0-80h173.86c26.48 0 26.46-40 0-40zM298 416a120.21 120.21 0 0 0 51.11-80h64.55a19.83 19.83 0 0 0 19.66-20V196a19.83 19.83 0 0 0-19.66-20H296.42a60.77 60.77 0 0 0 0-80h136.93c43.44 0 78.65 35.82 78.65 80v160c0 44.18-35.21 80-78.65 80z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://es.slideshare.net/RedHatSpain/favorites" target="_blank" rel="noopener" title="es.slideshare.net" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M187.7 153.7c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7s61.7-26 61.7-57.7c0-32-27.7-57.7-61.7-57.7zm143.4 0c-34 0-61.7 25.7-61.7 57.7 0 31.7 27.7 57.7 61.7 57.7 34.3 0 61.7-26 61.7-57.7.1-32-27.4-57.7-61.7-57.7zm156.6 90l-6 4.3V49.7c0-27.4-20.6-49.7-46-49.7H76.6c-25.4 0-46 22.3-46 49.7V248c-2-1.4-4.3-2.9-6.3-4.3-15.1-10.6-25.1 4-16 17.7 18.3 22.6 53.1 50.3 106.3 72C58.3 525.1 252 555.7 248.9 457.5c0-.7.3-56.6.3-96.6 5.1 1.1 9.4 2.3 13.7 3.1 0 39.7.3 92.8.3 93.5-3.1 98.3 190.6 67.7 134.3-124 53.1-21.7 88-49.4 106.3-72 9.1-13.8-.9-28.3-16.1-17.8zm-30.5 19.2c-68.9 37.4-128.3 31.1-160.6 29.7-23.7-.9-32.6 9.1-33.7 24.9-10.3-7.7-18.6-15.5-20.3-17.1-5.1-5.4-13.7-8-27.1-7.7-31.7 1.1-89.7 7.4-157.4-28V72.3c0-34.9 8.9-45.7 40.6-45.7h317.7c30.3 0 40.9 12.9 40.9 45.7v190.6z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://redhatspain.slack.com/" target="_blank" rel="noopener" title="redhatspain.slack.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
